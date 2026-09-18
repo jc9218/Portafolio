@@ -119,10 +119,6 @@ export const PORTFOLIO_DATA = {
     linkedin: "https://linkedin.com/in/juan-camilo-lopez-espitia",
     github: "https://github.com/jc9218",
     whatsapp: "https://wa.me/573162438345",
-    statusBadge: {
-      es: "Abierto a nuevas oportunidades",
-      en: "Open to new opportunities",
-    },
     summary: {
       es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en desarrollo agéntico, flujos de trabajo con agentes autónomos de IA y el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
       en: "Systems Engineer with over 10 years of experience in software engineering, enterprise web architecture, and technical leadership for digital transformation initiatives. Specialized in agentic software development, autonomous AI coding workflows, and building complex modern headless commerce ecosystems, enterprise-grade CMS platforms, and decoupled architectures using Next.js, Ibexa DXP, and Commerce Layer. Proven ability to lead cross-functional engineering teams (4-6 developers), mitigate technical debt, align complex business goals with high-performing software design, and deploy mission-critical transactional checkout and payment pipelines for highly available, high-traffic systems.",
@@ -164,7 +160,10 @@ export const PORTFOLIO_DATA = {
       },
     },
     {
-      value: "Thousands",
+      value: {
+        es: "Miles",
+        en: "Thousands",
+      },
       label: {
         es: "Transacciones Concurrentes",
         en: "Concurrent Purchases Handled",
@@ -218,7 +217,7 @@ export const PORTFOLIO_DATA = {
         id: "headless-cms",
         name: "Ibexa DXP & Contentful",
         role: {
-          es: "Headless Content & Experience Engine",
+          es: "Motor de Contenido Headless y Experiencias Digitales",
           en: "Headless Content & Experience Engine",
         },
         description: {
@@ -319,7 +318,7 @@ export const PORTFOLIO_DATA = {
       id: "aplyca",
       company: "Aplyca",
       role: {
-        es: "Technical Lead / Senior Full Stack Developer",
+        es: "Líder Técnico / Desarrollador Full Stack Senior",
         en: "Technical Lead / Senior Full Stack Developer",
       },
       period: {
@@ -411,7 +410,7 @@ export const PORTFOLIO_DATA = {
       id: "asesoftware",
       company: "Asesoftware",
       role: {
-        es: "Intermediate Systems Analyst",
+        es: "Analista de Sistemas Intermedio",
         en: "Intermediate Systems Analyst",
       },
       period: {
@@ -430,7 +429,7 @@ export const PORTFOLIO_DATA = {
       id: "blaucast",
       company: "Blaucast",
       role: {
-        es: "Full Stack Web Developer",
+        es: "Desarrollador Web Full Stack",
         en: "Full Stack Web Developer",
       },
       period: {
@@ -478,7 +477,7 @@ export const PORTFOLIO_DATA = {
       id: "univalle",
       company: "Universidad del Valle",
       role: {
-        es: "Web Developer",
+        es: "Desarrollador Web",
         en: "Web Developer",
       },
       period: {
@@ -590,8 +589,8 @@ export const PORTFOLIO_DATA = {
 
   education: {
     degree: {
-      es: "Ingeniero de Sistemas (B.S. in Systems Engineering)",
-      en: "B.S. in Systems Engineering (Ingeniero de Sistemas)",
+      es: "Ingeniero de Sistemas",
+      en: "B.S. in Systems Engineering",
     },
     institution: "Universidad del Valle",
     year: "2017",

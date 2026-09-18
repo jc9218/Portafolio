@@ -18,7 +18,7 @@ export default function Metrics() {
               className={`${index > 0 ? "pt-6 md:pt-0 md:pl-8" : ""}`}
             >
               <div className="text-3xl sm:text-4xl font-semibold text-white font-mono tracking-tight mb-2">
-                {metric.value}
+                {typeof metric.value === "string" ? metric.value : metric.value[language]}
               </div>
               <h3 className="text-sm font-medium text-zinc-200 mb-1">
                 {metric.label[language]}

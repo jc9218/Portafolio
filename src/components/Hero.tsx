@@ -27,17 +27,10 @@ export default function Hero() {
     <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
-          {/* Status & Location line */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            <div className="inline-flex items-center gap-2 text-xs text-zinc-400 font-mono">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
-              <span>{personal.statusBadge[language]}</span>
-            </div>
-            <span className="text-zinc-600 hidden sm:inline">•</span>
-            <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono">
-              <MapPin className="w-3.5 h-3.5 text-zinc-500" />
-              <span>{personal.location}</span>
-            </div>
+          {/* Location line */}
+          <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono mb-6">
+            <MapPin className="w-3.5 h-3.5 text-zinc-500" />
+            <span>{personal.location}</span>
           </div>
 
           {/* Name */}
@@ -58,11 +51,11 @@ export default function Hero() {
           {/* Key tags */}
           <div className="flex flex-wrap gap-2 mb-10">
             {[
-              "Decoupled Architectures",
+              language === "es" ? "Arquitecturas Desacopladas" : "Decoupled Architectures",
               "Next.js App Router",
               "Ibexa DXP",
               "Commerce Layer",
-              "Agentic Workflows",
+              language === "es" ? "Flujos Agénticos & IA" : "Agentic Workflows & AI",
               "AWS & Vercel",
             ].map((tag) => (
               <span
