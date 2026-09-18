@@ -20,6 +20,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "#architecture", label: language === "es" ? "Arquitectura" : "Architecture" },
     { href: "#experience", label: language === "es" ? "Experiencia" : "Experience" },
+    { href: "#projects", label: language === "es" ? "Proyectos" : "Projects" },
     { href: "#skills", label: language === "es" ? "Competencias" : "Skills" },
     { href: "#education", label: language === "es" ? "Educación" : "Education" },
     { href: "#contact", label: language === "es" ? "Contacto" : "Contact" },

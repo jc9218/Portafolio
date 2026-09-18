@@ -41,6 +41,34 @@ export interface JobExperience {
   technologies: string[];
 }
 
+export interface PersonalProject {
+  id: string;
+  name: string;
+  badge: {
+    es: string;
+    en: string;
+  };
+  tagline: {
+    es: string;
+    en: string;
+  };
+  utility: {
+    es: string;
+    en: string;
+  };
+  description: {
+    es: string;
+    en: string;
+  };
+  features: {
+    es: string[];
+    en: string[];
+  };
+  technologies: string[];
+  githubUrl: string;
+  liveUrl?: string;
+}
+
 export interface SkillCategory {
   title: {
     es: string;
@@ -217,6 +245,61 @@ export const PORTFOLIO_DATA = {
       },
     ] as ArchitectureNode[],
   },
+
+  personalProjects: [
+    {
+      id: "kom-trainer",
+      name: "KOM Trainer — AI Cycling Coach",
+      badge: {
+        es: "Proyecto Destacado • AI & Sports Tech",
+        en: "Featured Project • AI & Sports Tech",
+      },
+      tagline: {
+        es: "Entrenador personal de ciclismo con IA que analiza rendimiento fisiológico y prescribe entrenamientos adaptativos en tiempo real.",
+        en: "AI-powered personal cycling coach analyzing physiological telemetry and prescribing adaptive training plans in real time.",
+      },
+      utility: {
+        es: "Plataforma integral para ciclistas de ruta, gravel y MTB. Sincroniza automáticamente telemetría con Strava e Intervals.icu para computar el modelo Banister (Fitness CTL, Fatiga ATL, Forma TSB) y distribución de potencia Coggan (Z1–Z7, NP, IF, TSS). El motor de IA diagnostica el estado del atleta y prescribe entrenamientos adaptativos y sesiones de fuerza con regla de recuperación de 48h, publicando directamente en ciclocomputadores Garmin, Wahoo, Karoo y COROS.",
+        en: "Comprehensive platform for road, gravel, and MTB cyclists. Synchronizes telemetry with Strava and Intervals.icu to compute the Banister impulse-response model (Fitness CTL, Fatigue ATL, Form TSB) and Coggan 7-zone power metrics (NP, IF, TSS). The AI engine diagnoses athlete status and prescribes adaptive workouts and RPE strength sessions with a 48h recovery guardrail, publishing directly to Garmin, Wahoo, Karoo, and COROS devices.",
+      },
+      description: {
+        es: "Desarrollada con arquitectura moderna full-stack sobre Next.js 16 y PostgreSQL serverless. Integra mapas de ruta GPS interactivos con Leaflet, capas de telemetría multi-métrica, curvas de potencia máxima y sincronización mediante cron jobs y webhooks.",
+        en: "Built with a modern full-stack architecture on Next.js 16 and serverless PostgreSQL. Integrates interactive Leaflet GPS elevation profiles, multi-metric telemetry charts, peak power curves, and automated background sync via cron jobs and webhooks.",
+      },
+      features: {
+        es: [
+          "Prescripción de entrenamientos 100% generada por IA contra datos reales del atleta (sin rutinas predefinidas).",
+          "Dashboard de rendimiento Banister: Fitness (CTL, 42d), Fatiga (ATL, 7d) y Forma (TSB) por día civil.",
+          "Mapas interactivos de rutas GPS con Leaflet, perfiles de elevación con gradiente de pendientes y telemetría de potencia, FC y cadencia.",
+          "Curvas de mejor potencia: 5s (sprint), 1min (ataque), 5min (Vo2 max) y 20min (FTP) en vatios y W/kg.",
+          "Módulo de entrenamiento de fuerza con 25 ejercicios guiados por RPE y bloqueo preventivo de 48h antes de sesiones clave.",
+          "Publicación directa a Intervals.icu para sincronización inalámbrica con Garmin, Wahoo, Hammerhead Karoo y COROS.",
+        ],
+        en: [
+          "AI-driven training prescriptions generated against the athlete's real telemetry (zero pre-canned workouts).",
+          "Banister impulse-response dashboard: Fitness (CTL, 42d), Fatigue (ATL, 7d), and Form (TSB) per civil day.",
+          "Interactive GPS route maps with Leaflet, slope-graded elevation profiles, and synchronized multi-metric telemetry.",
+          "Best power curves: 5s (sprint), 1min (attack), 5min (Vo2 max), and 20min (FTP) in Watts and W/kg.",
+          "Strength training module featuring 25 RPE-guided exercises with a strict 48h recovery rule before key rides.",
+          "Direct publishing to Intervals.icu pushing wirelessly to Garmin, Wahoo, Karoo, and COROS head units.",
+        ],
+      },
+      technologies: [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Drizzle ORM",
+        "Neon Serverless PostgreSQL",
+        "NextAuth v5 (Auth.js)",
+        "Leaflet GPS",
+        "Strava API v3",
+        "Intervals.icu API",
+        "AI Coaching Engine",
+        "Tailwind CSS",
+      ],
+      githubUrl: "https://github.com/jc9218/KOM-Trainer",
+    },
+  ] as PersonalProject[],
 
   experiences: [
     {

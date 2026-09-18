@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Metrics from "@/components/Metrics";
 import ArchitectureShowcase from "@/components/ArchitectureShowcase";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import SkillsSection from "@/components/SkillsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
@@ -23,6 +24,7 @@ export default function Home() {
         <Metrics />
         <ArchitectureShowcase />
         <ExperienceTimeline />
+        <FeaturedProjects />
         <SkillsSection />
         <EducationSection />
         <ContactSection />
