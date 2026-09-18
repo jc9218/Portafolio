@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
@@ -38,9 +39,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between">
         {/* Brand */}
         <a href="#" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
-          <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-700/80 flex items-center justify-center text-zinc-200 font-mono text-xs font-semibold group-hover:border-zinc-500 transition-colors shrink-0">
-            JL
-          </div>
+          <Logo className="w-8 h-8 shrink-0 group-hover:scale-105 transition-transform" />
           <div className="flex flex-col min-w-0">
             <span className="font-medium text-zinc-100 tracking-tight text-xs sm:text-sm group-hover:text-white transition-colors truncate">
               Juan Camilo López

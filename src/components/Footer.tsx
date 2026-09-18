@@ -5,6 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   const { language } = useLanguage();
@@ -19,9 +20,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pb-8 border-b border-zinc-850 text-center sm:text-left">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 font-mono text-xs font-semibold shrink-0">
-              JL
-            </div>
+            <Logo className="w-8 h-8 shrink-0" />
             <div>
               <span className="font-semibold text-white text-sm">
                 Juan Camilo López Espitia
