@@ -120,8 +120,8 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/jc9218",
     whatsapp: "https://wa.me/573162438345",
     statusBadge: {
-      es: "Disponible para Consultoría y Liderazgo Técnico",
-      en: "Available for Consulting & Technical Leadership",
+      es: "Abierto a nuevas oportunidades",
+      en: "Open to new opportunities",
     },
     summary: {
       es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en desarrollo agéntico, flujos de trabajo con agentes autónomos de IA y el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
@@ -703,16 +703,16 @@ export const PORTFOLIO_DATA = {
       badge: "Icons",
     },
     {
-      name: "Canvas Confetti",
+      name: "Geist Sans & Mono",
       category: {
-        es: "Microinteracciones",
-        en: "Micro-interactions",
+        es: "Tipografía & Diseño",
+        en: "Typography & Design",
       },
       description: {
-        es: "Feedback interactivo táctil de celebración al copiar correo o enviar mensajes.",
-        en: "Celebratory interactive feedback when copying email or submitting messages.",
+        es: "Sistema tipográfico de precisión diseñado para interfaces técnicas de alto contraste.",
+        en: "Precision typographic system engineered for high-contrast technical interfaces.",
       },
-      badge: "FX",
+      badge: "Fonts",
     },
     {
       name: "Antigravity AI Platform",

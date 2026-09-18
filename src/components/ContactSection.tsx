@@ -5,11 +5,9 @@ import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
   Mail, 
-  MessageSquare, 
   Copy, 
   Check, 
-  Send, 
-  ArrowRight
+  ArrowUpRight
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 
@@ -17,10 +15,6 @@ export default function ContactSection() {
   const { language } = useLanguage();
   const { personal } = PORTFOLIO_DATA;
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [senderName, setSenderName] = useState("");
-  const [senderEmail, setSenderEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personal.email);
@@ -28,229 +22,131 @@ export default function ContactSection() {
     setTimeout(() => setCopiedEmail(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`Contacto: ${senderName || "Consulta de Proyecto"}`);
-    const body = encodeURIComponent(
-      `Hola Juan Camilo,\n\nMi nombre es ${senderName} (${senderEmail}).\n\n${message}\n\nSaludos.`
-    );
-    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
-    setFormSubmitted(true);
-  };
-
   return (
     <section id="contact" className="py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-12">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            07 // {language === "es" ? "Contacto Directo" : "Direct Contact"}
+            07 // {language === "es" ? "Contacto & Redes" : "Contact & Links"}
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
-            {language === "es"
-              ? "Hablemos de Arquitectura y Nuevos Desafíos"
-              : "Let's Talk Architecture & Key Challenges"}
+            {language === "es" ? "Contacto" : "Get in Touch"}
           </h2>
           <p className="text-zinc-400 text-base leading-relaxed">
             {language === "es"
-              ? "Disponible para consultoría técnica, liderazgo de ingeniería o nuevos retos estratégicos. Conversemos por WhatsApp o correo electrónico."
-              : "Available for technical consulting, engineering leadership roles, and ambitious system architectures. Reach out via WhatsApp or email."}
+              ? "Si estás evaluando mi perfil para roles de Solutions Architect o Technical Lead, puedes escribirme directamente por correo electrónico o conectar a través de mis redes profesionales."
+              : "If you are evaluating my profile for Solutions Architect or Technical Lead positions, feel free to reach out directly via email or connect through my professional profiles."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Direct Contact Cards */}
-          <div className="lg:col-span-5 space-y-3">
-            {/* WhatsApp Card */}
-            <a
-              href={personal.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 rounded-lg bg-zinc-800 text-emerald-400">
-                  <MessageSquare className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
-                    WhatsApp Directo
-                  </h3>
-                  <p className="text-xs text-zinc-400 font-mono">
-                    {personal.phone}
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
-            </a>
-
-            {/* Email Card */}
-            <div className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 flex items-center justify-between">
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
+        {/* 3 Contact Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {/* Email Card (Primary Contact Method) */}
+          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
                   <Mail className="w-5 h-5" />
                 </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white">
-                    {language === "es" ? "Correo Electrónico" : "Email"}
-                  </h3>
-                  <p className="text-xs text-zinc-400 font-mono">
-                    {personal.email}
-                  </p>
-                </div>
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-emerald-400">
+                  {language === "es" ? "Principal" : "Primary"}
+                </span>
               </div>
+              <h3 className="text-base font-semibold text-white mb-1">
+                {language === "es" ? "Correo Electrónico" : "Direct Email"}
+              </h3>
+              <p className="text-xs text-zinc-400 font-mono mb-4 break-all">
+                {personal.email}
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 pt-4 border-t border-zinc-800/80">
+              <a
+                href={`mailto:${personal.email}`}
+                className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium transition-colors"
+              >
+                <span>{language === "es" ? "Escribir" : "Send Email"}</span>
+                <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
               <button
                 onClick={handleCopyEmail}
-                className="px-2.5 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+                className="px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+                title={language === "es" ? "Copiar correo" : "Copy email"}
               >
                 {copiedEmail ? (
-                  <span className="text-emerald-400 flex items-center gap-1">
-                    <Check className="w-3.5 h-3.5" />
-                    <span>{language === "es" ? "Copiado" : "Copied"}</span>
-                  </span>
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
                 ) : (
-                  <span className="flex items-center gap-1">
-                    <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                    <span>{language === "es" ? "Copiar" : "Copy"}</span>
-                  </span>
+                  <Copy className="w-3.5 h-3.5" />
                 )}
               </button>
             </div>
-
-            {/* LinkedIn Card */}
-            <a
-              href={personal.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
-                  <LinkedinIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-zinc-200 transition-colors">
-                    LinkedIn
-                  </h3>
-                  <p className="text-xs text-zinc-400 font-mono">
-                    in/juan-camilo-lopez-espitia
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-            </a>
-
-            {/* GitHub Card */}
-            <a
-              href={personal.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
-            >
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
-                  <GithubIcon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-zinc-200 transition-colors">
-                    GitHub
-                  </h3>
-                  <p className="text-xs text-zinc-400 font-mono">
-                    github.com/jc9218
-                  </p>
-                </div>
-              </div>
-              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-            </a>
           </div>
 
-          {/* Contact Message Form */}
-          <div className="lg:col-span-7">
-            <div className="p-6 sm:p-7 rounded-xl bg-zinc-900/50 border border-zinc-800">
-              <h3 className="text-lg font-bold text-white mb-1">
-                {language === "es" ? "Enviar un Mensaje" : "Send a Message"}
-              </h3>
-              <p className="text-xs text-zinc-400 mb-5">
-                {language === "es"
-                  ? "Genera un borrador directo hacia mi correo electrónico."
-                  : "This will prepare an email directly addressed to my inbox."}
-              </p>
-
-              {formSubmitted ? (
-                <div className="p-5 rounded-lg bg-zinc-950 border border-zinc-800 text-center">
-                  <Check className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-                  <h4 className="text-sm font-bold text-white mb-1">
-                    {language === "es" ? "Borrador de Correo Generado" : "Email Draft Created"}
-                  </h4>
-                  <p className="text-xs text-zinc-400 mb-3">
-                    {language === "es"
-                      ? "Si no se abrió tu cliente automáticamente, escríbeme directamente a "
-                      : "If your email client didn't launch automatically, please email "}
-                    <span className="text-zinc-200 font-mono">{personal.email}</span>
-                  </p>
-                  <button
-                    onClick={() => setFormSubmitted(false)}
-                    className="text-xs text-zinc-400 hover:text-white underline font-mono"
-                  >
-                    {language === "es" ? "Redactar otro mensaje" : "Draft another message"}
-                  </button>
+          {/* LinkedIn Card */}
+          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
+                  <LinkedinIcon className="w-5 h-5" />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-3.5">
-                  <div>
-                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
-                      {language === "es" ? "Nombre / Organización" : "Name / Organization"}
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={senderName}
-                      onChange={(e) => setSenderName(e.target.value)}
-                      placeholder={language === "es" ? "Ej. Carlos Gómez" : "e.g. Alex Smith"}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
-                    />
-                  </div>
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
+                  Network
+                </span>
+              </div>
+              <h3 className="text-base font-semibold text-white mb-1">
+                LinkedIn
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                {language === "es"
+                  ? "Trayectoria profesional completa, experiencia corporativa y red de contactos."
+                  : "Comprehensive professional trajectory, corporate track, and career background."}
+              </p>
+            </div>
 
-                  <div>
-                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
-                      {language === "es" ? "Correo Electrónico" : "Email Address"}
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={senderEmail}
-                      onChange={(e) => setSenderEmail(e.target.value)}
-                      placeholder="nombre@empresa.com"
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
-                    />
-                  </div>
+            <div className="pt-4 border-t border-zinc-800/80">
+              <a
+                href={personal.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
+              >
+                <span>{language === "es" ? "Ver Perfil en LinkedIn" : "View LinkedIn Profile"}</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
+              </a>
+            </div>
+          </div>
 
-                  <div>
-                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
-                      {language === "es" ? "Detalles del Proyecto / Consulta" : "Message / Project Scope"}
-                    </label>
-                    <textarea
-                      rows={4}
-                      required
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder={
-                        language === "es"
-                          ? "Cuéntame sobre el reto técnico, volumen o rol requerido..."
-                          : "Tell me about the technical requirements, scale, or role..."
-                      }
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors resize-none"
-                    />
-                  </div>
+          {/* GitHub Card */}
+          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
+                  <GithubIcon className="w-5 h-5" />
+                </div>
+                <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
+                  Code
+                </span>
+              </div>
+              <h3 className="text-base font-semibold text-white mb-1">
+                GitHub
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed mb-4">
+                {language === "es"
+                  ? "Repositorios de código, proyectos personales, experimentación y contribuciones técnicas."
+                  : "Source code repositories, personal projects, experiments, and technical contributions."}
+              </p>
+            </div>
 
-                  <button
-                    type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm"
-                  >
-                    <Send className="w-3.5 h-3.5 text-zinc-800" />
-                    <span>{language === "es" ? "Enviar Mensaje" : "Send Inquiry"}</span>
-                  </button>
-                </form>
-              )}
+            <div className="pt-4 border-t border-zinc-800/80">
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
+              >
+                <span>{language === "es" ? "Ver Perfil en GitHub" : "View GitHub Profile"}</span>
+                <ArrowUpRight className="w-3.5 h-3.5 text-zinc-400" />
+              </a>
             </div>
           </div>
         </div>

@@ -7,7 +7,6 @@ import {
   Copy, 
   Check, 
   Mail, 
-  MessageSquare, 
   MapPin, 
   ArrowUpRight
 } from "lucide-react";
@@ -77,15 +76,13 @@ export default function Hero() {
 
           {/* Actions */}
           <div className="flex flex-wrap items-center gap-3">
-            {/* Primary Action */}
+            {/* Primary Action: Email */}
             <a
-              href={personal.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`mailto:${personal.email}`}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-600" />
-              <span>{language === "es" ? "Contactar por WhatsApp" : "Chat on WhatsApp"}</span>
+              <Mail className="w-4 h-4 text-zinc-900" />
+              <span>{language === "es" ? "Contactar por Correo" : "Contact via Email"}</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
             </a>
 
