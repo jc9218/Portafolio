@@ -80,7 +80,6 @@ Portafolio/
 │   │   ├── layout.tsx            # SEO metadata, Geist fonts, OpenGraph, and LanguageProvider
 │   │   └── page.tsx              # Main orchestrator page composing all sections
 │   ├── components/
-│   │   ├── ArchitectureShowcase.tsx # Interactive decoupled Solutions Architecture showcase
 │   │   ├── ContactSection.tsx    # Direct WhatsApp, Mailto email, LinkedIn, and GitHub cards
 │   │   ├── EducationSection.tsx  # University degree and language proficiencies
 │   │   ├── ExperienceTimeline.tsx # Career trajectory, achievements, and enterprise projects
@@ -92,10 +91,13 @@ Portafolio/
 │   │   ├── Navbar.tsx            # Fixed glassmorphism navbar with segmented ES/EN switcher
 │   │   ├── PortfolioTechStack.tsx # Dedicated showcase of the technologies powering this website
 │   │   └── SkillsSection.tsx     # Categorized interactive technical competencies
+│   ├── config/
+│   │   └── site.ts               # Single source of truth for site URL & env configuration
 │   ├── context/
 │   │   └── LanguageContext.tsx   # Global bilingual state with localStorage persistence
 │   └── data/
 │       └── portfolio.ts          # Single source of truth for all content and bilingual texts
+├── .env.example                  # Template for environment variables (NEXT_PUBLIC_SITE_URL)
 ├── .yarnrc.yml                   # Yarn Berry configuration (nodeLinker: node-modules)
 ├── AGENTS.md                     # Master guidelines and operational rules for AI agents
 ├── CLAUDE.md                     # Reference redirect link pointing to AGENTS.md
@@ -136,11 +138,12 @@ yarn lint
 
 ---
 
-## 6. Production Domain & Vercel Deployment
+## 6. Production Domain & Environment Variables
 
-- **Canonical Production URL:** `https://jclopezespitia.sytes.net/`
+- **Single Source of Truth:** `src/config/site.ts` resolves the canonical domain via `NEXT_PUBLIC_SITE_URL`.
+  - Default / Fallback: `https://jclopezespitia.sytes.net/`
+  - Overridable via: `NEXT_PUBLIC_SITE_URL` in `.env.local` or Vercel Project Settings.
 - **Deployment Pipeline:**
   1. The GitHub repository `https://github.com/jc9218/Portafolio` is integrated with Vercel.
   2. Every `git push` to `main` automatically triggers an optimized edge deployment.
-  3. Canonical metadata, OpenGraph, sitemap (`/sitemap.xml`), and robots (`/robots.txt`) are configured to point to `https://jclopezespitia.sytes.net/`.
-  4. No mandatory environment variables are required for standard public portfolio browsing.
+  3. Canonical metadata, OpenGraph, sitemap (`/sitemap.xml`), robots (`/robots.txt`), and portfolio data dynamically read from `SITE_URL`.

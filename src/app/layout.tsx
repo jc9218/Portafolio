@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { SITE_URL } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jclopezespitia.sytes.net"),
+  metadataBase: new URL(SITE_URL),
   alternates: {
-    canonical: "https://jclopezespitia.sytes.net",
+    canonical: SITE_URL,
   },
   title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
   description:
@@ -36,13 +37,13 @@ export const metadata: Metadata = {
     "Vercel",
     "Software Architecture",
   ],
-  authors: [{ name: "Juan Camilo López Espitia", url: "https://jclopezespitia.sytes.net" }],
+  authors: [{ name: "Juan Camilo López Espitia", url: SITE_URL }],
   creator: "Juan Camilo López Espitia",
   openGraph: {
     title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
     description:
       "Fullstack Developer & Technical Lead. 10+ years specializing in enterprise headless commerce ecosystems, decoupled architectures, Next.js, Ibexa DXP, Commerce Layer.",
-    url: "https://jclopezespitia.sytes.net",
+    url: SITE_URL,
     siteName: "Juan Camilo López Espitia — Portfolio",
     type: "website",
     locale: "es_CO",
