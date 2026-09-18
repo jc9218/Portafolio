@@ -408,6 +408,25 @@ export const PORTFOLIO_DATA = {
       ],
     },
     {
+      id: "asesoftware",
+      company: "Asesoftware",
+      role: {
+        es: "Intermediate Systems Analyst",
+        en: "Intermediate Systems Analyst",
+      },
+      period: {
+        es: "Mayo 2021 – Junio 2021",
+        en: "May 2021 – June 2021",
+      },
+      location: "Colombia",
+      summary: {
+        es: "Análisis de requerimientos de ingeniería y soporte de aplicaciones backend para la expansión y mantenimiento de infraestructura corporativa de misión crítica.",
+        en: "Analyzed engineering requirements and delivered intermediate backend application support to maintain and expand mission-critical corporate infrastructure.",
+      },
+      projects: [],
+      technologies: ["PHP", "Java", "SQL", "Git"],
+    },
+    {
       id: "blaucast",
       company: "Blaucast",
       role: {
@@ -454,25 +473,6 @@ export const PORTFOLIO_DATA = {
         },
       ],
       technologies: ["Laravel", "PHP", "Angular", "JavaScript", "AWS (EC2, S3, RDS)", "MySQL", "Git"],
-    },
-    {
-      id: "asesoftware",
-      company: "Asesoftware",
-      role: {
-        es: "Intermediate Systems Analyst",
-        en: "Intermediate Systems Analyst",
-      },
-      period: {
-        es: "Mayo 2021 – Junio 2021",
-        en: "May 2021 – June 2021",
-      },
-      location: "Colombia",
-      summary: {
-        es: "Análisis de requerimientos de ingeniería y soporte de aplicaciones backend para la expansión y mantenimiento de infraestructura corporativa de misión crítica.",
-        en: "Analyzed engineering requirements and delivered intermediate backend application support to maintain and expand mission-critical corporate infrastructure.",
-      },
-      projects: [],
-      technologies: ["PHP", "Java", "SQL", "Git"],
     },
     {
       id: "univalle",
