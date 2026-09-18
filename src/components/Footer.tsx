@@ -85,14 +85,30 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom copyright & location row */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-400 font-mono text-center sm:text-left">
-          <p>
-            © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
-          </p>
-          <p className="text-zinc-500 text-[11px]">
-            Cali & Bogotá, Colombia
-          </p>
+        {/* Bottom copyright & tech stack row */}
+        <div className="pt-6 border-t border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono text-center md:text-left">
+          <div>
+            <p>
+              © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
+            </p>
+            <p className="text-zinc-500 text-[11px] mt-1">
+              {personal.location}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center md:justify-end gap-1.5 text-[11px] text-zinc-400">
+            <span className="text-zinc-500 mr-1">
+              {language === "es" ? "Stack del sitio:" : "Site stack:"}
+            </span>
+            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Next.js 16</span>
+            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">React 19</span>
+            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Tailwind CSS v4</span>
+            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">TypeScript</span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-emerald-900/60 text-emerald-400">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+              <span>AI-Assisted</span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>
