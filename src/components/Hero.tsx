@@ -82,25 +82,25 @@ export default function Hero() {
             {/* Copy Email Button */}
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono transition-colors w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono transition-colors w-full sm:w-auto min-w-0"
             >
               {copied ? (
                 <>
                   <Check className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-emerald-400">
+                  <span className="text-emerald-400 font-medium">
                     {language === "es" ? "Copiado" : "Copied"}
                   </span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
-                  <span>{personal.email}</span>
+                  <Copy className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                  <span className="truncate">{personal.email}</span>
                 </>
               )}
             </button>
 
             {/* Social Links */}
-            <div className="flex items-center justify-center gap-2 pt-1 sm:pt-0 sm:ml-1">
+            <div className="flex items-center justify-center gap-2 w-full sm:w-auto pt-1 sm:pt-0">
               <a
                 href={personal.linkedin}
                 target="_blank"
@@ -118,13 +118,6 @@ export default function Hero() {
                 className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >
                 <GithubIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={`mailto:${personal.email}`}
-                aria-label="Email"
-                className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
-              >
-                <Mail className="w-4 h-4" />
               </a>
             </div>
           </div>

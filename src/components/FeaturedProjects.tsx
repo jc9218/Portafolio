@@ -106,34 +106,34 @@ export default function FeaturedProjects() {
                     <span className="text-[11px] text-zinc-400">SYNC READY</span>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-2 mb-3 text-center">
-                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
-                      <div className="text-[10px] text-zinc-400">CTL (FITNESS)</div>
-                      <div className="text-lg font-semibold text-zinc-100 mt-0.5">84</div>
-                      <div className="text-[9px] text-zinc-400">42 Days</div>
+                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2 mb-3 text-center">
+                    <div className="p-2 sm:p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[9px] sm:text-[10px] text-zinc-400 truncate">CTL (FITNESS)</div>
+                      <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">84</div>
+                      <div className="text-[8px] sm:text-[9px] text-zinc-500">42 Days</div>
                     </div>
-                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
-                      <div className="text-[10px] text-zinc-400">ATL (FATIGUE)</div>
-                      <div className="text-lg font-semibold text-zinc-100 mt-0.5">72</div>
-                      <div className="text-[9px] text-zinc-400">7 Days</div>
+                    <div className="p-2 sm:p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[9px] sm:text-[10px] text-zinc-400 truncate">ATL (FATIGUE)</div>
+                      <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">72</div>
+                      <div className="text-[8px] sm:text-[9px] text-zinc-500">7 Days</div>
                     </div>
-                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
-                      <div className="text-[10px] text-zinc-400">TSB (FORM)</div>
-                      <div className="text-lg font-semibold text-emerald-400 mt-0.5">+12</div>
-                      <div className="text-[9px] text-zinc-400">Optimal</div>
+                    <div className="p-2 sm:p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[9px] sm:text-[10px] text-zinc-400 truncate">TSB (FORM)</div>
+                      <div className="text-base sm:text-lg font-semibold text-emerald-400 mt-0.5">+12</div>
+                      <div className="text-[8px] sm:text-[9px] text-zinc-500">Optimal</div>
                     </div>
                   </div>
 
-                  <div className="space-y-1.5 text-xs text-zinc-300">
-                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                  <div className="space-y-1 text-[11px] sm:text-xs text-zinc-300">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
                       <span className="text-zinc-400">Power Distribution:</span>
                       <span className="text-zinc-200">Coggan 7-Zones (Z1-Z7)</span>
                     </div>
-                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
                       <span className="text-zinc-400">Device Push:</span>
                       <span className="text-zinc-200">Garmin • Wahoo • Karoo</span>
                     </div>
-                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
                       <span className="text-zinc-400">Recovery Rule:</span>
                       <span className="text-zinc-200 font-medium">48h Heavy-Leg Guardrail</span>
                     </div>

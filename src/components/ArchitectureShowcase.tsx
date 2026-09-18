@@ -49,9 +49,9 @@ export default function ArchitectureShowcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           {/* Architecture Pipeline Flow */}
           <div className="lg:col-span-7 space-y-3">
-            <div className="flex items-center justify-between text-xs text-zinc-400 font-mono pb-2 border-b border-zinc-800">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-xs text-zinc-400 font-mono pb-2 border-b border-zinc-800">
               <span>{language === "es" ? "Pipeline desacoplado de 5 niveles" : "5-tier decoupled pipeline"}</span>
-              <span className="text-zinc-400 text-[11px] sm:text-xs">RFC / Production Spec</span>
+              <span className="text-zinc-500 text-[11px] sm:text-xs">RFC / Production Spec</span>
             </div>
 
             <div className="space-y-3 sm:space-y-2.5">
@@ -69,9 +69,9 @@ export default function ArchitectureShowcase() {
                     {/* Header clickable trigger */}
                     <button
                       onClick={() => setSelectedNodeId(node.id)}
-                      className="w-full text-left p-3.5 sm:p-4 flex items-center justify-between group"
+                      className="w-full text-left p-3.5 sm:p-4 flex items-center justify-between group min-w-0"
                     >
-                      <div className="flex items-center gap-3 min-w-0">
+                      <div className="flex items-center gap-3 min-w-0 flex-1 pr-1">
                         <div
                           className={`p-2 sm:p-2.5 rounded-lg border shrink-0 transition-colors ${
                             isSelected
@@ -81,9 +81,9 @@ export default function ArchitectureShowcase() {
                         >
                           {categoryIcons[node.category]}
                         </div>
-                        <div className="min-w-0">
+                        <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
-                            <span className="text-xs font-mono text-zinc-500">
+                            <span className="text-xs font-mono text-zinc-500 shrink-0">
                               0{index + 1}.
                             </span>
                             <h3 className="text-sm font-semibold text-zinc-100 group-hover:text-white truncate">
@@ -117,7 +117,7 @@ export default function ArchitectureShowcase() {
 
                     {/* Mobile inline expansion */}
                     {isSelected && (
-                      <div className="lg:hidden px-3.5 pb-4 pt-1 sm:px-4 border-t border-zinc-850 space-y-4">
+                      <div className="lg:hidden px-3.5 pb-4 pt-1 sm:px-4 border-t border-zinc-800 space-y-4">
                         <div className="pt-2">
                           <h4 className="text-[11px] uppercase tracking-wider text-zinc-400 font-mono mb-1">
                             {language === "es" ? "Descripción & Responsabilidades" : "Responsibilities"}
@@ -144,7 +144,7 @@ export default function ArchitectureShowcase() {
                           </div>
                         </div>
 
-                        <div className="pt-3 border-t border-zinc-850 flex items-center justify-between text-[11px] text-zinc-400 font-mono">
+                        <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 font-mono">
                           <span>SLA / Performance:</span>
                           <span className="text-zinc-200">High-Concurrency 99.9%</span>
                         </div>

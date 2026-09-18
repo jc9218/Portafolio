@@ -16,77 +16,83 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-zinc-800/80 bg-[#090a0f] py-12">
+    <footer className="border-t border-zinc-800/80 bg-[#090a0f] py-10 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pb-8 border-b border-zinc-850 text-center sm:text-left">
-          <div className="flex items-center gap-3">
-            <Logo className="w-8 h-8 shrink-0" />
-            <div>
-              <span className="font-semibold text-white text-sm">
-                Juan Camilo López Espitia
-              </span>
-              <p className="text-xs text-zinc-400">
-                Fullstack Developer & Technical Lead
-              </p>
+        {/* Main Footer Block */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-zinc-800">
+          {/* Brand Info & Mobile Back to Top */}
+          <div className="flex items-center justify-between w-full md:w-auto">
+            <div className="flex items-center gap-3">
+              <Logo className="w-8 h-8 shrink-0" />
+              <div>
+                <span className="font-semibold text-white text-sm block">
+                  Juan Camilo López Espitia
+                </span>
+                <p className="text-xs text-zinc-400">
+                  Fullstack Developer & Technical Lead
+                </p>
+              </div>
             </div>
+
+            {/* Back to top on mobile (top-right aligned) */}
+            <button
+              onClick={scrollToTop}
+              className="md:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white transition-colors flex items-center justify-center shrink-0"
+              aria-label="Back to top"
+              title={language === "es" ? "Subir al inicio" : "Back to top"}
+            >
+              <ArrowUp className="w-4 h-4" />
+            </button>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-4 text-xs font-mono text-zinc-400">
+          {/* Social Links as touch-friendly buttons */}
+          <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto text-xs font-mono">
             <a
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1.5"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
               <span>LinkedIn</span>
             </a>
-            <span className="text-zinc-700">•</span>
             <a
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors flex items-center gap-1.5"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
               <GithubIcon className="w-3.5 h-3.5" />
               <span>GitHub</span>
             </a>
-            <span className="text-zinc-700">•</span>
             <a
               href={`mailto:${personal.email}`}
-              className="hover:text-white transition-colors flex items-center gap-1.5"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
               <Mail className="w-3.5 h-3.5" />
               <span>Email</span>
             </a>
-          </div>
 
-          <button
-            onClick={scrollToTop}
-            className="px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white transition-colors flex items-center gap-1.5 text-xs font-mono"
-            aria-label="Back to top"
-          >
-            <span>{language === "es" ? "Subir" : "Top"}</span>
-            <ArrowUp className="w-3.5 h-3.5 text-zinc-400" />
-          </button>
+            {/* Desktop Back to Top Button */}
+            <button
+              onClick={scrollToTop}
+              className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors ml-2"
+              aria-label="Back to top"
+            >
+              <span>{language === "es" ? "Subir" : "Top"}</span>
+              <ArrowUp className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono text-center sm:text-left">
+        {/* Bottom copyright & location row */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-400 font-mono text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
           </p>
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-              <span>
-                {language === "es" ? "Desarrollo Agéntico" : "Agentic Engineering"}
-              </span>
-              <span className="text-zinc-600">·</span>
-              <span className="text-zinc-200">
-                Powered by: Antigravity
-              </span>
-            </span>
-          </div>
+          <p className="text-zinc-500 text-[11px]">
+            Cali & Bogotá, Colombia
+          </p>
         </div>
       </div>
     </footer>

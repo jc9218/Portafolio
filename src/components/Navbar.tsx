@@ -44,7 +44,7 @@ export default function Navbar() {
             <span className="font-medium text-zinc-100 tracking-tight text-xs sm:text-sm group-hover:text-white transition-colors truncate">
               Juan Camilo López
             </span>
-            <span className="text-[10px] sm:text-[11px] text-zinc-400 truncate hidden xs:block">
+            <span className="text-[10px] sm:text-[11px] text-zinc-400 truncate hidden sm:block">
               Fullstack Developer & Technical Lead
             </span>
           </div>
