@@ -17,7 +17,9 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem("portfolio_lang") as Language;
     if (saved === "es" || saved === "en") {
-      setLanguage(saved);
+      queueMicrotask(() => {
+        setLanguage(saved);
+      });
     }
   }, []);
 

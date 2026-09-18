@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { Menu, X, Globe, Terminal, ArrowUpRight } from "lucide-react";
+import { Menu, X, Terminal, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();

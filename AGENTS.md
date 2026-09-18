@@ -14,18 +14,40 @@ This document is the **technical single source of truth** for any AI agent or de
 
 ---
 
-## 1. Primary Execution Environment
+## 1. Primary Execution Environment & Workflow Rules
 
-- **Official Workspace & Repository Location (Windows):**
-  - Path: `C:\Users\juanc\Documentos\Proyectos\Portafolio`
-  - All source code modifications, dependency installations, builds, and Git operations must be executed **directly in this Windows folder**.
-  - Package manager: **Yarn 4 (Berry)** with `nodeLinker: node-modules`.
+- **Primary & Active Working Directory (WSL Debian):**
+  - Path: `/home/jc9218/Portafolio` (located at the same level as `/home/jc9218/KOM-Trainer`).
+  - **MANDATORY RULE:** **Always work inside the WSL repository.** All code modifications, dependency installations, tests, builds (`yarn build`), and Git commits/pushes **MUST be executed natively inside WSL Debian** (`/home/jc9218/Portafolio`).
+  - Package Manager: **Yarn 4 (Berry)** with `nodeLinker: node-modules`.
+
+- **Windows Project Directory (Mirror Only):**
+  - Path: `C:\Users\juanc\Documentos\Proyectos\Portafolio` (`/mnt/c/Users/juanc/Documentos/Proyectos/Portafolio`).
+  - **Purpose:** This folder is **strictly an offline copy/mirror** for the user. Do **not** run development servers, builds, or package installations in Windows.
+  - After pushing changes from WSL Debian to GitHub, simply run `git pull origin main` in the Windows folder to keep the mirror up to date.
 
 ### 🔄 Standard Workflow for Changes:
-1. **Apply changes in the Windows workspace:** All edits and file operations are conducted in `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
-2. **Validate production build:** Run `yarn build` in PowerShell ensuring 0 errors.
-3. **Commit and Push to GitHub:** Directly push commits using `git add .`, `git commit -m "..."`, and `git push origin main`.
-4. **Automated Vercel Deployment:** Pushing to `main` automatically triggers an optimized production deployment on Vercel's Edge Network.
+1. **Work in WSL Debian:** Apply all code edits, styles, and configurations in `/home/jc9218/Portafolio`.
+2. **Validate production build in WSL:**
+   ```bash
+   cd /home/jc9218/Portafolio
+   yarn build
+   ```
+   Ensure 0 errors and 0 lint failures.
+3. **Commit & Push from WSL Debian to GitHub:**
+   ```bash
+   cd /home/jc9218/Portafolio
+   git add .
+   git commit -m "feat/fix: descriptive commit message"
+   git push origin main
+   ```
+4. **Update Windows Mirror:**
+   ```powershell
+   cd C:\Users\juanc\Documentos\Proyectos\Portafolio
+   git pull origin main
+   ```
+5. **Automated Production Deployment:**
+   Pushing to `main` triggers Vercel's automatic production edge build.
 
 ---
 
@@ -100,10 +122,10 @@ Portafolio/
 
 ## 5. Mandatory Verification Commands
 
-Before creating a commit or deploying to production, execute in the project root in Windows PowerShell:
+Before creating a commit or deploying to production, execute in WSL Debian:
 
-```powershell
-cd C:\Users\juanc\Documentos\Proyectos\Portafolio
+```bash
+cd /home/jc9218/Portafolio
 
 # Validate production build and TypeScript types
 yarn build

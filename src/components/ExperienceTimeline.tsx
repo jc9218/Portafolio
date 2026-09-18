@@ -1,18 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import { Briefcase, Calendar, MapPin, ChevronDown, ChevronUp, CheckCircle, ExternalLink } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle } from "lucide-react";
 
 export default function ExperienceTimeline() {
   const { language } = useLanguage();
   const { experiences } = PORTFOLIO_DATA;
-  const [expandedJobId, setExpandedJobId] = useState<string>("aplyca");
-
-  const toggleExpand = (id: string) => {
-    setExpandedJobId(expandedJobId === id ? "" : id);
-  };
 
   return (
     <section id="experience" className="py-24 bg-slate-950/60 relative">
@@ -35,8 +30,7 @@ export default function ExperienceTimeline() {
 
         {/* Timeline Container */}
         <div className="relative border-l border-slate-800 ml-4 md:ml-6 space-y-12">
-          {experiences.map((exp, idx) => {
-            const isExpanded = expandedJobId === exp.id;
+          {experiences.map((exp) => {
             return (
               <div key={exp.id} className="relative pl-6 md:pl-10 group">
                 {/* Timeline node marker */}

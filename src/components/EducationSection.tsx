@@ -3,7 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import { GraduationCap, Languages, CheckCircle2, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Languages, MapPin } from "lucide-react";
 
 export default function EducationSection() {
   const { language } = useLanguage();

@@ -12,8 +12,7 @@ import {
   Sparkles, 
   Bot, 
   Cloud, 
-  Zap,
-  Check
+  Zap
 } from "lucide-react";
 
 export default function PortfolioTechStack() {

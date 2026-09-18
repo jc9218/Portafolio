@@ -7,11 +7,7 @@ import {
   Sparkles, 
   ExternalLink, 
   Activity, 
-  MapPin, 
-  CheckCircle2, 
-  TrendingUp, 
-  Compass,
-  Cpu
+  CheckCircle2
 } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 

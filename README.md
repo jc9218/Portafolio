@@ -73,16 +73,15 @@ Portafolio/
 
 ---
 
-## 🚀 Local Development
+## 🚀 Local Development (WSL Debian)
 
-The project is hosted and developed in:
-`C:\Users\juanc\Documentos\Proyectos\Portafolio`
+All development, builds, and package management run in WSL Debian at `/home/jc9218/Portafolio`:
 
-```powershell
-# 1. Navigate to the project directory
-cd C:\Users\juanc\Documentos\Proyectos\Portafolio
+```bash
+# 1. Navigate to the project directory in WSL
+cd /home/jc9218/Portafolio
 
-# 2. Install dependencies
+# 2. Install dependencies with Yarn Berry
 yarn install
 
 # 3. Start the Turbopack development server
@@ -93,6 +92,8 @@ yarn build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
+
+> **Note on Windows (`C:\Users\juanc\Documentos\Proyectos\Portafolio`):** The Windows folder is maintained strictly as an offline mirror. To update the Windows copy after changes, simply run `git pull origin main`.
 
 ---
 

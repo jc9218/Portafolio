@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { PORTFOLIO_DATA, ArchitectureNode } from "@/data/portfolio";
+import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
   Cpu, 
   Layers, 

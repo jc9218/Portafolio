@@ -4,15 +4,13 @@ import React, { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
-  Download, 
   Copy, 
   Check, 
   Mail, 
   MessageSquare, 
   MapPin, 
   Layers,
-  Sparkles,
-  Bot
+  Sparkles
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import confetti from "canvas-confetti";
