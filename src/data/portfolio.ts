@@ -70,8 +70,9 @@ export interface PersonalProject {
     en: string[];
   };
   technologies: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
+  isPrivateRepo?: boolean;
 }
 
 export interface SiteTechItem {
@@ -217,7 +218,8 @@ export const PORTFOLIO_DATA = {
         "AI Coaching Engine",
         "Tailwind CSS",
       ],
-      githubUrl: "https://github.com/jc9218/KOM-Trainer",
+      liveUrl: "https://www.kom-trainer.tech",
+      isPrivateRepo: true,
     },
   ] as PersonalProject[],
 

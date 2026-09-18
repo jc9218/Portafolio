@@ -11,7 +11,7 @@ A high-performance, modern professional portfolio engineered with **Next.js 16 (
 
 - **Architectural Excellence:** Built on Next.js 16 Server Components and edge-ready optimizations with sub-second page loads.
 - **Career Trajectory & Case Studies:** In-depth technical track covering senior engineering and leadership roles at **Aplyca**, **Asesoftware**, **Blaucast**, and **Universidad del Valle**.
-- **Featured Innovation — [KOM Trainer](https://github.com/jc9218/KOM-Trainer):** An AI-powered cycling coach integrating Strava v3 & Intervals.icu telemetry, Coggan power distributions (Z1–Z7, NP, IF, TSS), Banister impulse-response modeling (CTL, ATL, TSB), and automated device synchronization to Garmin, Wahoo, Karoo, and COROS.
+- **Featured Innovation — [KOM Trainer](https://www.kom-trainer.tech):** An AI-powered cycling coach integrating Strava v3 & Intervals.icu telemetry, Coggan power distributions (Z1–Z7, NP, IF, TSS), Banister impulse-response modeling (CTL, ATL, TSB), and automated device synchronization to Garmin, Wahoo, Karoo, and COROS.
 - **Quantitative Impact Metrics:** +10 years of experience, mentoring 4-6 engineers, 99.9% uptime, and thousands of concurrent ticketing purchases.
 - **Instant Bilingual Support (EN / ES):** Strict 100% bilingual parity across all components, roles, and technical descriptions with persistent preferences.
 - **Direct Communication Channels for Recruiters:** Direct email link, 1-click email copying, verified LinkedIn profile, and GitHub repositories.

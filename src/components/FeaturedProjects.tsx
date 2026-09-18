@@ -6,7 +6,9 @@ import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
   ExternalLink, 
   Activity, 
-  CheckCircle2
+  CheckCircle2,
+  Globe,
+  Lock
 } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 
@@ -22,7 +24,7 @@ export default function FeaturedProjects() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            02 // {language === "es" ? "Proyectos & Código Abierto" : "Projects & Open Source"}
+            02 // {language === "es" ? "Proyectos Destacados" : "Featured Projects"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Proyectos Personales" : "Personal Projects"}
@@ -55,17 +57,37 @@ export default function FeaturedProjects() {
                   </h3>
                 </div>
 
-                <div className="pt-1 sm:pt-0">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors w-full sm:w-auto"
-                  >
-                    <GithubIcon className="w-3.5 h-3.5" />
-                    <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
-                    <ExternalLink className="w-3 h-3 text-zinc-400" />
-                  </a>
+                <div className="flex flex-wrap items-center gap-2 pt-1 sm:pt-0">
+                  {project.isPrivateRepo && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-950/90 border border-zinc-800 text-zinc-400 text-xs font-mono">
+                      <Lock className="w-3.5 h-3.5 text-zinc-500" />
+                      <span>{language === "es" ? "Repositorio Privado" : "Private Repository"}</span>
+                    </span>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-medium text-xs transition-colors shadow-sm w-full sm:w-auto"
+                    >
+                      <Globe className="w-3.5 h-3.5" />
+                      <span>{language === "es" ? "Visitar Aplicación" : "Visit Application"}</span>
+                      <ExternalLink className="w-3 h-3 text-zinc-950 opacity-70" />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors w-full sm:w-auto"
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                      <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
+                      <ExternalLink className="w-3 h-3 text-zinc-400" />
+                    </a>
+                  )}
                 </div>
               </div>
 
