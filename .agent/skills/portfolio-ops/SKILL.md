@@ -1,55 +1,37 @@
 ---
 name: portfolio-ops
-description: Operaciones, mantenimiento, sincronización y despliegue del portafolio web de Juan Camilo López Espitia en WSL Debian y Vercel.
+description: Operaciones, mantenimiento y despliegue del portafolio web de Juan Camilo López Espitia en Windows (C:\Users\juanc\Documentos\Proyectos\Portafolio) y Vercel.
 ---
 
 # Portfolio Operations & Maintenance Skill
 
-Esta skill proporciona los procedimientos estándar para operar, sincronizar y desplegar el portafolio web.
+Esta skill proporciona los procedimientos estándar para operar, mantener y desplegar el portafolio web.
 
-## Cuándo usar esta skill
+## Entorno Oficial de Trabajo
 
-Utiliza esta skill cuando necesites:
-1. Actualizar datos de experiencia, proyectos o habilidades técnicas del CV.
-2. Sincronizar cambios entre el entorno de Windows y el entorno Linux WSL Debian (`/home/jc9218/Portafolio`).
-3. Ejecutar builds y pruebas de compilación estricta de TypeScript y Turbopack.
-4. Desplegar o publicar nuevas versiones a GitHub y Vercel.
+- **Ruta del Proyecto:** `C:\Users\juanc\Documentos\Proyectos\Portafolio`
+- **Repositorio Remoto en GitHub:** `https://github.com/jc9218/Portafolio.git`
+- Todas las operaciones de desarrollo, instalación de paquetes, compilación y Git se realizan directamente en esta carpeta.
 
 ## Procedimientos Clave
 
-### 1. Flujo Estándar de Cambios y Sincronización
-1. **Edición & Verificación en WSL Debian:**
-   Realizar los cambios y compilar en `/home/jc9218/Portafolio`:
-   ```bash
-   cd /home/jc9218/Portafolio
+### 1. Flujo Estándar de Desarrollo y Despliegue
+1. **Modificación de archivos:**
+   Realizar los cambios directamente en `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
+2. **Validación de compilación:**
+   ```powershell
    npm run build
    ```
-2. **Commit y Push desde WSL Debian a GitHub:**
-   ```bash
-   cd /home/jc9218/Portafolio
+3. **Commit y Push a GitHub:**
+   ```powershell
    git add .
-   git commit -m "Mensaje descriptivo del cambio"
+   git commit -m "feat/fix: descripción clara del cambio"
    git push origin main
    ```
-3. **Pull en el Repositorio de Windows:**
-   ```bash
-   cd C:\Users\juanc\Documentos\Proyectos\Portafolio
-   git pull origin main
-   ```
-   Ambos repositorios quedan idénticos con el mismo árbol de Git.
+4. **Despliegue automático en Vercel:**
+   Vercel detecta automáticamente el push a la rama `main` y despliega a producción en su Edge Network.
 
-### 2. Verificación de Compilación
-Ejecutar siempre la compilación dentro de WSL Debian:
-```bash
-wsl -- bash -c "cd /home/jc9218/Portafolio && npm run build"
-```
-
-### 3. Modificación de Datos Bilingües
+### 2. Modificación de Datos Bilingües
 - Todo el contenido editable reside en `src/data/portfolio.ts`.
 - Nunca hardcodear textos directamente en los componentes de UI.
-- Garantizar que cada nueva clave tenga su traducción tanto en español (`es`) como en inglés (`en`).
-
-### 4. Despliegue en Vercel
-1. Confirmar que `npm run build` pase con código de salida 0.
-2. Realizar commit y push a la rama `main` en GitHub.
-3. Vercel desplegará automáticamente la nueva versión en producción.
+- Mantener siempre la paridad bilingüe (`es` y `en`) en cada campo de texto.

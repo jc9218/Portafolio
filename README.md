@@ -73,46 +73,26 @@ Portafolio/
 
 ---
 
-## 🚀 Local Development (WSL Debian)
+## 🚀 Local Development
 
-The active development environment runs natively in WSL Debian at `/home/jc9218/Portafolio`:
+The project is hosted and developed in:
+`C:\Users\juanc\Documentos\Proyectos\Portafolio`
 
-```bash
-# 1. Navigate to the project directory in WSL
-cd /home/jc9218/Portafolio
+```powershell
+# 1. Navigate to the project directory
+cd C:\Users\juanc\Documentos\Proyectos\Portafolio
 
 # 2. Install dependencies
 npm install
 
 # 3. Start the Turbopack development server
 npm run dev
+
+# 4. Build for production
+npm run build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.
-
----
-
-## 🔄 Strict Repository Synchronization Workflow
-
-Both repositories are unified as the exact same Git repository linked to [github.com/jc9218/Portafolio](https://github.com/jc9218/Portafolio):
-
-1. **Apply and verify changes in WSL Debian (`/home/jc9218/Portafolio`):**
-   ```bash
-   cd /home/jc9218/Portafolio
-   npm run build
-   ```
-2. **Commit and Push to GitHub from WSL Debian:**
-   ```bash
-   git add .
-   git commit -m "feat/fix: descriptive message"
-   git push origin main
-   ```
-3. **Pull in the Windows repository (`C:\Users\juanc\Documentos\Proyectos\Portafolio`):**
-   ```bash
-   git pull origin main
-   ```
-
-Both repositories remain perfectly synchronized with identical commit hashes.
 
 ---
 

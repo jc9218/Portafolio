@@ -14,18 +14,17 @@ Este documento es la **fuente de verdad técnica** para cualquier agente de IA o
 
 ---
 
-## 1. Entorno de Ejecución y Filosofía de Sincronización
+## 1. Entorno de Ejecución Principal
 
-- **Repositorio de Desarrollo Activo (WSL Debian):**
-  - Ubicación en Linux: `/home/jc9218/Portafolio` (al mismo nivel que `/home/jc9218/KOM-Trainer`).
-- **Repositorio del Proyecto Mapeado (Windows):**
-  - Ubicación en Windows: `C:\Users\juanc\Documentos\Proyectos\Portafolio` (`/mnt/c/Users/juanc/Documentos/Proyectos/Portafolio`).
+- **Repositorio Oficial y Carpeta de Trabajo (Windows):**
+  - Ubicación: `C:\Users\juanc\Documentos\Proyectos\Portafolio`
+  - Toda modificación de código, dependencias, compilación y operaciones de Git se ejecutan **directamente en esta carpeta de Windows**.
 
-### 🔄 Flujo de Trabajo Obligatorio para Cambios:
-1. **Aplicar cambios en WSL Debian:** Toda modificación de archivos, dependencias y configuración se realiza en `/home/jc9218/Portafolio`.
-2. **Validar compilación:** Ejecutar `npm run build` en WSL Debian asegurando 0 errores.
-3. **Commit y Push desde WSL Debian:** Subir los cambios directamente al repositorio remoto en GitHub desde `/home/jc9218/Portafolio` (`git add .`, `git commit`, `git push origin main`).
-4. **Pull en el repositorio de Windows:** Ejecutar inmediatamente `git pull origin main` en el repositorio de Windows (`C:\Users\juanc\Documentos\Proyectos\Portafolio`) para que ambos repositorios compartan exactamente los mismos commits y estado.
+### 🔄 Flujo de Trabajo para Cambios:
+1. **Aplicar cambios en la carpeta de Windows:** Cualquier modificación de archivos o datos se realiza en `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
+2. **Validar compilación:** Ejecutar `npm run build` en PowerShell/CMD asegurando 0 errores.
+3. **Commit y Push a GitHub:** Subir directamente los cambios con `git add .`, `git commit -m "..."` y `git push origin main`.
+4. **Despliegue automático en Vercel:** Al hacer push a `main`, Vercel despliega automáticamente la nueva versión.
 
 ---
 
@@ -94,10 +93,10 @@ Portafolio/
 
 ## 5. Comandos de Verificación Obligatorios
 
-Antes de hacer commit o desplegar a producción en Vercel, ejecutar en WSL Debian:
+Antes de hacer commit o desplegar a producción en Vercel, ejecutar en la carpeta del proyecto en Windows:
 
-```bash
-cd /home/jc9218/Portafolio
+```powershell
+cd C:\Users\juanc\Documentos\Proyectos\Portafolio
 
 # Validar compilación de producción y tipos TypeScript
 npm run build
