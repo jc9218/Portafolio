@@ -5,6 +5,7 @@ import ArchitectureShowcase from "@/components/ArchitectureShowcase";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SkillsSection from "@/components/SkillsSection";
+import PortfolioTechStack from "@/components/PortfolioTechStack";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -26,6 +27,7 @@ export default function Home() {
         <ExperienceTimeline />
         <FeaturedProjects />
         <SkillsSection />
+        <PortfolioTechStack />
         <EducationSection />
         <ContactSection />
       </main>

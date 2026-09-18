@@ -69,6 +69,19 @@ export interface PersonalProject {
   liveUrl?: string;
 }
 
+export interface SiteTechItem {
+  name: string;
+  category: {
+    es: string;
+    en: string;
+  };
+  description: {
+    es: string;
+    en: string;
+  };
+  badge: string;
+}
+
 export interface SkillCategory {
   title: {
     es: string;
@@ -615,4 +628,115 @@ export const PORTFOLIO_DATA = {
       },
     },
   ],
+
+  thisSiteTechStack: [
+    {
+      name: "Next.js 16 (App Router)",
+      category: {
+        es: "Framework & SSR",
+        en: "Framework & SSR",
+      },
+      description: {
+        es: "Arquitectura híbrida con Server Components y Turbopack para compilación y renderizado instantáneo.",
+        en: "Hybrid architecture featuring React Server Components and Turbopack for sub-second speeds.",
+      },
+      badge: "Next.js 16",
+    },
+    {
+      name: "React 19",
+      category: {
+        es: "Librería de UI",
+        en: "UI Library",
+      },
+      description: {
+        es: "Última generación de React con Server Components nativos y renderizado concurrente sin bloqueos.",
+        en: "Latest React generation leveraging native Server Components and concurrent rendering.",
+      },
+      badge: "React 19",
+    },
+    {
+      name: "TypeScript (Strict Mode)",
+      category: {
+        es: "Lenguaje & Tipado",
+        en: "Language & Types",
+      },
+      description: {
+        es: "Seguridad de tipos estricta en esquemas de datos, componentes e interfaces sin tipos 'any'.",
+        en: "Strict end-to-end typing across data schemas, components, and interfaces with zero 'any' types.",
+      },
+      badge: "TypeScript",
+    },
+    {
+      name: "Tailwind CSS v4",
+      category: {
+        es: "Motor de Estilos",
+        en: "Styling Engine",
+      },
+      description: {
+        es: "Motor CSS moderno v4 con @import 'tailwindcss' y variables de diseño para tema oscuro.",
+        en: "Modern v4 engine utilizing @import 'tailwindcss' and design tokens for deep dark mode.",
+      },
+      badge: "Tailwind v4",
+    },
+    {
+      name: "Yarn 4 (Berry)",
+      category: {
+        es: "Gestor de Paquetes",
+        en: "Package Manager",
+      },
+      description: {
+        es: "Gestión determinista de dependencias de alta velocidad con nodeLinker: node-modules.",
+        en: "High-speed deterministic dependency management configured with nodeLinker: node-modules.",
+      },
+      badge: "Yarn Berry",
+    },
+    {
+      name: "Lucide React & Custom SVG",
+      category: {
+        es: "Iconografía & Vectores",
+        en: "Iconography & Vectors",
+      },
+      description: {
+        es: "Iconos técnicos vectoriales y componentes SVG dedicados para marcas (GitHub, LinkedIn).",
+        en: "Vector technical icons and dedicated brand SVG components with zero bundle overhead.",
+      },
+      badge: "Icons",
+    },
+    {
+      name: "Canvas Confetti",
+      category: {
+        es: "Microinteracciones",
+        en: "Micro-interactions",
+      },
+      description: {
+        es: "Feedback interactivo táctil de celebración al copiar correo o enviar mensajes.",
+        en: "Celebratory interactive feedback when copying email or submitting messages.",
+      },
+      badge: "FX",
+    },
+    {
+      name: "Antigravity AI Platform",
+      category: {
+        es: "Ingeniería Agéntica",
+        en: "Agentic Engineering",
+      },
+      description: {
+        es: "Construido y mantenido mediante flujos avanzados de desarrollo agéntico con agentes de IA autónomos.",
+        en: "Engineered and maintained leveraging advanced autonomous AI coding agent workflows.",
+      },
+      badge: "Agentic AI",
+    },
+    {
+      name: "Vercel Edge Network",
+      category: {
+        es: "Cloud & Despliegue",
+        en: "Cloud & Deployment",
+      },
+      description: {
+        es: "Despliegue continuo con cada commit a GitHub, certificados SSL y distribución global en el Edge.",
+        en: "Automated CI/CD with every commit, automated SSL, and global edge delivery.",
+      },
+      badge: "Vercel",
+    },
+  ] as SiteTechItem[],
 };

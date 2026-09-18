@@ -8,107 +8,114 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Directrices para Agentes de IA (AGENTS.md)
+# AI Agent Guidelines (AGENTS.md)
 
-Este documento es la **fuente de verdad técnica** para cualquier agente de IA o desarrollador que interactúe, mantenga o extienda este proyecto.
-
----
-
-## 1. Entorno de Ejecución Principal
-
-- **Repositorio Oficial y Carpeta de Trabajo (Windows):**
-  - Ubicación: `C:\Users\juanc\Documentos\Proyectos\Portafolio`
-  - Toda modificación de código, dependencias, compilación y operaciones de Git se ejecutan **directamente en esta carpeta de Windows**.
-
-### 🔄 Flujo de Trabajo para Cambios:
-1. **Aplicar cambios en la carpeta de Windows:** Cualquier modificación de archivos o datos se realiza en `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
-2. **Validar compilación:** Ejecutar `yarn build` en PowerShell asegurando 0 errores.
-3. **Commit y Push a GitHub:** Subir directamente los cambios con `git add .`, `git commit -m "..."` y `git push origin main`.
-4. **Despliegue automático en Vercel:** Al hacer push a `main`, Vercel despliega automáticamente la nueva versión.
+This document is the **technical single source of truth** for any AI agent or developer interacting with, maintaining, or extending this project.
 
 ---
 
-## 2. Stack Tecnológico & Arquitectura del Proyecto
+## 1. Primary Execution Environment
 
-- **Framework:** Next.js 16 (App Router con Turbopack).
-- **Librería de UI:** React 19 con Server Components por defecto y Client Components (`"use client"`) únicamente para interactividad.
-- **Tipado:** TypeScript en modo estricto.
-- **Estilos:** Tailwind CSS v4 con directiva moderna `@import "tailwindcss";` en `globals.css`.
-- **Iconografía:** Lucide React para iconografía general y componentes SVG dedicados en `@/components/Icons.tsx` para marcas (GitHub, LinkedIn).
-- **Animaciones & Efectos:** Canvas Confetti para feedback de interacción al copiar correos o enviar formularios.
-- **Internacionalización (i18n):** Contexto React nativo (`LanguageProvider`) con soporte dinámico e instantáneo para Español (`es`) e Inglés (`en`).
+- **Official Workspace & Repository Location (Windows):**
+  - Path: `C:\Users\juanc\Documentos\Proyectos\Portafolio`
+  - All source code modifications, dependency installations, builds, and Git operations must be executed **directly in this Windows folder**.
+  - Package manager: **Yarn 4 (Berry)** with `nodeLinker: node-modules`.
+
+### 🔄 Standard Workflow for Changes:
+1. **Apply changes in the Windows workspace:** All edits and file operations are conducted in `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
+2. **Validate production build:** Run `yarn build` in PowerShell ensuring 0 errors.
+3. **Commit and Push to GitHub:** Directly push commits using `git add .`, `git commit -m "..."`, and `git push origin main`.
+4. **Automated Vercel Deployment:** Pushing to `main` automatically triggers an optimized production deployment on Vercel's Edge Network.
 
 ---
 
-## 3. Estructura de Archivos y Responsabilidades
+## 2. Technology Stack & Project Architecture
+
+- **Framework:** Next.js 16 (App Router with Turbopack).
+- **UI Library:** React 19 with Server Components by default, using Client Components (`"use client"`) strictly for interactivity.
+- **Typing:** TypeScript in strict mode.
+- **Styling:** Tailwind CSS v4 using modern `@import "tailwindcss";` in `globals.css`.
+- **Package Manager:** Yarn 4 (Berry) with `.yarnrc.yml` (`nodeLinker: node-modules`).
+- **Icons:** Lucide React for general iconography and custom optimized SVGs in `@/components/Icons.tsx` for brands (GitHub, LinkedIn).
+- **Interactive Effects:** Canvas Confetti for user interaction feedback (copying email, submitting messages).
+- **Internationalization (i18n):** Native React Context (`LanguageProvider`) supporting dynamic English (`en`) and Spanish (`es`) switching with `localStorage` persistence.
+- **Agentic Engineering:** Developed and maintained using Antigravity AI agentic workflows.
+
+---
+
+## 3. Directory Structure & Responsibilities
 
 ```text
 Portafolio/
 ├── .agent/
 │   └── skills/
-│       └── portfolio-ops/        # Skill con instrucciones operativas y de despliegue
-├── public/                       # Activos estáticos, favicons y documentos descargables
+│       └── portfolio-ops/        # Operational and deployment agent skill
+├── public/                       # Static assets, icons, and downloadable documents
 ├── src/
 │   ├── app/
 │   │   ├── favicon.ico
-│   │   ├── globals.css           # Configuración base de Tailwind CSS v4 y tema oscuro
-│   │   ├── layout.tsx            # Metadata SEO, fuentes Geist, OpenGraph y LanguageProvider
-│   │   └── page.tsx              # Página principal que orquesta todas las secciones
+│   │   ├── globals.css           # Base Tailwind CSS v4 styling & dark theme tokens
+│   │   ├── layout.tsx            # SEO metadata, Geist fonts, OpenGraph, and LanguageProvider
+│   │   └── page.tsx              # Main orchestrator page composing all sections
 │   ├── components/
-│   │   ├── ArchitectureShowcase.tsx # Showcase interactivo de Solutions Architecture desacoplada
-│   │   ├── ContactSection.tsx    # Tarjetas de WhatsApp, Email (copia + mailto), LinkedIn y GitHub
-│   │   ├── EducationSection.tsx  # Titulación universitaria e idiomas con nivel de dominio
-│   │   ├── ExperienceTimeline.tsx # Línea de tiempo profesional, proyectos y logros
-│   │   ├── Footer.tsx            # Pie de página y enlaces directos
-│   │   ├── Hero.tsx              # Resumen de impacto, badge de disponibilidad y CTAs
-│   │   ├── Icons.tsx             # Componentes SVG optimizados para marcas (GitHub, LinkedIn)
-│   │   ├── Metrics.tsx           # Métricas de impacto (+10 años, 4-6 devs, 99.9% uptime, transacciones)
-│   │   ├── Navbar.tsx            # Barra fija glassmorphism, selector ES/EN y menú responsive
-│   │   └── SkillsSection.tsx     # Competencias categorizadas e interactivas
+│   │   ├── ArchitectureShowcase.tsx # Interactive decoupled Solutions Architecture showcase
+│   │   ├── ContactSection.tsx    # Direct WhatsApp, Mailto email, LinkedIn, and GitHub cards
+│   │   ├── EducationSection.tsx  # University degree and language proficiencies
+│   │   ├── ExperienceTimeline.tsx # Career trajectory, achievements, and enterprise projects
+│   │   ├── FeaturedProjects.tsx  # Personal projects showcase (KOM Trainer AI Cycling Coach)
+│   │   ├── Footer.tsx            # Footer, Antigravity badge, and portfolio tech stack specs
+│   │   ├── Hero.tsx              # High-impact summary, agentic badge, and CTAs
+│   │   ├── Icons.tsx             # Dedicated vector SVGs (GitHub, LinkedIn)
+│   │   ├── Metrics.tsx           # Quantitative impact cards (+10 yrs, 4-6 devs, 99.9% uptime)
+│   │   ├── Navbar.tsx            # Fixed glassmorphism navbar with segmented ES/EN switcher
+│   │   ├── PortfolioTechStack.tsx # Dedicated showcase of the technologies powering this website
+│   │   └── SkillsSection.tsx     # Categorized interactive technical competencies
 │   ├── context/
-│   │   └── LanguageContext.tsx   # Estado global bilingüe con persistencia en localStorage
+│   │   └── LanguageContext.tsx   # Global bilingual state with localStorage persistence
 │   └── data/
-│       └── portfolio.ts          # ÚNICA fuente de datos para contenidos, textos y traducciones
-├── AGENTS.md                     # Guía maestra y reglas operativas del proyecto
-├── CLAUDE.md                     # Enlace de referencia hacia AGENTS.md
+│       └── portfolio.ts          # Single source of truth for all content and bilingual texts
+├── .yarnrc.yml                   # Yarn Berry configuration (nodeLinker: node-modules)
+├── AGENTS.md                     # Master guidelines and operational rules for AI agents
+├── CLAUDE.md                     # Reference redirect link pointing to AGENTS.md
 ├── package.json
-└── README.md                     # Documentación general para humanos y reclutadores
+├── yarn.lock
+└── README.md                     # Comprehensive technical documentation
 ```
 
 ---
 
-## 4. Guía para Modificaciones Comunes
+## 4. Common Modification Guides
 
-### A. Modificar Experiencia, Proyectos o Habilidades
-- **No modificar directamente los componentes UI.** Toda la información está centralizada en `src/data/portfolio.ts`.
-- Mantener siempre la paridad bilingüe (`es` y `en`) en cada campo de texto.
+### A. Updating Experience, Projects, or Skills
+- **Do not modify UI components directly.** All information is centralized in `src/data/portfolio.ts`.
+- Always maintain complete bilingual parity (`es` and `en`) for every text field.
 
-### B. Añadir una Nueva Sección
-1. Definir los datos en `src/data/portfolio.ts`.
-2. Crear el componente en `src/components/NombreSeccion.tsx`.
-3. Importar y renderizar en `src/app/page.tsx`.
-4. Añadir el ancla de navegación en `src/components/Navbar.tsx`.
+### B. Adding a New Section
+1. Define data structures and contents in `src/data/portfolio.ts`.
+2. Create the presentation component in `src/components/SectionName.tsx`.
+3. Import and render within `src/app/page.tsx`.
+4. Add the corresponding navigation anchor in `src/components/Navbar.tsx`.
 
 ---
 
-## 5. Comandos de Verificación Obligatorios
+## 5. Mandatory Verification Commands
 
-Antes de hacer commit o desplegar a producción en Vercel, ejecutar en la carpeta del proyecto en Windows:
+Before creating a commit or deploying to production, execute in the project root in Windows PowerShell:
 
 ```powershell
 cd C:\Users\juanc\Documentos\Proyectos\Portafolio
 
-# Validar compilación de producción y tipos TypeScript
+# Validate production build and TypeScript types
 yarn build
 
-# Validar linter
+# Validate ESLint
 yarn lint
 ```
 
 ---
 
-## 6. Despliegue en Vercel
+## 6. Vercel Production Deployment
 
-1. El repositorio en GitHub está conectado con Vercel.
-2. Cada `push` a la rama `main` dispara automáticamente un despliegue optimizado en Edge Network de Vercel.
-3. El proyecto no requiere variables de entorno obligatorias para funcionar en su versión pública.
+1. The GitHub repository `https://github.com/jc9218/Portafolio` is integrated with Vercel.
+2. Every `git push` to `main` automatically triggers an optimized edge deployment.
+3. No mandatory environment variables are required for standard public portfolio browsing.
