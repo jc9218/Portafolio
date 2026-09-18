@@ -20,7 +20,7 @@ Esta skill proporciona los procedimientos estándar para operar, mantener y desp
    Realizar los cambios directamente en `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
 2. **Validación de compilación:**
    ```powershell
-   npm run build
+   yarn build
    ```
 3. **Commit y Push a GitHub:**
    ```powershell

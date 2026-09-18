@@ -83,13 +83,13 @@ The project is hosted and developed in:
 cd C:\Users\juanc\Documentos\Proyectos\Portafolio
 
 # 2. Install dependencies
-npm install
+yarn install
 
 # 3. Start the Turbopack development server
-npm run dev
+yarn dev
 
 # 4. Build for production
-npm run build
+yarn build
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the portfolio.

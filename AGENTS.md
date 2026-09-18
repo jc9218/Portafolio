@@ -22,7 +22,7 @@ Este documento es la **fuente de verdad técnica** para cualquier agente de IA o
 
 ### 🔄 Flujo de Trabajo para Cambios:
 1. **Aplicar cambios en la carpeta de Windows:** Cualquier modificación de archivos o datos se realiza en `C:\Users\juanc\Documentos\Proyectos\Portafolio`.
-2. **Validar compilación:** Ejecutar `npm run build` en PowerShell/CMD asegurando 0 errores.
+2. **Validar compilación:** Ejecutar `yarn build` en PowerShell asegurando 0 errores.
 3. **Commit y Push a GitHub:** Subir directamente los cambios con `git add .`, `git commit -m "..."` y `git push origin main`.
 4. **Despliegue automático en Vercel:** Al hacer push a `main`, Vercel despliega automáticamente la nueva versión.
 
@@ -99,10 +99,10 @@ Antes de hacer commit o desplegar a producción en Vercel, ejecutar en la carpet
 cd C:\Users\juanc\Documentos\Proyectos\Portafolio
 
 # Validar compilación de producción y tipos TypeScript
-npm run build
+yarn build
 
 # Validar linter
-npm run lint
+yarn lint
 ```
 
 ---
