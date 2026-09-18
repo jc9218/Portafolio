@@ -15,7 +15,7 @@ export default function EducationSection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            06 // {language === "es" ? "Formación & Comunicación" : "Education & Languages"}
+            05 // {language === "es" ? "Formación & Comunicación" : "Education & Languages"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Educación & Idiomas" : "Education & Languages"}

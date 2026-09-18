@@ -1,7 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Metrics from "@/components/Metrics";
-import ArchitectureShowcase from "@/components/ArchitectureShowcase";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import SkillsSection from "@/components/SkillsSection";
@@ -19,7 +18,6 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Metrics />
-        <ArchitectureShowcase />
         <ExperienceTimeline />
         <FeaturedProjects />
         <SkillsSection />

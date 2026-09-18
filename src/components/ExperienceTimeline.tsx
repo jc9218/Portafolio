@@ -15,7 +15,7 @@ export default function ExperienceTimeline() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            02 // {language === "es" ? "Trayectoria Profesional" : "Professional Track"}
+            01 // {language === "es" ? "Trayectoria Profesional" : "Professional Track"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Experiencia Profesional" : "Professional Experience"}

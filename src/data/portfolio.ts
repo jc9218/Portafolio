@@ -94,21 +94,6 @@ export interface SkillCategory {
   skills: string[];
 }
 
-export interface ArchitectureNode {
-  id: string;
-  name: string;
-  role: {
-    es: string;
-    en: string;
-  };
-  description: {
-    es: string;
-    en: string;
-  };
-  techs: string[];
-  category: "frontend" | "api" | "cms" | "payment" | "cloud";
-}
-
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Juan Camilo López Espitia",
@@ -177,89 +162,6 @@ export const PORTFOLIO_DATA = {
       },
     },
   ],
-
-  architectureShowcase: {
-    title: {
-      es: "Blueprint de Arquitectura Desacoplada",
-      en: "Decoupled Architecture Blueprint",
-    },
-    subtitle: {
-      es: "Diseño de soluciones escalables, modulares y de alto rendimiento que integran frontend moderno, orquestación de APIs, headless commerce y pasarelas de pago.",
-      en: "Scalable, modular, high-performing solution design bridging modern frontend, API orchestration, headless commerce, and mission-critical payments.",
-    },
-    nodes: [
-      {
-        id: "frontend",
-        name: "Next.js Edge & App Router",
-        role: {
-          es: "Capa de Presentación Desacoplada",
-          en: "Decoupled Presentation Layer",
-        },
-        description: {
-          es: "Renderizado híbrido (SSR/SSG/ISR), optimización de Core Web Vitals, caching granular en el Edge y experiencia de usuario fluida con TypeScript y Tailwind CSS.",
-          en: "Hybrid rendering (SSR/SSG/ISR), Core Web Vitals optimization, Edge caching, and ultra-fluid user experience powered by TypeScript and Tailwind CSS.",
-        },
-        techs: ["Next.js", "React", "TypeScript", "Vercel Edge", "Tailwind CSS"],
-        category: "frontend",
-      },
-      {
-        id: "api-layer",
-        name: "GraphQL & API Gateway Mesh",
-        role: {
-          es: "Orquestación e Integración de Microservicios",
-          en: "Microservices Integration & Orchestration",
-        },
-        description: {
-          es: "Unificación de múltiples fuentes de datos, catálogos en tiempo real, microservicios de inventario y endpoints RESTful desacoplados sin sobrecarga en el cliente.",
-          en: "Single contract unification for third-party catalogs, real-time inventory synchronizations, and RESTful microservices with zero over-fetching.",
-        },
-        techs: ["GraphQL", "REST APIs", "Node.js", "Symfony Microservices"],
-        category: "api",
-      },
-      {
-        id: "headless-cms",
-        name: "Ibexa DXP & Contentful",
-        role: {
-          es: "Motor de Contenido Headless y Experiencias Digitales",
-          en: "Headless Content & Experience Engine",
-        },
-        description: {
-          es: "Gestión de contenido estructurado omnicanal, personalización de experiencias corporativas y publicación desacoplada para audiencias globales.",
-          en: "Omnichannel structured content management, enterprise digital experience personalization, and decoupled publishing for global audiences.",
-        },
-        techs: ["Ibexa DXP", "Contentful", "Headless CMS", "Decoupled Schemas"],
-        category: "cms",
-      },
-      {
-        id: "commerce-payments",
-        name: "Commerce Layer & Critical Payments",
-        role: {
-          es: "Motor Transaccional y Checkout Masivo",
-          en: "Transactional Engine & Mass-Scale Checkout",
-        },
-        description: {
-          es: "Orquestación de checkout seguro, cálculo multidivisa, validación anti-fraude, webhooks de conciliación y tolerancia a fallos en venta masiva de ticketing.",
-          en: "Secure checkout orchestration, multi-currency engine, anti-fraud validations, webhook reconciliation, and extreme fault tolerance for peak ticketing.",
-        },
-        techs: ["Commerce Layer", "Stripe / Gateways", "Idempotency", "PCI-DSS Best Practices"],
-        category: "payment",
-      },
-      {
-        id: "cloud-devops",
-        name: "AWS & Vercel Cloud Infrastructure",
-        role: {
-          es: "Infraestructura Cloud, Contenedores y CI/CD",
-          en: "Cloud Infrastructure, Containers & CI/CD",
-        },
-        description: {
-          es: "Automatización integral de despliegues con GitHub Actions y GitLab CI/CD, clústeres Docker en AWS, servidores Linux optimizados y balanceo Nginx.",
-          en: "End-to-end deployment automation via GitHub Actions & GitLab CI/CD, Dockerized services in AWS, Linux kernel tuning, and Nginx edge routing.",
-        },
-        techs: ["AWS (EC2, S3, RDS)", "Vercel", "Docker", "GitHub Actions", "GitLab CI/CD", "Nginx"],
-        category: "cloud",
-      },
-    ] as ArchitectureNode[],
-  },
 
   personalProjects: [
     {

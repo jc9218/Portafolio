@@ -28,7 +28,7 @@ export default function PortfolioTechStack() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            05 // {language === "es" ? "Arquitectura de este Sitio" : "Site Architecture"}
+            04 // {language === "es" ? "Arquitectura de este Sitio" : "Site Architecture"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Stack & Especificaciones del Sitio" : "Site Stack & Specifications"}

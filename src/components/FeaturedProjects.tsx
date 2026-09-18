@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            03 // {language === "es" ? "Proyectos & Código Abierto" : "Projects & Open Source"}
+            02 // {language === "es" ? "Proyectos & Código Abierto" : "Projects & Open Source"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Proyectos Personales" : "Personal Projects"}

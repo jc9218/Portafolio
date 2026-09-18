@@ -27,7 +27,7 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
-            07 // {language === "es" ? "Contacto & Redes" : "Contact & Links"}
+            06 // {language === "es" ? "Contacto & Redes" : "Contact & Links"}
           </div>
           <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Contacto" : "Get in Touch"}
