@@ -40,8 +40,13 @@ This skill provides standard operating procedures to maintain, update, and deplo
    git pull origin main
    ```
 5. **Automated Vercel Deployment:**
-   Vercel automatically detects the push to `main` and deploys to production edge.
+   Vercel automatically detects the push to `main` and deploys to production edge at `https://jclopezespitia.sytes.net/`.
 
-### 2. Bilingual Content Modifications
+### 2. Production Domain & Canonical URL
+- Canonical Domain: `https://jclopezespitia.sytes.net/`
+- Sitemap: `https://jclopezespitia.sytes.net/sitemap.xml`
+- Robots: `https://jclopezespitia.sytes.net/robots.txt`
+
+### 3. Bilingual Content Modifications
 - All editable text and profile data resides exclusively in `src/data/portfolio.ts`.
 - Maintain complete bilingual parity (`es` and `en`) for every field.

@@ -136,8 +136,11 @@ yarn lint
 
 ---
 
-## 6. Vercel Production Deployment
+## 6. Production Domain & Vercel Deployment
 
-1. The GitHub repository `https://github.com/jc9218/Portafolio` is integrated with Vercel.
-2. Every `git push` to `main` automatically triggers an optimized edge deployment.
-3. No mandatory environment variables are required for standard public portfolio browsing.
+- **Canonical Production URL:** `https://jclopezespitia.sytes.net/`
+- **Deployment Pipeline:**
+  1. The GitHub repository `https://github.com/jc9218/Portafolio` is integrated with Vercel.
+  2. Every `git push` to `main` automatically triggers an optimized edge deployment.
+  3. Canonical metadata, OpenGraph, sitemap (`/sitemap.xml`), and robots (`/robots.txt`) are configured to point to `https://jclopezespitia.sytes.net/`.
+  4. No mandatory environment variables are required for standard public portfolio browsing.

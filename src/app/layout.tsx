@@ -14,6 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://jclopezespitia.sytes.net"),
+  alternates: {
+    canonical: "https://jclopezespitia.sytes.net",
+  },
   title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
   description:
     "Fullstack Developer & Technical Lead. 10+ years specializing in enterprise headless commerce ecosystems, decoupled architectures, Next.js, Ibexa DXP, Commerce Layer, and mass-scale transactional payments.",
@@ -21,6 +25,8 @@ export const metadata: Metadata = {
     "Juan Camilo López Espitia",
     "Fullstack Developer",
     "Technical Lead",
+    "Desarrollador Full Stack",
+    "Líder Técnico",
     "Next.js",
     "React",
     "Headless Commerce",
@@ -28,16 +34,33 @@ export const metadata: Metadata = {
     "Ibexa DXP",
     "AWS",
     "Vercel",
-    "Full Stack Engineer",
     "Software Architecture",
   ],
-  authors: [{ name: "Juan Camilo López Espitia" }],
+  authors: [{ name: "Juan Camilo López Espitia", url: "https://jclopezespitia.sytes.net" }],
+  creator: "Juan Camilo López Espitia",
   openGraph: {
     title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
     description:
-      "Fullstack Developer & Technical Lead specialized in enterprise web architecture, headless commerce ecosystems, and mission-critical checkout pipelines.",
+      "Fullstack Developer & Technical Lead. 10+ years specializing in enterprise headless commerce ecosystems, decoupled architectures, Next.js, Ibexa DXP, Commerce Layer.",
+    url: "https://jclopezespitia.sytes.net",
+    siteName: "Juan Camilo López Espitia — Portfolio",
     type: "website",
     locale: "es_CO",
+    images: [
+      {
+        url: "/icon.svg",
+        width: 128,
+        height: 128,
+        alt: "Juan Camilo López Espitia Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
+    description:
+      "Fullstack Developer & Technical Lead. 10+ years enterprise web architectures, Next.js, Ibexa DXP, Commerce Layer.",
+    images: ["/icon.svg"],
   },
   icons: {
     icon: [

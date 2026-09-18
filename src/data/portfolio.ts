@@ -106,6 +106,7 @@ export const PORTFOLIO_DATA = {
     email: "juancamilolopez10a@gmail.com",
     linkedin: "https://linkedin.com/in/juan-camilo-lopez-espitia",
     github: "https://github.com/jc9218",
+    website: "https://jclopezespitia.sytes.net",
     whatsapp: "https://wa.me/573162438345",
     summary: {
       es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
