@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { Menu, X, Terminal, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
@@ -31,33 +31,33 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/80 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20"
+          ? "bg-[#090a0f]/90 backdrop-blur-md border-b border-zinc-800/80"
           : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
         {/* Brand */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:border-emerald-400/60 transition-colors">
-            <Terminal className="w-5 h-5" />
+          <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-700/80 flex items-center justify-center text-zinc-200 font-mono text-xs font-semibold group-hover:border-zinc-500 transition-colors">
+            JL
           </div>
           <div className="flex flex-col">
-            <span className="font-semibold text-slate-100 tracking-tight text-base group-hover:text-emerald-400 transition-colors">
+            <span className="font-medium text-zinc-100 tracking-tight text-sm group-hover:text-white transition-colors">
               Juan Camilo López
             </span>
-            <span className="text-xs text-slate-400 font-mono">
+            <span className="text-[11px] text-zinc-400">
               Solutions Architect
             </span>
           </div>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-slate-300 hover:text-emerald-400 font-medium transition-colors"
+              className="text-xs tracking-wide text-zinc-400 hover:text-zinc-100 font-medium transition-colors"
             >
               {link.label}
             </a>
@@ -65,16 +65,16 @@ export default function Navbar() {
         </nav>
 
         {/* Actions */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3">
           {/* Segmented Language Switcher (ES / EN) */}
-          <div className="flex items-center p-1 rounded-xl bg-slate-900 border border-slate-800 shadow-inner">
+          <div className="flex items-center p-0.5 rounded-lg bg-zinc-900/90 border border-zinc-800">
             <button
               onClick={() => setLanguage("es")}
               aria-label="Cambiar idioma a Español"
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition-all ${
+              className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all ${
                 language === "es"
-                  ? "bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-zinc-800 text-zinc-100 shadow-sm"
+                  : "text-zinc-400 hover:text-zinc-200"
               }`}
             >
               ES
@@ -82,10 +82,10 @@ export default function Navbar() {
             <button
               onClick={() => setLanguage("en")}
               aria-label="Switch language to English"
-              className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition-all ${
+              className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all ${
                 language === "en"
-                  ? "bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-zinc-800 text-zinc-100 shadow-sm"
+                  : "text-zinc-400 hover:text-zinc-200"
               }`}
             >
               EN
@@ -95,9 +95,9 @@ export default function Navbar() {
           {/* Contact CTA Button */}
           <a
             href="#contact"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:border-emerald-500/60 transition-all text-xs font-medium"
+            className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors shadow-sm"
           >
-            <span>{language === "es" ? "Hablemos" : "Let's Connect"}</span>
+            <span>{language === "es" ? "Contacto" : "Contact"}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -105,13 +105,13 @@ export default function Navbar() {
         {/* Mobile Nav Header */}
         <div className="flex md:hidden items-center gap-3">
           {/* Mobile Language Switcher */}
-          <div className="flex items-center p-0.5 rounded-lg bg-slate-900 border border-slate-800">
+          <div className="flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800">
             <button
               onClick={() => setLanguage("es")}
               className={`px-2 py-1 rounded text-xs font-mono font-medium ${
                 language === "es"
-                  ? "bg-emerald-500 text-slate-950 font-bold"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-zinc-800 text-zinc-100"
+                  : "text-zinc-400 hover:text-white"
               }`}
             >
               ES
@@ -120,8 +120,8 @@ export default function Navbar() {
               onClick={() => setLanguage("en")}
               className={`px-2 py-1 rounded text-xs font-mono font-medium ${
                 language === "en"
-                  ? "bg-emerald-500 text-slate-950 font-bold"
-                  : "text-slate-400 hover:text-white"
+                  ? "bg-zinc-800 text-zinc-100"
+                  : "text-zinc-400 hover:text-white"
               }`}
             >
               EN
@@ -130,7 +130,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+            className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -140,24 +140,24 @@ export default function Navbar() {
 
       {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-950/95 backdrop-blur-xl border-b border-slate-800 px-6 py-6 space-y-4">
+        <div className="md:hidden bg-[#090a0f]/95 backdrop-blur-xl border-b border-zinc-800 px-6 py-6 space-y-4">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-base text-slate-300 hover:text-emerald-400 font-medium py-2"
+              className="block text-sm text-zinc-300 hover:text-white font-medium py-2"
             >
               {link.label}
             </a>
           ))}
-          <div className="pt-4 border-t border-slate-800 flex justify-between items-center">
+          <div className="pt-4 border-t border-zinc-800">
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center py-2.5 rounded-lg bg-emerald-500 text-slate-950 font-semibold text-sm hover:bg-emerald-400 transition-colors"
+              className="block w-full text-center py-2.5 rounded-lg bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors"
             >
-              {language === "es" ? "Contactar" : "Contact Me"}
+              {language === "es" ? "Contacto" : "Contact Me"}
             </a>
           </div>
         </div>

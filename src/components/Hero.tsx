@@ -9,11 +9,9 @@ import {
   Mail, 
   MessageSquare, 
   MapPin, 
-  Layers,
-  Sparkles
+  ArrowUpRight
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import confetti from "canvas-confetti";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -23,116 +21,102 @@ export default function Hero() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personal.email);
     setCopied(true);
-    confetti({
-      particleCount: 50,
-      spread: 60,
-      origin: { y: 0.7 },
-      colors: ["#10b981", "#06b6d4", "#3b82f6"],
-    });
-    setTimeout(() => setCopied(false), 2500);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-emerald-500/10 via-cyan-500/10 to-indigo-500/5 blur-3xl rounded-full pointer-events-none -z-10" />
-      <div className="absolute top-10 right-10 w-72 h-72 bg-emerald-500/5 blur-2xl rounded-full pointer-events-none -z-10" />
-
+    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl">
-          {/* Status & Agentic Badges */}
-          <div className="flex flex-wrap items-center gap-3 mb-8">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-mono shadow-sm shadow-emerald-950">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
+        <div className="max-w-3xl">
+          {/* Status & Location line */}
+          <div className="flex flex-wrap items-center gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 text-xs text-zinc-400 font-mono">
+              <span className="w-2 h-2 rounded-full bg-emerald-500" />
               <span>{personal.statusBadge[language]}</span>
             </div>
-
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-950/40 border border-teal-500/30 text-teal-300 text-xs font-mono">
-              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-              <span>
-                {language === "es"
-                  ? "Especialista en Desarrollo Agéntico & IA"
-                  : "Agentic Development & AI Specialist"}
-              </span>
+            <span className="text-zinc-600 hidden sm:inline">•</span>
+            <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono">
+              <MapPin className="w-3.5 h-3.5 text-zinc-500" />
+              <span>{personal.location}</span>
             </div>
           </div>
 
-          {/* Name & Title */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+          {/* Name */}
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-4">
             {personal.name}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-2 text-lg sm:text-2xl font-semibold mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
-              Solutions Architect
-            </span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-200">Technical Lead</span>
-            <span className="text-slate-600">•</span>
-            <span className="text-slate-400 font-normal">Senior Full Stack</span>
-          </div>
+          {/* Role headline */}
+          <p className="text-xl sm:text-2xl font-medium text-zinc-300 mb-6 tracking-tight">
+            Solutions Architect <span className="text-zinc-600 font-normal">/</span> Technical Lead
+          </p>
 
           {/* Bio Summary */}
-          <p className="text-base sm:text-lg text-slate-300 leading-relaxed mb-8 max-w-3xl">
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed mb-8">
             {personal.summary[language]}
           </p>
 
-          {/* Location & Quick Meta */}
-          <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 mb-10 font-mono">
-            <div className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-emerald-400" />
-              <span>{personal.location}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Layers className="w-4 h-4 text-cyan-400" />
-              <span>Next.js • Ibexa DXP • Commerce Layer</span>
-            </div>
+          {/* Key tags */}
+          <div className="flex flex-wrap gap-2 mb-10">
+            {[
+              "Decoupled Architectures",
+              "Next.js App Router",
+              "Ibexa DXP",
+              "Commerce Layer",
+              "Agentic Workflows",
+              "AWS & Vercel",
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"
+              >
+                {tag}
+              </span>
+            ))}
           </div>
 
-          {/* Call to Actions */}
-          <div className="flex flex-wrap items-center gap-4">
-            {/* WhatsApp CTA */}
+          {/* Actions */}
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Primary Action */}
             <a
               href={personal.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/30 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm"
             >
-              <MessageSquare className="w-4 h-4" />
+              <MessageSquare className="w-4 h-4 text-emerald-600" />
               <span>{language === "es" ? "Contactar por WhatsApp" : "Chat on WhatsApp"}</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
             </a>
 
             {/* Copy Email Button */}
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-slate-600 text-slate-200 font-medium text-sm transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono transition-colors"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span className="text-emerald-400 font-mono text-xs">
-                    {language === "es" ? "¡Correo Copiado!" : "Email Copied!"}
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <span className="text-emerald-400">
+                    {language === "es" ? "Copiado" : "Copied"}
                   </span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-4 h-4 text-slate-400" />
-                  <span className="font-mono text-xs">{personal.email}</span>
+                  <Copy className="w-3.5 h-3.5 text-zinc-400" />
+                  <span>{personal.email}</span>
                 </>
               )}
             </button>
 
-            {/* Social Icons */}
-            <div className="flex items-center gap-2 pl-2">
+            {/* Social Links */}
+            <div className="flex items-center gap-1.5 ml-1">
               <a
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn Profile"
-                className="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-all"
+                aria-label="LinkedIn"
+                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
@@ -140,15 +124,15 @@ export default function Hero() {
                 href={personal.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub Profile"
-                className="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-all"
+                aria-label="GitHub"
+                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personal.email}`}
-                aria-label="Send Email"
-                className="p-3 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 text-slate-300 hover:text-white transition-all"
+                aria-label="Email"
+                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
               >
                 <Mail className="w-4 h-4" />
               </a>

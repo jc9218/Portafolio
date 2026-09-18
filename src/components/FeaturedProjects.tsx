@@ -4,7 +4,6 @@ import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
-  Sparkles, 
   ExternalLink, 
   Activity, 
   CheckCircle2
@@ -18,156 +17,154 @@ export default function FeaturedProjects() {
   if (!personalProjects || personalProjects.length === 0) return null;
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 right-10 w-80 h-80 bg-emerald-500/5 blur-3xl rounded-full pointer-events-none -z-10" />
-
+    <section id="projects" className="py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>FEATURED INNOVATION</span>
+        <div className="max-w-3xl mb-14">
+          <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
+            03 // {language === "es" ? "Proyectos & Código Abierto" : "Projects & Open Source"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
-            {language === "es" ? "Proyectos Personales & AI" : "Personal Projects & AI"}
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+            {language === "es" ? "Proyectos Personales" : "Personal Projects"}
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="text-zinc-400 text-base leading-relaxed">
             {language === "es"
-              ? "Aplicaciones de vanguardia diseñadas y desarrolladas de forma independiente para resolver problemas complejos combinando inteligencia artificial, telemetría y arquitecturas modernas."
-              : "Cutting-edge applications independently engineered to solve complex problems combining artificial intelligence, telemetry, and modern full-stack architectures."}
+              ? "Desarrollo independiente de sistemas complejos integrando modelos matemáticos de rendimiento, procesamiento de telemetría y arquitecturas modernas."
+              : "Independent engineering of complex systems integrating physiological performance models, telemetry streaming, and modern web architectures."}
           </p>
         </div>
 
         {/* Projects List */}
-        <div className="space-y-12">
+        <div className="space-y-10">
           {personalProjects.map((project) => (
             <div
               key={project.id}
-              className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-950/80 border border-slate-800 hover:border-emerald-500/50 shadow-2xl transition-all duration-300"
+              className="p-6 sm:p-8 rounded-xl bg-zinc-900/50 border border-zinc-800"
             >
               {/* Header row */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 mb-4">
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-3">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>{project.badge[language]}</span>
+                  <div className="flex items-center gap-2.5 mb-1">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span className="text-xs font-mono text-zinc-400">
+                      {project.badge[language]}
+                    </span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
                     {project.name}
                   </h3>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div>
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-slate-600 text-slate-100 font-medium text-xs transition-all shadow-md"
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
                   >
-                    <GithubIcon className="w-4 h-4" />
-                    <span>{language === "es" ? "Ver Código en GitHub" : "View on GitHub"}</span>
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                    <GithubIcon className="w-3.5 h-3.5" />
+                    <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
+                    <ExternalLink className="w-3 h-3 text-zinc-400" />
                   </a>
                 </div>
               </div>
 
               {/* Tagline */}
-              <p className="text-base sm:text-lg text-emerald-400 font-medium mb-6">
+              <p className="text-base text-zinc-300 font-medium mb-6">
                 {project.tagline[language]}
               </p>
 
-              {/* Two Column details: Utility / Description + Metric Simulation */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
-                <div className="lg:col-span-7 space-y-4 text-sm sm:text-base text-slate-300 leading-relaxed">
+              {/* Two Column details */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
+                <div className="lg:col-span-7 space-y-4 text-sm text-zinc-300 leading-relaxed">
                   <div>
-                    <h4 className="text-xs uppercase tracking-wider text-slate-400 font-mono mb-1.5">
-                      {language === "es" ? "¿Para qué sirve? (Utilidad):" : "Utility & Purpose:"}
+                    <h4 className="text-xs uppercase tracking-wider text-zinc-400 font-mono mb-1">
+                      {language === "es" ? "Utilidad & Propósito:" : "Utility & Purpose:"}
                     </h4>
-                    <p className="text-slate-300">
+                    <p className="text-zinc-300">
                       {project.utility[language]}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="text-xs uppercase tracking-wider text-slate-400 font-mono mb-1.5">
-                      {language === "es" ? "Arquitectura & Enfoque Técnico:" : "Architecture & Technical Approach:"}
+                    <h4 className="text-xs uppercase tracking-wider text-zinc-400 font-mono mb-1">
+                      {language === "es" ? "Enfoque Arquitectónico:" : "Architecture Approach:"}
                     </h4>
-                    <p className="text-slate-400 text-sm">
+                    <p className="text-zinc-400">
                       {project.description[language]}
                     </p>
                   </div>
                 </div>
 
-                {/* Telemetry Visual Widget Preview */}
-                <div className="lg:col-span-5 p-6 rounded-2xl bg-slate-950/80 border border-slate-800 font-mono">
-                  <div className="flex items-center justify-between text-xs text-slate-400 border-b border-slate-800 pb-3 mb-4">
-                    <span className="flex items-center gap-2 text-emerald-400">
-                      <Activity className="w-4 h-4" />
-                      <span>TELEMETRY & BANISTER MODEL</span>
+                {/* Telemetry Visual Widget */}
+                <div className="lg:col-span-5 p-5 rounded-lg bg-zinc-950/80 border border-zinc-800 font-mono">
+                  <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-zinc-800/80 pb-2.5 mb-3">
+                    <span className="flex items-center gap-1.5 text-zinc-200 font-medium">
+                      <Activity className="w-3.5 h-3.5 text-emerald-500" />
+                      <span>TELEMETRY / BANISTER MODEL</span>
                     </span>
-                    <span className="text-[11px] text-slate-500">LIVE SYNC</span>
+                    <span className="text-[11px] text-zinc-400">SYNC READY</span>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-3 mb-4 text-center">
-                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-                      <div className="text-[10px] text-slate-400">CTL (FITNESS)</div>
-                      <div className="text-xl font-bold text-emerald-400 mt-1">84</div>
-                      <div className="text-[9px] text-slate-500">42 Days</div>
+                  <div className="grid grid-cols-3 gap-2 mb-3 text-center">
+                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[10px] text-zinc-400">CTL (FITNESS)</div>
+                      <div className="text-lg font-semibold text-zinc-100 mt-0.5">84</div>
+                      <div className="text-[9px] text-zinc-400">42 Days</div>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-                      <div className="text-[10px] text-slate-400">ATL (FATIGUE)</div>
-                      <div className="text-xl font-bold text-amber-400 mt-1">72</div>
-                      <div className="text-[9px] text-slate-500">7 Days</div>
+                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[10px] text-zinc-400">ATL (FATIGUE)</div>
+                      <div className="text-lg font-semibold text-zinc-100 mt-0.5">72</div>
+                      <div className="text-[9px] text-zinc-400">7 Days</div>
                     </div>
-                    <div className="p-3 rounded-xl bg-slate-900/80 border border-slate-800/80">
-                      <div className="text-[10px] text-slate-400">TSB (FORM)</div>
-                      <div className="text-xl font-bold text-cyan-400 mt-1">+12</div>
-                      <div className="text-[9px] text-slate-500">Optimal</div>
+                    <div className="p-2.5 rounded-md bg-zinc-900 border border-zinc-800">
+                      <div className="text-[10px] text-zinc-400">TSB (FORM)</div>
+                      <div className="text-lg font-semibold text-emerald-400 mt-0.5">+12</div>
+                      <div className="text-[9px] text-zinc-400">Optimal</div>
                     </div>
                   </div>
 
-                  <div className="space-y-2 text-xs text-slate-300">
-                    <div className="flex justify-between items-center py-1 border-t border-slate-900">
-                      <span className="text-slate-500">Power Distribution:</span>
-                      <span className="text-slate-200">Coggan 7-Zones (Z1-Z7)</span>
+                  <div className="space-y-1.5 text-xs text-zinc-300">
+                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                      <span className="text-zinc-400">Power Distribution:</span>
+                      <span className="text-zinc-200">Coggan 7-Zones (Z1-Z7)</span>
                     </div>
-                    <div className="flex justify-between items-center py-1 border-t border-slate-900">
-                      <span className="text-slate-500">Device Push:</span>
-                      <span className="text-slate-200">Garmin • Wahoo • Karoo</span>
+                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                      <span className="text-zinc-400">Device Push:</span>
+                      <span className="text-zinc-200">Garmin • Wahoo • Karoo</span>
                     </div>
-                    <div className="flex justify-between items-center py-1 border-t border-slate-900">
-                      <span className="text-slate-500">Recovery Rule:</span>
-                      <span className="text-emerald-400 font-semibold">48h Heavy-Leg Guardrail</span>
+                    <div className="flex justify-between items-center py-1 border-t border-zinc-900">
+                      <span className="text-zinc-400">Recovery Rule:</span>
+                      <span className="text-zinc-200 font-medium">48h Heavy-Leg Guardrail</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Key Features Bullet List */}
-              <div className="mb-8 pt-6 border-t border-slate-800/80">
-                <h4 className="text-xs uppercase tracking-wider text-slate-400 font-mono mb-4">
-                  {language === "es" ? "Capacidades Destacadas:" : "Key Architectural Capabilities:"}
+              {/* Key Features */}
+              <div className="pt-4 border-t border-zinc-800 mb-5">
+                <h4 className="text-xs uppercase tracking-wider text-zinc-400 font-mono mb-3">
+                  {language === "es" ? "Capacidades Clave:" : "Key Capabilities:"}
                 </h4>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                   {project.features[language].map((feature, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={fIdx} className="flex items-start gap-2 text-xs text-zinc-300">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Tech Stack Pills */}
-              <div className="pt-6 border-t border-slate-800/80 flex flex-wrap items-center gap-2">
-                <span className="text-xs text-slate-400 font-mono mr-2">
-                  {language === "es" ? "Herramientas Utilizadas:" : "Tools & Technologies:"}
+              {/* Technologies */}
+              <div className="pt-4 border-t border-zinc-800 flex flex-wrap items-center gap-1.5">
+                <span className="text-xs text-zinc-400 font-mono mr-1">
+                  {language === "es" ? "Stack:" : "Stack:"}
                 </span>
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-3 py-1 rounded-lg bg-slate-800/60 border border-slate-700/60 text-xs text-slate-200 font-mono"
+                    className="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700/60 text-xs text-zinc-300 font-mono"
                   >
                     {tech}
                   </span>

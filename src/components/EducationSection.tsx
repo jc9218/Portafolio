@@ -3,81 +3,71 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import { GraduationCap, Languages, MapPin } from "lucide-react";
+import { MapPin } from "lucide-react";
 
 export default function EducationSection() {
   const { language } = useLanguage();
   const { education, languages } = PORTFOLIO_DATA;
 
   return (
-    <section id="education" className="py-24 bg-slate-950/40 border-t border-slate-800/60 relative">
+    <section id="education" className="py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-14">
+          <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
+            06 // {language === "es" ? "Formación & Comunicación" : "Education & Languages"}
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+            {language === "es" ? "Educación & Idiomas" : "Education & Languages"}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Education Card */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
-              <GraduationCap className="w-3.5 h-3.5" />
-              <span>ACADEMIC BACKGROUND</span>
-            </div>
-            <h2 className="text-3xl font-bold text-white tracking-tight mb-8">
-              {language === "es" ? "Educación Superior" : "Higher Education"}
-            </h2>
-
-            <div className="p-8 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors">
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  {education.year}
-                </span>
-                <div className="flex items-center gap-1.5 text-xs text-slate-400 font-mono">
-                  <MapPin className="w-3.5 h-3.5 text-slate-500" />
-                  <span>{education.location}</span>
-                </div>
+          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800">
+            <div className="flex items-center justify-between gap-4 mb-3">
+              <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-300">
+                {education.year}
+              </span>
+              <div className="flex items-center gap-1.5 text-xs text-zinc-400 font-mono">
+                <MapPin className="w-3.5 h-3.5 text-zinc-500" />
+                <span>{education.location}</span>
               </div>
-
-              <h3 className="text-xl font-bold text-white mb-2">
-                {education.degree[language]}
-              </h3>
-              <p className="text-emerald-400 font-semibold text-base mb-4">
-                {education.institution}
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                {language === "es"
-                  ? "Formación rigurosa en fundamentos de ciencias de la computación, arquitectura de software, modelado de sistemas distribuidos y optimización de bases de datos."
-                  : "Rigorous training in computer science foundations, software architecture, distributed system modeling, and database optimization."}
-              </p>
             </div>
+
+            <h3 className="text-lg font-bold text-white mb-1">
+              {education.degree[language]}
+            </h3>
+            <p className="text-emerald-400 font-medium text-sm mb-3">
+              {education.institution}
+            </p>
+            <p className="text-zinc-400 text-sm leading-relaxed">
+              {language === "es"
+                ? "Formación rigurosa en fundamentos de ciencias de la computación, arquitectura de software, modelado de sistemas distribuidos y optimización de bases de datos."
+                : "Rigorous training in computer science foundations, software architecture, distributed system modeling, and database optimization."}
+            </p>
           </div>
 
           {/* Languages Card */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-4">
-              <Languages className="w-3.5 h-3.5" />
-              <span>COMMUNICATION & PROFICIENCY</span>
-            </div>
-            <h2 className="text-3xl font-bold text-white tracking-tight mb-8">
-              {language === "es" ? "Idiomas & Comunicación" : "Languages & Alignment"}
-            </h2>
-
-            <div className="space-y-4">
-              {languages.map((lang, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-bold text-white">
-                      {lang.name[language]}
-                    </h3>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-950 border border-slate-800 text-cyan-400">
-                      {lang.level[language]}
-                    </span>
-                  </div>
-                  <p className="text-sm text-slate-300 leading-relaxed">
-                    {lang.detail[language]}
-                  </p>
+          <div className="space-y-4">
+            {languages.map((lang, idx) => (
+              <div
+                key={idx}
+                className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
+              >
+                <div className="flex items-center justify-between mb-1.5">
+                  <h3 className="text-base font-semibold text-white">
+                    {lang.name[language]}
+                  </h3>
+                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
+                    {lang.level[language]}
+                  </span>
                 </div>
-              ))}
-            </div>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                  {lang.detail[language]}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -9,11 +9,9 @@ import {
   Copy, 
   Check, 
   Send, 
-  Sparkles,
   ArrowRight
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
-import confetti from "canvas-confetti";
 
 export default function ContactSection() {
   const { language } = useLanguage();
@@ -27,101 +25,94 @@ export default function ContactSection() {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(personal.email);
     setCopiedEmail(true);
-    confetti({
-      particleCount: 40,
-      spread: 60,
-      origin: { y: 0.8 },
-      colors: ["#10b981", "#06b6d4"],
-    });
-    setTimeout(() => setCopiedEmail(false), 2500);
+    setTimeout(() => setCopiedEmail(false), 2000);
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Contacto desde Portafolio: ${senderName || "Proyecto / Oportunidad"}`);
+    const subject = encodeURIComponent(`Contacto: ${senderName || "Consulta de Proyecto"}`);
     const body = encodeURIComponent(
       `Hola Juan Camilo,\n\nMi nombre es ${senderName} (${senderEmail}).\n\n${message}\n\nSaludos.`
     );
     window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
     setFormSubmitted(true);
-    confetti({
-      particleCount: 70,
-      spread: 80,
-      origin: { y: 0.7 },
-      colors: ["#10b981", "#38bdf8", "#818cf8"],
-    });
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
-      {/* Glow */}
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none -z-10" />
-
+    <section id="contact" className="py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-mono mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>DIRECT CONNECT</span>
+        <div className="max-w-3xl mb-14">
+          <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
+            07 // {language === "es" ? "Contacto Directo" : "Direct Contact"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es"
               ? "Hablemos de Arquitectura y Nuevos Desafíos"
-              : "Let's Talk Architecture & High-Impact Projects"}
+              : "Let's Talk Architecture & Key Challenges"}
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="text-zinc-400 text-base leading-relaxed">
             {language === "es"
-              ? "Disponible para consultoría técnica, liderazgo de ingeniería o nuevos retos estratégicos. Escríbeme por WhatsApp, correo o agenda una conversación."
-              : "Open for technical consulting, engineering leadership roles, and ambitious digital transformation initiatives. Reach out via WhatsApp or email."}
+              ? "Disponible para consultoría técnica, liderazgo de ingeniería o nuevos retos estratégicos. Conversemos por WhatsApp o correo electrónico."
+              : "Available for technical consulting, engineering leadership roles, and ambitious system architectures. Reach out via WhatsApp or email."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Direct Contact Cards */}
-          <div className="lg:col-span-5 space-y-4">
+          <div className="lg:col-span-5 space-y-3">
             {/* WhatsApp Card */}
             <a
               href={personal.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 to-slate-900 border border-emerald-500/30 hover:border-emerald-400 flex items-center justify-between group transition-all duration-200 hover:-translate-y-0.5"
+              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-emerald-500/20 text-emerald-400">
-                  <MessageSquare className="w-6 h-6" />
+              <div className="flex items-center gap-3.5">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-emerald-400">
+                  <MessageSquare className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-emerald-300 transition-colors">
+                  <h3 className="text-sm font-semibold text-white group-hover:text-emerald-400 transition-colors">
                     WhatsApp Directo
                   </h3>
-                  <p className="text-xs text-slate-400 font-mono">
+                  <p className="text-xs text-zinc-400 font-mono">
                     {personal.phone}
                   </p>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-emerald-400 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition-all" />
             </a>
 
             {/* Email Card */}
-            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-800 text-cyan-400">
-                  <Mail className="w-6 h-6" />
+            <div className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 flex items-center justify-between">
+              <div className="flex items-center gap-3.5">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
+                  <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white">
-                    {language === "es" ? "Correo Electrónico" : "Email Address"}
+                  <h3 className="text-sm font-semibold text-white">
+                    {language === "es" ? "Correo Electrónico" : "Email"}
                   </h3>
-                  <p className="text-xs text-slate-400 font-mono">
+                  <p className="text-xs text-zinc-400 font-mono">
                     {personal.email}
                   </p>
                 </div>
               </div>
               <button
                 onClick={handleCopyEmail}
-                className="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                title={language === "es" ? "Copiar correo" : "Copy email"}
+                className="px-2.5 py-1.5 rounded-md bg-zinc-800 hover:bg-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
               >
-                {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                {copiedEmail ? (
+                  <span className="text-emerald-400 flex items-center gap-1">
+                    <Check className="w-3.5 h-3.5" />
+                    <span>{language === "es" ? "Copiado" : "Copied"}</span>
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <Copy className="w-3.5 h-3.5 text-zinc-400" />
+                    <span>{language === "es" ? "Copiar" : "Copy"}</span>
+                  </span>
+                )}
               </button>
             </div>
 
@@ -130,22 +121,22 @@ export default function ContactSection() {
               href={personal.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 flex items-center justify-between group transition-all"
+              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-800 text-sky-400">
-                  <LinkedinIcon className="w-6 h-6" />
+              <div className="flex items-center gap-3.5">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
+                  <LinkedinIcon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors">
+                  <h3 className="text-sm font-semibold text-white group-hover:text-zinc-200 transition-colors">
                     LinkedIn
                   </h3>
-                  <p className="text-xs text-slate-400 font-mono">
+                  <p className="text-xs text-zinc-400 font-mono">
                     in/juan-camilo-lopez-espitia
                   </p>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-sky-400 group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
             </a>
 
             {/* GitHub Card */}
@@ -153,75 +144,75 @@ export default function ContactSection() {
               href={personal.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 flex items-center justify-between group transition-all"
+              className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 flex items-center justify-between group transition-colors"
             >
-              <div className="flex items-center gap-4">
-                <div className="p-3 rounded-xl bg-slate-800 text-slate-300">
-                  <GithubIcon className="w-6 h-6" />
+              <div className="flex items-center gap-3.5">
+                <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-300">
+                  <GithubIcon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white group-hover:text-slate-200 transition-colors">
+                  <h3 className="text-sm font-semibold text-white group-hover:text-zinc-200 transition-colors">
                     GitHub
                   </h3>
-                  <p className="text-xs text-slate-400 font-mono">
+                  <p className="text-xs text-zinc-400 font-mono">
                     github.com/jc9218
                   </p>
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-slate-500 group-hover:text-white group-hover:translate-x-1 transition-all" />
+              <ArrowRight className="w-4 h-4 text-zinc-500 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
             </a>
           </div>
 
           {/* Contact Message Form */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-2xl bg-slate-900/40 border border-slate-800">
-              <h3 className="text-xl font-bold text-white mb-2">
-                {language === "es" ? "Enviar un Mensaje Rápido" : "Send a Direct Message"}
+            <div className="p-6 sm:p-7 rounded-xl bg-zinc-900/50 border border-zinc-800">
+              <h3 className="text-lg font-bold text-white mb-1">
+                {language === "es" ? "Enviar un Mensaje" : "Send a Message"}
               </h3>
-              <p className="text-sm text-slate-400 mb-6">
+              <p className="text-xs text-zinc-400 mb-5">
                 {language === "es"
-                  ? "Se abrirá tu cliente de correo preparado con el mensaje para enviarlo directamente."
-                  : "This will prepare an email directly to my inbox with your notes."}
+                  ? "Genera un borrador directo hacia mi correo electrónico."
+                  : "This will prepare an email directly addressed to my inbox."}
               </p>
 
               {formSubmitted ? (
-                <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-center">
-                  <Check className="w-8 h-8 text-emerald-400 mx-auto mb-2" />
-                  <h4 className="text-base font-bold text-white mb-1">
-                    {language === "es" ? "¡Mensaje Preparado!" : "Message Ready!"}
+                <div className="p-5 rounded-lg bg-zinc-950 border border-zinc-800 text-center">
+                  <Check className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
+                  <h4 className="text-sm font-bold text-white mb-1">
+                    {language === "es" ? "Borrador de Correo Generado" : "Email Draft Created"}
                   </h4>
-                  <p className="text-xs text-slate-300 mb-4">
+                  <p className="text-xs text-zinc-400 mb-3">
                     {language === "es"
-                      ? "Se ha generado la plantilla de correo. Si no se abrió tu cliente automáticamente, puedes escribirme directamente a "
-                      : "Email drafted. If your client didn't launch automatically, write directly to "}
-                    <span className="text-emerald-400 font-mono">{personal.email}</span>
+                      ? "Si no se abrió tu cliente automáticamente, escríbeme directamente a "
+                      : "If your email client didn't launch automatically, please email "}
+                    <span className="text-zinc-200 font-mono">{personal.email}</span>
                   </p>
                   <button
                     onClick={() => setFormSubmitted(false)}
-                    className="text-xs text-slate-400 hover:text-white underline font-mono"
+                    className="text-xs text-zinc-400 hover:text-white underline font-mono"
                   >
                     {language === "es" ? "Redactar otro mensaje" : "Draft another message"}
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-3.5">
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
-                      {language === "es" ? "Tu Nombre / Empresa" : "Your Name / Organization"}
+                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
+                      {language === "es" ? "Nombre / Organización" : "Name / Organization"}
                     </label>
                     <input
                       type="text"
                       required
                       value={senderName}
                       onChange={(e) => setSenderName(e.target.value)}
-                      placeholder={language === "es" ? "Ej. Carlos Gómez o Empresa XYZ" : "e.g. Alex Smith or Tech Corp"}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white placeholder-slate-600 outline-none transition-colors"
+                      placeholder={language === "es" ? "Ej. Carlos Gómez" : "e.g. Alex Smith"}
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
-                      {language === "es" ? "Tu Correo Electrónico" : "Your Email"}
+                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
+                      {language === "es" ? "Correo Electrónico" : "Email Address"}
                     </label>
                     <input
                       type="email"
@@ -229,13 +220,13 @@ export default function ContactSection() {
                       value={senderEmail}
                       onChange={(e) => setSenderEmail(e.target.value)}
                       placeholder="nombre@empresa.com"
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white placeholder-slate-600 outline-none transition-colors"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-slate-300 mb-1.5 uppercase">
-                      {language === "es" ? "Detalles del Proyecto / Consulta" : "Project Details / Inquiry"}
+                    <label className="block text-xs font-mono text-zinc-400 mb-1 uppercase">
+                      {language === "es" ? "Detalles del Proyecto / Consulta" : "Message / Project Scope"}
                     </label>
                     <textarea
                       rows={4}
@@ -244,19 +235,19 @@ export default function ContactSection() {
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder={
                         language === "es"
-                          ? "Cuéntame sobre el reto técnico, arquitectura, volumen o rol requerido..."
-                          : "Tell me about the technical challenge, architecture requirements, or role..."
+                          ? "Cuéntame sobre el reto técnico, volumen o rol requerido..."
+                          : "Tell me about the technical requirements, scale, or role..."
                       }
-                      className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 text-sm text-white placeholder-slate-600 outline-none transition-colors resize-none"
+                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-950 border border-zinc-800 focus:border-zinc-500 text-sm text-white placeholder-zinc-600 outline-none transition-colors resize-none"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-emerald-500/20"
+                    className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm"
                   >
-                    <Send className="w-4 h-4" />
-                    <span>{language === "es" ? "Enviar Mensaje Directo" : "Send Direct Inquiry"}</span>
+                    <Send className="w-3.5 h-3.5 text-zinc-800" />
+                    <span>{language === "es" ? "Enviar Mensaje" : "Send Inquiry"}</span>
                   </button>
                 </form>
               )}
