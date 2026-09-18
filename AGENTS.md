@@ -14,13 +14,18 @@ Este documento es la **fuente de verdad técnica** para cualquier agente de IA o
 
 ---
 
-## 1. Entorno de Ejecución y Filosofía de Trabajo
+## 1. Entorno de Ejecución y Filosofía de Sincronización
 
-- **WSL2 Debian es el entorno nativo de desarrollo y ejecución:**
-  - Ubicación principal en Linux: `/home/jc9218/Portafolio` (al mismo nivel que `/home/jc9218/KOM-Trainer`).
-  - Ubicación mapeada en Windows: `C:\Users\juanc\Documentos\Proyectos\Portafolio` (`/mnt/c/Users/juanc/Documentos/Proyectos/Portafolio`).
-  - **Regla de oro:** Todos los comandos de terminal (`npm install`, `npm run dev`, `npm run build`, operaciones con `git`) **deben ejecutarse dentro de WSL Debian** en `/home/jc9218/Portafolio` para aprovechar el rendimiento del filesystem ext4 nativo y evitar bloqueos de archivos en Windows.
-  - Cuando se editen archivos desde herramientas de Windows, sincronizar los cambios hacia `/home/jc9218/Portafolio` antes de compilar.
+- **Repositorio de Desarrollo Activo (WSL Debian):**
+  - Ubicación en Linux: `/home/jc9218/Portafolio` (al mismo nivel que `/home/jc9218/KOM-Trainer`).
+- **Repositorio del Proyecto Mapeado (Windows):**
+  - Ubicación en Windows: `C:\Users\juanc\Documentos\Proyectos\Portafolio` (`/mnt/c/Users/juanc/Documentos/Proyectos/Portafolio`).
+
+### 🔄 Flujo de Trabajo Obligatorio para Cambios:
+1. **Aplicar cambios en WSL Debian:** Toda modificación de archivos, dependencias y configuración se realiza en `/home/jc9218/Portafolio`.
+2. **Validar compilación:** Ejecutar `npm run build` en WSL Debian asegurando 0 errores.
+3. **Commit y Push desde WSL Debian:** Subir los cambios directamente al repositorio remoto en GitHub desde `/home/jc9218/Portafolio` (`git add .`, `git commit`, `git push origin main`).
+4. **Pull en el repositorio de Windows:** Ejecutar inmediatamente `git pull origin main` en el repositorio de Windows (`C:\Users\juanc\Documentos\Proyectos\Portafolio`) para que ambos repositorios compartan exactamente los mismos commits y estado.
 
 ---
 

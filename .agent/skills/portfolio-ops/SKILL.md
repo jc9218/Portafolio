@@ -17,11 +17,26 @@ Utiliza esta skill cuando necesites:
 
 ## Procedimientos Clave
 
-### 1. Sincronización entre Windows y WSL Debian
-Siempre que se realicen cambios desde el entorno de Windows, sincronizar hacia el entorno nativo de WSL:
-```bash
-wsl -- bash -c "cp -r /mnt/c/Users/juanc/Documentos/Proyectos/Portafolio/src /home/jc9218/Portafolio/ && cp /mnt/c/Users/juanc/Documentos/Proyectos/Portafolio/*.md /home/jc9218/Portafolio/"
-```
+### 1. Flujo Estándar de Cambios y Sincronización
+1. **Edición & Verificación en WSL Debian:**
+   Realizar los cambios y compilar en `/home/jc9218/Portafolio`:
+   ```bash
+   cd /home/jc9218/Portafolio
+   npm run build
+   ```
+2. **Commit y Push desde WSL Debian a GitHub:**
+   ```bash
+   cd /home/jc9218/Portafolio
+   git add .
+   git commit -m "Mensaje descriptivo del cambio"
+   git push origin main
+   ```
+3. **Pull en el Repositorio de Windows:**
+   ```bash
+   cd C:\Users\juanc\Documentos\Proyectos\Portafolio
+   git pull origin main
+   ```
+   Ambos repositorios quedan idénticos con el mismo árbol de Git.
 
 ### 2. Verificación de Compilación
 Ejecutar siempre la compilación dentro de WSL Debian:
