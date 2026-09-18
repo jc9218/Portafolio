@@ -323,8 +323,8 @@ export const PORTFOLIO_DATA = {
         en: "Technical Lead / Senior Full Stack Developer",
       },
       period: {
-        es: "Julio 2021 – Presente",
-        en: "July 2021 – Present",
+        es: "Julio 2021 – Agosto 2026",
+        en: "July 2021 – August 2026",
       },
       location: "Remoto / Colombia",
       summary: {
