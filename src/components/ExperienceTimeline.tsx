@@ -44,7 +44,7 @@ export default function ExperienceTimeline() {
                         {exp.company}
                       </h3>
                       <span className="text-xs text-zinc-400 font-mono">
-                        ({exp.location})
+                        ({typeof exp.location === "string" ? exp.location : exp.location[language]})
                       </span>
                     </div>
                     <p className="text-sm font-medium text-emerald-400">

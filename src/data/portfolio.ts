@@ -32,7 +32,10 @@ export interface JobExperience {
     es: string;
     en: string;
   };
-  location: string;
+  location: {
+    es: string;
+    en: string;
+  } | string;
   summary: {
     es: string;
     en: string;
@@ -110,7 +113,7 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Juan Camilo López Espitia",
     title: {
-      es: "Fullstack Developer & Technical Lead",
+      es: "Desarrollador Full Stack & Líder Técnico",
       en: "Fullstack Developer & Technical Lead",
     },
     location: "Cali, Colombia",
@@ -325,7 +328,10 @@ export const PORTFOLIO_DATA = {
         es: "Julio 2021 – Agosto 2026",
         en: "July 2021 – August 2026",
       },
-      location: "Remoto / Colombia",
+      location: {
+        es: "Remoto / Colombia",
+        en: "Remote / Colombia",
+      },
       summary: {
         es: "Responsable del diseño arquitectónico, liderazgo técnico y despliegue automatizado de plataformas digitales empresariales para organizaciones globales de escala intensiva.",
         en: "Accountable for architectural design, technical guidance, and automated deployment of enterprise digital platforms for scale-intensive global organizations.",
@@ -714,16 +720,16 @@ export const PORTFOLIO_DATA = {
       badge: "Fonts",
     },
     {
-      name: "Antigravity AI Platform",
+      name: "Git & GitHub Actions",
       category: {
-        es: "Ingeniería Agéntica",
-        en: "Agentic Engineering",
+        es: "Control de Versiones & CI",
+        en: "Version Control & CI",
       },
       description: {
-        es: "Construido y mantenido mediante flujos avanzados de desarrollo agéntico con agentes de IA autónomos.",
-        en: "Engineered and maintained leveraging advanced autonomous AI coding agent workflows.",
+        es: "Integración continua automatizada y despliegues atómicos ante cada actualización del repositorio.",
+        en: "Automated continuous integration workflows and atomic deployments triggered on every repository push.",
       },
-      badge: "Agentic AI",
+      badge: "CI / CD",
     },
     {
       name: "Vercel Edge Network",

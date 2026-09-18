@@ -27,6 +27,14 @@ export default function ArchitectureShowcase() {
     cloud: <Cloud className="w-4 h-4 text-zinc-300" />,
   };
 
+  const categoryLabels: Record<string, { es: string; en: string }> = {
+    frontend: { es: "Frontend", en: "Frontend" },
+    api: { es: "API & Mesh", en: "API & Mesh" },
+    cms: { es: "Headless CMS", en: "Headless CMS" },
+    payment: { es: "Pagos & Motor", en: "Payments & Engine" },
+    cloud: { es: "Cloud & DevOps", en: "Cloud & DevOps" },
+  };
+
   const selectedNode = architectureShowcase.nodes.find((n) => n.id === selectedNodeId) || architectureShowcase.nodes[0];
 
   return (
@@ -98,7 +106,7 @@ export default function ArchitectureShowcase() {
 
                       <div className="flex items-center gap-2 sm:gap-3 shrink-0 ml-2">
                         <span className="text-[11px] font-mono text-zinc-500 uppercase hidden sm:inline">
-                          {node.category}
+                          {categoryLabels[node.category]?.[language] || node.category}
                         </span>
                         {/* Desktop arrow */}
                         <ArrowRight
@@ -145,8 +153,10 @@ export default function ArchitectureShowcase() {
                         </div>
 
                         <div className="pt-3 border-t border-zinc-800 flex items-center justify-between text-[11px] text-zinc-400 font-mono">
-                          <span>SLA / Performance:</span>
-                          <span className="text-zinc-200">High-Concurrency 99.9%</span>
+                          <span>{language === "es" ? "SLA / Rendimiento:" : "SLA / Performance:"}</span>
+                          <span className="text-zinc-200">
+                            {language === "es" ? "Alta Concurrencia 99.9%" : "High-Concurrency 99.9%"}
+                          </span>
                         </div>
                       </div>
                     )}
@@ -210,8 +220,10 @@ export default function ArchitectureShowcase() {
                 </div>
 
                 <div className="pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400 font-mono">
-                  <span>SLA / Performance:</span>
-                  <span className="text-zinc-200">High-Concurrency 99.9%</span>
+                  <span>{language === "es" ? "SLA / Rendimiento:" : "SLA / Performance:"}</span>
+                  <span className="text-zinc-200">
+                    {language === "es" ? "Alta Concurrencia 99.9%" : "High-Concurrency 99.9%"}
+                  </span>
                 </div>
               </div>
             </div>

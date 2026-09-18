@@ -40,7 +40,15 @@ export default function Hero() {
 
           {/* Role headline */}
           <p className="text-lg sm:text-2xl font-medium text-zinc-300 mb-5 sm:mb-6 tracking-tight">
-            Fullstack Developer <span className="text-zinc-600 font-normal">/</span> Technical Lead
+            {language === "es" ? (
+              <>
+                Desarrollador Full Stack <span className="text-zinc-600 font-normal">/</span> Líder Técnico
+              </>
+            ) : (
+              <>
+                Fullstack Developer <span className="text-zinc-600 font-normal">/</span> Technical Lead
+              </>
+            )}
           </p>
 
           {/* Bio Summary */}
@@ -55,7 +63,7 @@ export default function Hero() {
               "Next.js App Router",
               "Ibexa DXP",
               "Commerce Layer",
-              language === "es" ? "Flujos Agénticos & IA" : "Agentic Workflows & AI",
+              language === "es" ? "Arquitectura de Software & IA" : "Software Architecture & AI",
               "AWS & Vercel",
             ].map((tag) => (
               <span

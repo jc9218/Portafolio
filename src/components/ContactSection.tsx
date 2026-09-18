@@ -90,7 +90,7 @@ export default function ContactSection() {
                   <LinkedinIcon className="w-5 h-5" />
                 </div>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
-                  Network
+                  {language === "es" ? "Red Profesional" : "Network"}
                 </span>
               </div>
               <h3 className="text-base font-semibold text-white mb-1">
@@ -124,7 +124,7 @@ export default function ContactSection() {
                   <GithubIcon className="w-5 h-5" />
                 </div>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
-                  Code
+                  {language === "es" ? "Código" : "Code"}
                 </span>
               </div>
               <h3 className="text-base font-semibold text-white mb-1">

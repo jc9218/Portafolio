@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "@/components/Logo";
 
 export default function Navbar() {
   const { language, setLanguage } = useLanguage();
+  const { personal } = PORTFOLIO_DATA;
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -45,7 +47,7 @@ export default function Navbar() {
               Juan Camilo López
             </span>
             <span className="text-[10px] sm:text-[11px] text-zinc-400 truncate hidden sm:block">
-              Fullstack Developer & Technical Lead
+              {personal.title[language]}
             </span>
           </div>
         </a>
