@@ -24,32 +24,32 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 border-b border-zinc-800/80">
+    <section className="relative pt-26 pb-14 md:pt-40 md:pb-24 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Location line */}
-          <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono mb-6">
+          <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono mb-5 sm:mb-6">
             <MapPin className="w-3.5 h-3.5 text-zinc-500" />
             <span>{personal.location}</span>
           </div>
 
           {/* Name */}
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-4">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 sm:mb-4">
             {personal.name}
           </h1>
 
           {/* Role headline */}
-          <p className="text-xl sm:text-2xl font-medium text-zinc-300 mb-6 tracking-tight">
+          <p className="text-lg sm:text-2xl font-medium text-zinc-300 mb-5 sm:mb-6 tracking-tight">
             Fullstack Developer <span className="text-zinc-600 font-normal">/</span> Technical Lead
           </p>
 
           {/* Bio Summary */}
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed mb-8">
+          <p className="text-sm sm:text-lg text-zinc-400 leading-relaxed mb-6 sm:mb-8">
             {personal.summary[language]}
           </p>
 
           {/* Key tags */}
-          <div className="flex flex-wrap gap-2 mb-10">
+          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8 sm:mb-10">
             {[
               language === "es" ? "Arquitecturas Desacopladas" : "Decoupled Architectures",
               "Next.js App Router",
@@ -60,7 +60,7 @@ export default function Hero() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300"
+                className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] sm:text-xs font-mono text-zinc-300"
               >
                 {tag}
               </span>
@@ -68,11 +68,11 @@ export default function Hero() {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3">
             {/* Primary Action: Email */}
             <a
               href={`mailto:${personal.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm w-full sm:w-auto"
             >
               <Mail className="w-4 h-4 text-zinc-900" />
               <span>{language === "es" ? "Contactar por Correo" : "Contact via Email"}</span>
@@ -82,7 +82,7 @@ export default function Hero() {
             {/* Copy Email Button */}
             <button
               onClick={handleCopyEmail}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-850 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-mono transition-colors w-full sm:w-auto"
             >
               {copied ? (
                 <>
@@ -100,13 +100,13 @@ export default function Hero() {
             </button>
 
             {/* Social Links */}
-            <div className="flex items-center gap-1.5 ml-1">
+            <div className="flex items-center justify-center gap-2 pt-1 sm:pt-0 sm:ml-1">
               <a
                 href={personal.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >
                 <LinkedinIcon className="w-4 h-4" />
               </a>
@@ -115,14 +115,14 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >
                 <GithubIcon className="w-4 h-4" />
               </a>
               <a
                 href={`mailto:${personal.email}`}
                 aria-label="Email"
-                className="p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors"
+                className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >
                 <Mail className="w-4 h-4" />
               </a>

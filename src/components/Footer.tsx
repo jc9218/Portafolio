@@ -17,9 +17,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-zinc-800/80 bg-[#090a0f] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-zinc-850">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 pb-8 border-b border-zinc-850 text-center sm:text-left">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 font-mono text-xs font-semibold">
+            <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-300 font-mono text-xs font-semibold shrink-0">
               JL
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-mono text-zinc-400">
+          <div className="flex flex-wrap justify-center items-center gap-4 text-xs font-mono text-zinc-400">
             <a
               href={personal.linkedin}
               target="_blank"
@@ -72,7 +72,7 @@ export default function Footer() {
           </button>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
           </p>

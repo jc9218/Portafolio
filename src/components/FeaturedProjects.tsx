@@ -17,17 +17,17 @@ export default function FeaturedProjects() {
   if (!personalProjects || personalProjects.length === 0) return null;
 
   return (
-    <section id="projects" className="py-20 border-b border-zinc-800/80">
+    <section id="projects" className="py-16 sm:py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             03 // {language === "es" ? "Proyectos & Código Abierto" : "Projects & Open Source"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Proyectos Personales" : "Personal Projects"}
           </h2>
-          <p className="text-zinc-400 text-base leading-relaxed">
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             {language === "es"
               ? "Desarrollo independiente de sistemas complejos integrando modelos matemáticos de rendimiento, procesamiento de telemetría y arquitecturas modernas."
               : "Independent engineering of complex systems integrating physiological performance models, telemetry streaming, and modern web architectures."}
@@ -35,32 +35,32 @@ export default function FeaturedProjects() {
         </div>
 
         {/* Projects List */}
-        <div className="space-y-10">
+        <div className="space-y-8 sm:space-y-10">
           {personalProjects.map((project) => (
             <div
               key={project.id}
-              className="p-6 sm:p-8 rounded-xl bg-zinc-900/50 border border-zinc-800"
+              className="p-4.5 sm:p-8 rounded-xl bg-zinc-900/50 border border-zinc-800"
             >
               {/* Header row */}
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-3 mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-3 mb-4">
                 <div>
-                  <div className="flex items-center gap-2.5 mb-1">
+                  <div className="flex items-center gap-2 mb-1">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
                     <span className="text-xs font-mono text-zinc-400">
                       {project.badge[language]}
                     </span>
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  <h3 className="text-xl sm:text-3xl font-bold text-white tracking-tight">
                     {project.name}
                   </h3>
                 </div>
 
-                <div>
+                <div className="pt-1 sm:pt-0">
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors w-full sm:w-auto"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                     <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
@@ -70,7 +70,7 @@ export default function FeaturedProjects() {
               </div>
 
               {/* Tagline */}
-              <p className="text-base text-zinc-300 font-medium mb-6">
+              <p className="text-sm sm:text-base text-zinc-300 font-medium mb-6">
                 {project.tagline[language]}
               </p>
 
@@ -97,7 +97,7 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Telemetry Visual Widget */}
-                <div className="lg:col-span-5 p-5 rounded-lg bg-zinc-950/80 border border-zinc-800 font-mono">
+                <div className="lg:col-span-5 p-3.5 sm:p-5 rounded-lg bg-zinc-950/80 border border-zinc-800 font-mono">
                   <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-zinc-800/80 pb-2.5 mb-3">
                     <span className="flex items-center gap-1.5 text-zinc-200 font-medium">
                       <Activity className="w-3.5 h-3.5 text-emerald-500" />

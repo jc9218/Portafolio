@@ -10,21 +10,21 @@ export default function EducationSection() {
   const { education, languages } = PORTFOLIO_DATA;
 
   return (
-    <section id="education" className="py-20 border-b border-zinc-800/80">
+    <section id="education" className="py-16 sm:py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             06 // {language === "es" ? "Formación & Comunicación" : "Education & Languages"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Educación & Idiomas" : "Education & Languages"}
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 items-start">
           {/* Education Card */}
-          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800">
+          <div className="p-4.5 sm:p-6 rounded-xl bg-zinc-900/50 border border-zinc-800">
             <div className="flex items-center justify-between gap-4 mb-3">
               <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-300">
                 {education.year}

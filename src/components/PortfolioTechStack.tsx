@@ -23,17 +23,17 @@ export default function PortfolioTechStack() {
   const icons = [Cpu, Layers, Code2, Palette, Package, Zap, Bot, Cloud];
 
   return (
-    <section id="tech-stack" className="py-20 border-b border-zinc-800/80">
+    <section id="tech-stack" className="py-16 sm:py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             05 // {language === "es" ? "Arquitectura de este Sitio" : "Site Architecture"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Stack & Especificaciones del Sitio" : "Site Stack & Specifications"}
           </h2>
-          <p className="text-zinc-400 text-base leading-relaxed">
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             {language === "es"
               ? "Especificación técnica de las herramientas y servicios utilizados para construir y servir este portafolio."
               : "Technical specifications of the tooling and runtime infrastructure powering this portfolio website."}
@@ -41,13 +41,13 @@ export default function PortfolioTechStack() {
         </div>
 
         {/* Tech Stack Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {thisSiteTechStack.map((tech, index) => {
             const IconComponent = icons[index % icons.length];
             return (
               <div
                 key={tech.name}
-                className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
+                className="p-4 sm:p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300">

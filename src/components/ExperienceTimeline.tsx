@@ -10,17 +10,17 @@ export default function ExperienceTimeline() {
   const { experiences } = PORTFOLIO_DATA;
 
   return (
-    <section id="experience" className="py-20 border-b border-zinc-800/80">
+    <section id="experience" className="py-16 sm:py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-14">
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             02 // {language === "es" ? "Trayectoria Profesional" : "Professional Track"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Experiencia Profesional" : "Professional Experience"}
           </h2>
-          <p className="text-zinc-400 text-base leading-relaxed">
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             {language === "es"
               ? "Más de una década liderando el diseño y desarrollo de arquitecturas de software empresarial y guiando equipos de ingeniería."
               : "Over a decade leading the design and development of enterprise software architectures and engineering teams."}
@@ -28,14 +28,14 @@ export default function ExperienceTimeline() {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative border-l border-zinc-800 ml-3 md:ml-4 space-y-10">
+        <div className="relative border-l border-zinc-800 ml-2.5 sm:ml-4 space-y-8 sm:space-y-10">
           {experiences.map((exp) => (
-            <div key={exp.id} className="relative pl-6 md:pl-8 group">
+            <div key={exp.id} className="relative pl-5 sm:pl-8 group">
               {/* Timeline node marker */}
               <div className="absolute -left-[5px] top-2 w-2.5 h-2.5 rounded-full bg-zinc-600 group-hover:bg-emerald-400 transition-colors" />
 
               {/* Job Card */}
-              <div className="p-6 sm:p-7 rounded-xl bg-zinc-900/50 border border-zinc-800">
+              <div className="p-4 sm:p-7 rounded-xl bg-zinc-900/50 border border-zinc-800">
                 {/* Top Bar */}
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
                   <div>

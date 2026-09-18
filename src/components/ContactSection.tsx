@@ -23,16 +23,16 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 border-b border-zinc-800/80">
+    <section id="contact" className="py-16 sm:py-20 border-b border-zinc-800/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             07 // {language === "es" ? "Contacto & Redes" : "Contact & Links"}
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
             {language === "es" ? "Contacto" : "Get in Touch"}
           </h2>
-          <p className="text-zinc-400 text-base leading-relaxed">
+          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
             {language === "es"
               ? "Si estás evaluando mi perfil para roles de Fullstack Developer o Technical Lead, puedes escribirme directamente por correo electrónico o conectar a través de mis redes profesionales."
               : "If you are evaluating my profile for Fullstack Developer or Technical Lead positions, feel free to reach out directly via email or connect through my professional profiles."}
@@ -40,9 +40,9 @@ export default function ContactSection() {
         </div>
 
         {/* 3 Contact Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
           {/* Email Card (Primary Contact Method) */}
-          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
@@ -83,7 +83,7 @@ export default function ContactSection() {
           </div>
 
           {/* LinkedIn Card */}
-          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
@@ -117,7 +117,7 @@ export default function ContactSection() {
           </div>
 
           {/* GitHub Card */}
-          <div className="p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
+          <div className="p-5 sm:p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
