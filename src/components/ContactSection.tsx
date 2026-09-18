@@ -42,7 +42,7 @@ export default function ContactSection() {
     const body = encodeURIComponent(
       `Hola Juan Camilo,\n\nMi nombre es ${senderName} (${senderEmail}).\n\n${message}\n\nSaludos.`
     );
-    window.open(`mailto:${personal.email}?subject=${subject}&body=${body}`, "_blank");
+    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
     setFormSubmitted(true);
     confetti({
       particleCount: 70,
