@@ -46,7 +46,7 @@ export default function Navbar() {
               Juan Camilo López
             </span>
             <span className="text-[11px] text-zinc-400">
-              Solutions Architect
+              Fullstack Developer & Technical Lead
             </span>
           </div>
         </a>

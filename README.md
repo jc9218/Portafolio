@@ -1,5 +1,5 @@
 # Juan Camilo López Espitia — Portfolio
-### Solutions Architect | Technical Lead | Senior Full Stack Engineer
+### Fullstack Developer & Technical Lead
 
 A high-performance, modern professional portfolio engineered with **Next.js 16 (App Router with Turbopack)**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. Built with a minimalist, high-impact dark engineering aesthetic inspired by Vercel and Linear, featuring real-time bilingual switching (English / Spanish).
 
@@ -18,7 +18,7 @@ A high-performance, modern professional portfolio engineered with **Next.js 16 (
 - **Quantitative Impact Metrics:** +10 years of experience, mentoring 4-6 engineers, 99.9% uptime, and thousands of concurrent ticketing purchases.
 - **Career Milestones:** Deep-dive case studies covering leadership roles at **Aplyca**, **Blaucast**, **Asesoftware**, and **Universidad del Valle**.
 - **Instant Bilingual Support (EN / ES):** Frictionless switching between English and Spanish with persistent local preferences.
-- **Direct Communication Channels:** Instant WhatsApp connection (+57 316 243 8345), 1-click email copying with confetti feedback, LinkedIn, and inquiry contact form.
+- **Direct Communication Channels for Recruiters:** Direct email link, 1-click email copying, verified LinkedIn profile, and GitHub repositories.
 
 ---
 

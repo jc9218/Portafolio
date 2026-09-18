@@ -110,8 +110,8 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Juan Camilo López Espitia",
     title: {
-      es: "Solutions Architect | Technical Lead | Senior Full Stack Engineer",
-      en: "Solutions Architect | Technical Lead | Senior Full Stack Engineer",
+      es: "Fullstack Developer & Technical Lead",
+      en: "Fullstack Developer & Technical Lead",
     },
     location: "Cali, Colombia",
     phone: "+57 316 243 8345",

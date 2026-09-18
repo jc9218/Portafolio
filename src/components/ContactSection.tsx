@@ -34,8 +34,8 @@ export default function ContactSection() {
           </h2>
           <p className="text-zinc-400 text-base leading-relaxed">
             {language === "es"
-              ? "Si estás evaluando mi perfil para roles de Solutions Architect o Technical Lead, puedes escribirme directamente por correo electrónico o conectar a través de mis redes profesionales."
-              : "If you are evaluating my profile for Solutions Architect or Technical Lead positions, feel free to reach out directly via email or connect through my professional profiles."}
+              ? "Si estás evaluando mi perfil para roles de Fullstack Developer o Technical Lead, puedes escribirme directamente por correo electrónico o conectar a través de mis redes profesionales."
+              : "If you are evaluating my profile for Fullstack Developer or Technical Lead positions, feel free to reach out directly via email or connect through my professional profiles."}
           </p>
         </div>
 

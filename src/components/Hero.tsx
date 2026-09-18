@@ -47,7 +47,7 @@ export default function Hero() {
 
           {/* Role headline */}
           <p className="text-xl sm:text-2xl font-medium text-zinc-300 mb-6 tracking-tight">
-            Solutions Architect <span className="text-zinc-600 font-normal">/</span> Technical Lead
+            Fullstack Developer <span className="text-zinc-600 font-normal">/</span> Technical Lead
           </p>
 
           {/* Bio Summary */}

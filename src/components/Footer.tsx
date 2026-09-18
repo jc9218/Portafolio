@@ -27,7 +27,7 @@ export default function Footer() {
                 Juan Camilo López Espitia
               </span>
               <p className="text-xs text-zinc-400">
-                Solutions Architect & Technical Lead
+                Fullstack Developer & Technical Lead
               </p>
             </div>
           </div>

@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Juan Camilo López Espitia | Solutions Architect & Technical Lead",
+  title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
   description:
-    "Solutions Architect, Technical Lead & Senior Full Stack Engineer. 10+ years specializing in enterprise headless commerce ecosystems, decoupled architectures, Next.js, Ibexa DXP, Commerce Layer, and mass-scale transactional payments.",
+    "Fullstack Developer & Technical Lead. 10+ years specializing in enterprise headless commerce ecosystems, decoupled architectures, Next.js, Ibexa DXP, Commerce Layer, and mass-scale transactional payments.",
   keywords: [
     "Juan Camilo López Espitia",
-    "Solutions Architect",
+    "Fullstack Developer",
     "Technical Lead",
     "Next.js",
     "React",
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Juan Camilo López Espitia" }],
   openGraph: {
-    title: "Juan Camilo López Espitia | Solutions Architect & Technical Lead",
+    title: "Juan Camilo López Espitia | Fullstack Developer & Technical Lead",
     description:
-      "Specialized in enterprise web architecture, headless commerce ecosystems, and mission-critical checkout pipelines.",
+      "Fullstack Developer & Technical Lead specialized in enterprise web architecture, headless commerce ecosystems, and mission-critical checkout pipelines.",
     type: "website",
     locale: "es_CO",
   },
