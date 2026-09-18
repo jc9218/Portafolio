@@ -2,11 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
-import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { Menu, X, Globe, Terminal, ArrowUpRight } from "lucide-react";
 
 export default function Navbar() {
-  const { language, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -65,39 +64,68 @@ export default function Navbar() {
 
         {/* Actions */}
         <div className="hidden md:flex items-center gap-4">
-          {/* Language Toggle */}
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-600 transition-all text-xs font-mono"
-            aria-label="Switch language"
-          >
-            <Globe className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="uppercase">{language}</span>
-            <span className="text-slate-500">|</span>
-            <span className="text-slate-400 hover:text-emerald-300">
-              {language === "es" ? "EN" : "ES"}
-            </span>
-          </button>
+          {/* Segmented Language Switcher (ES / EN) */}
+          <div className="flex items-center p-1 rounded-xl bg-slate-900 border border-slate-800 shadow-inner">
+            <button
+              onClick={() => setLanguage("es")}
+              aria-label="Cambiar idioma a Español"
+              className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition-all ${
+                language === "es"
+                  ? "bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              ES
+            </button>
+            <button
+              onClick={() => setLanguage("en")}
+              aria-label="Switch language to English"
+              className={`px-3 py-1 rounded-lg text-xs font-mono font-medium transition-all ${
+                language === "en"
+                  ? "bg-emerald-500 text-slate-950 font-bold shadow-md shadow-emerald-500/20"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+          </div>
 
-          {/* Contact Button */}
+          {/* Contact CTA Button */}
           <a
             href="#contact"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:border-emerald-500/60 transition-all text-xs font-medium"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:border-emerald-500/60 transition-all text-xs font-medium"
           >
             <span>{language === "es" ? "Hablemos" : "Let's Connect"}</span>
             <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
-        {/* Mobile menu button */}
+        {/* Mobile Nav Header */}
         <div className="flex md:hidden items-center gap-3">
-          <button
-            onClick={toggleLanguage}
-            className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-300 text-xs font-mono"
-          >
-            <Globe className="w-3 h-3 text-emerald-400" />
-            <span className="uppercase">{language}</span>
-          </button>
+          {/* Mobile Language Switcher */}
+          <div className="flex items-center p-0.5 rounded-lg bg-slate-900 border border-slate-800">
+            <button
+              onClick={() => setLanguage("es")}
+              className={`px-2 py-1 rounded text-xs font-mono font-medium ${
+                language === "es"
+                  ? "bg-emerald-500 text-slate-950 font-bold"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              ES
+            </button>
+            <button
+              onClick={() => setLanguage("en")}
+              className={`px-2 py-1 rounded text-xs font-mono font-medium ${
+                language === "en"
+                  ? "bg-emerald-500 text-slate-950 font-bold"
+                  : "text-slate-400 hover:text-white"
+              }`}
+            >
+              EN
+            </button>
+          </div>
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
