@@ -83,8 +83,8 @@ export const PORTFOLIO_DATA = {
       en: "Available for Consulting & Technical Leadership",
     },
     summary: {
-      es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
-      en: "Systems Engineer with over 10 years of experience in software engineering, enterprise web architecture, and technical leadership for digital transformation initiatives. Specialized in designing and building complex modern headless commerce ecosystems, enterprise-grade CMS platforms, and decoupled architectures using Next.js, Ibexa DXP, and Commerce Layer. Proven ability to lead cross-functional engineering teams (4-6 developers), mitigate technical debt, align complex business goals with high-performing software design, and deploy mission-critical transactional checkout and payment pipelines for highly available, high-traffic systems.",
+      es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en desarrollo agéntico, flujos de trabajo con agentes autónomos de IA y el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
+      en: "Systems Engineer with over 10 years of experience in software engineering, enterprise web architecture, and technical leadership for digital transformation initiatives. Specialized in agentic software development, autonomous AI coding workflows, and building complex modern headless commerce ecosystems, enterprise-grade CMS platforms, and decoupled architectures using Next.js, Ibexa DXP, and Commerce Layer. Proven ability to lead cross-functional engineering teams (4-6 developers), mitigate technical debt, align complex business goals with high-performing software design, and deploy mission-critical transactional checkout and payment pipelines for highly available, high-traffic systems.",
     },
   },
 
@@ -466,6 +466,21 @@ export const PORTFOLIO_DATA = {
       },
       iconName: "Database",
       skills: ["PostgreSQL", "MySQL", "Query Optimization", "Index Engineering", "Modelado Relacional Complejo"],
+    },
+    {
+      title: {
+        es: "Desarrollo Agéntico & IA",
+        en: "Agentic Development & AI",
+      },
+      iconName: "Bot",
+      skills: [
+        "Agentic Software Development",
+        "Antigravity Workflows & Skills",
+        "Autonomous AI Coding Agents",
+        "Prompt & Context Engineering",
+        "Agentic Architecture & Tooling",
+        "Automated CI/CD Workflows",
+      ],
     },
     {
       title: {

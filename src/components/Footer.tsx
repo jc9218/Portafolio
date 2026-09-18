@@ -76,9 +76,18 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
           </p>
-          <p className="flex items-center gap-1.5">
-            <span>Built with Next.js 16 (App Router), React & Tailwind CSS</span>
-          </p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>
+                {language === "es" ? "Desarrollo Agéntico" : "Agentic Engineering"}
+              </span>
+              <span className="text-slate-600">•</span>
+              <span className="text-emerald-400 font-semibold tracking-wide">
+                Powered by: Antigravity
+              </span>
+            </span>
+          </div>
         </div>
       </div>
     </footer>

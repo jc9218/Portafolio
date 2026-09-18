@@ -10,7 +10,9 @@ import {
   Mail, 
   MessageSquare, 
   MapPin, 
-  Layers
+  Layers,
+  Sparkles,
+  Bot
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import confetti from "canvas-confetti";
@@ -40,13 +42,24 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-8 shadow-sm shadow-emerald-950">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>{personal.statusBadge[language]}</span>
+          {/* Status & Agentic Badges */}
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/30 text-emerald-400 text-xs font-mono shadow-sm shadow-emerald-950">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span>{personal.statusBadge[language]}</span>
+            </div>
+
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-950/40 border border-teal-500/30 text-teal-300 text-xs font-mono">
+              <Sparkles className="w-3.5 h-3.5 text-teal-400" />
+              <span>
+                {language === "es"
+                  ? "Especialista en Desarrollo Agéntico & IA"
+                  : "Agentic Development & AI Specialist"}
+              </span>
+            </div>
           </div>
 
           {/* Name & Title */}

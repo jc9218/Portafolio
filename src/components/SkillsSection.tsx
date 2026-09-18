@@ -10,6 +10,7 @@ import {
   Cloud, 
   Database, 
   Award,
+  Bot,
   Sparkles,
   Check
 } from "lucide-react";
@@ -33,6 +34,8 @@ export default function SkillsSection() {
         return <Database className="w-5 h-5 text-indigo-400" />;
       case "Award":
         return <Award className="w-5 h-5 text-rose-400" />;
+      case "Bot":
+        return <Bot className="w-5 h-5 text-teal-400" />;
       default:
         return <Code2 className="w-5 h-5 text-emerald-400" />;
     }
