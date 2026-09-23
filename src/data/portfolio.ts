@@ -591,16 +591,28 @@ export const PORTFOLIO_DATA = {
       badge: "Tailwind v4",
     },
     {
-      name: "Yarn 4 (Berry)",
+      name: "Yarn 4.18 (Berry)",
       category: {
         es: "Gestor de Paquetes",
         en: "Package Manager",
       },
       description: {
-        es: "Gestión determinista de dependencias de alta velocidad con nodeLinker: node-modules.",
-        en: "High-speed deterministic dependency management configured with nodeLinker: node-modules.",
+        es: "Gestión determinista de dependencias de alta velocidad con nodeLinker: node-modules y corepack.",
+        en: "High-speed deterministic dependency management configured with nodeLinker: node-modules and corepack.",
       },
-      badge: "Yarn Berry",
+      badge: "Yarn 4.18",
+    },
+    {
+      name: "Cabeceras de Seguridad HTTP",
+      category: {
+        es: "Seguridad & Hardening",
+        en: "Security & Hardening",
+      },
+      description: {
+        es: "Hardening OWASP en next.config.ts: HSTS estricto, X-Frame-Options (DENY), nosniff, Referrer-Policy y Permissions-Policy.",
+        en: "OWASP hardening in next.config.ts: Strict HSTS, X-Frame-Options (DENY), nosniff, Referrer-Policy, and Permissions-Policy.",
+      },
+      badge: "OWASP / HSTS",
     },
     {
       name: "Lucide React & Custom SVG",

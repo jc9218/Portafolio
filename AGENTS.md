@@ -57,7 +57,8 @@ This document is the **technical single source of truth** for any AI agent or de
 - **UI Library:** React 19 with Server Components by default, using Client Components (`"use client"`) strictly for interactivity.
 - **Typing:** TypeScript in strict mode.
 - **Styling:** Tailwind CSS v4 using modern `@import "tailwindcss";` in `globals.css`.
-- **Package Manager:** Yarn 4 (Berry) with `.yarnrc.yml` (`nodeLinker: node-modules`).
+- **Package Manager:** Yarn 4 (Berry v4.18.0) via Corepack with `.yarnrc.yml` (`nodeLinker: node-modules`).
+- **Security:** HTTP Security Headers configured in `next.config.ts` (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-XSS-Protection).
 - **Icons:** Lucide React for general iconography and custom optimized SVGs in `@/components/Icons.tsx` for brands (GitHub, LinkedIn).
 - **Interactive Effects:** Canvas Confetti for user interaction feedback (copying email, submitting messages).
 - **Internationalization (i18n):** Native React Context (`LanguageProvider`) supporting dynamic English (`en`) and Spanish (`es`) switching with `localStorage` persistence.
