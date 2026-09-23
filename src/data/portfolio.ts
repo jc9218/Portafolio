@@ -508,6 +508,7 @@ export const PORTFOLIO_DATA = {
     institution: "Universidad del Valle",
     year: "2017",
     location: "Cali, Colombia",
+    logo: "/univalle.svg",
   },
 
   languages: [

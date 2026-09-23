@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { MapPin } from "lucide-react";
@@ -25,7 +26,7 @@ export default function EducationSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-8 items-start">
           {/* Education Card */}
           <div className="p-4.5 sm:p-6 rounded-xl bg-zinc-900/50 border border-zinc-800">
-            <div className="flex items-center justify-between gap-4 mb-3">
+            <div className="flex items-center justify-between gap-4 mb-4">
               <span className="text-xs font-mono px-2.5 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-300">
                 {education.year}
               </span>
@@ -35,12 +36,31 @@ export default function EducationSection() {
               </div>
             </div>
 
-            <h3 className="text-lg font-bold text-white mb-1">
-              {education.degree[language]}
-            </h3>
-            <p className="text-emerald-400 font-medium text-sm mb-3">
-              {education.institution}
-            </p>
+            <div className="flex items-start gap-4 mb-4">
+              {education.logo && (
+                <div className="w-12 h-16 sm:w-14 sm:h-20 rounded-lg overflow-hidden shrink-0 border border-zinc-800 shadow-md bg-[#ea1f01] flex items-center justify-center p-0.5">
+                  <Image
+                    src={education.logo}
+                    alt={education.institution}
+                    width={56}
+                    height={80}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              )}
+              <div className="min-w-0 flex-1">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
+                  {education.degree[language]}
+                </h3>
+                <p className="text-emerald-400 font-medium text-sm">
+                  {education.institution}
+                </p>
+                <p className="text-xs text-zinc-500 font-mono mt-0.5">
+                  Cali, Colombia
+                </p>
+              </div>
+            </div>
+
             <p className="text-zinc-400 text-sm leading-relaxed">
               {language === "es"
                 ? "Formación rigurosa en fundamentos de ciencias de la computación, arquitectura de software, modelado de sistemas distribuidos y optimización de bases de datos."
