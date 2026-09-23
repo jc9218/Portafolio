@@ -3,6 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
+import { TechIcon, getTechIconKey } from "@/components/TechIcon";
 import { 
   Cpu, 
   Layers, 
@@ -11,7 +12,8 @@ import {
   Package, 
   Bot, 
   Cloud, 
-  Zap
+  Zap,
+  ShieldCheck
 } from "lucide-react";
 
 export default function PortfolioTechStack() {
@@ -20,7 +22,7 @@ export default function PortfolioTechStack() {
 
   if (!thisSiteTechStack || thisSiteTechStack.length === 0) return null;
 
-  const icons = [Cpu, Layers, Code2, Palette, Package, Zap, Bot, Cloud];
+  const icons = [Cpu, Layers, Code2, Palette, Package, Zap, Bot, Cloud, ShieldCheck];
 
   return (
     <section id="tech-stack" className="py-16 sm:py-20 border-b border-zinc-800/80">
@@ -43,15 +45,21 @@ export default function PortfolioTechStack() {
         {/* Tech Stack Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {thisSiteTechStack.map((tech, index) => {
+            const hasTechIcon = Boolean(getTechIconKey(tech.name));
             const IconComponent = icons[index % icons.length];
+
             return (
               <div
                 key={tech.name}
                 className="p-4 sm:p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <div className="p-2 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300">
-                    <IconComponent className="w-4 h-4" />
+                  <div className="p-2 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300 flex items-center justify-center">
+                    {hasTechIcon ? (
+                      <TechIcon name={tech.name} className="w-4 h-4 text-emerald-400" />
+                    ) : (
+                      <IconComponent className="w-4 h-4 text-zinc-300" />
+                    )}
                   </div>
                   <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
                     {tech.badge}

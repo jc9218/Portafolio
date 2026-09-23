@@ -11,6 +11,7 @@ import {
   Lock
 } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
+import { TechIcon } from "@/components/TechIcon";
 
 export default function FeaturedProjects() {
   const { language } = useLanguage();
@@ -212,9 +213,10 @@ export default function FeaturedProjects() {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-0.5 rounded bg-zinc-800 border border-zinc-700/60 text-xs text-zinc-300 font-mono"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-800 border border-zinc-700/60 text-xs text-zinc-300 font-mono"
                   >
-                    {tech}
+                    <TechIcon name={tech} className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                    <span>{tech}</span>
                   </span>
                 ))}
               </div>

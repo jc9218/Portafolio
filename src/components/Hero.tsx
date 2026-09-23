@@ -11,6 +11,7 @@ import {
   ArrowUpRight
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { TechIcon } from "@/components/TechIcon";
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -68,9 +69,10 @@ export default function Hero() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] sm:text-xs font-mono text-zinc-300"
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[11px] sm:text-xs font-mono text-zinc-300"
               >
-                {tag}
+                <TechIcon name={tag} className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                <span>{tag}</span>
               </span>
             ))}
           </div>

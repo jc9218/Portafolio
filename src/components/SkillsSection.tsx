@@ -3,6 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
+import { TechIcon } from "@/components/TechIcon";
 import { 
   Code2, 
   Server, 
@@ -76,9 +77,10 @@ export default function SkillsSection() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2.5 py-1 rounded bg-zinc-950 border border-zinc-800/90 text-[11px] sm:text-xs font-mono text-zinc-300"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-zinc-950 border border-zinc-800/90 text-[11px] sm:text-xs font-mono text-zinc-300 hover:border-zinc-700 transition-colors"
                   >
-                    {skill}
+                    <TechIcon name={skill} className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>

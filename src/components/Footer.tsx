@@ -5,6 +5,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { ArrowUp, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { TechIcon } from "@/components/TechIcon";
 import Logo from "@/components/Logo";
 
 export default function Footer() {
@@ -100,10 +101,22 @@ export default function Footer() {
             <span className="text-zinc-500 mr-1">
               {language === "es" ? "Stack del sitio:" : "Site stack:"}
             </span>
-            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Next.js 16</span>
-            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">React 19</span>
-            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">Tailwind CSS v4</span>
-            <span className="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">TypeScript</span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+              <TechIcon name="nextjs" className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span>Next.js 16</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+              <TechIcon name="react" className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span>React 19</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+              <TechIcon name="tailwind" className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span>Tailwind CSS v4</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+              <TechIcon name="typescript" className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span>TypeScript</span>
+            </span>
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-emerald-900/60 text-emerald-400">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <span>AI-Assisted</span>
