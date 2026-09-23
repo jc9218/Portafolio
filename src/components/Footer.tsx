@@ -117,9 +117,9 @@ export default function Footer() {
               <TechIcon name="typescript" className="w-3 h-3 text-zinc-400 shrink-0" />
               <span>TypeScript</span>
             </span>
-            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-emerald-900/60 text-emerald-400">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span>AI-Assisted</span>
+            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">
+              <TechIcon name="antigravity" className="w-3 h-3 text-zinc-400 shrink-0" />
+              <span>Antigravity</span>
             </span>
           </div>
         </div>

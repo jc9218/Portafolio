@@ -1,10 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
-import { MapPin } from "lucide-react";
+import { MapPin, GraduationCap, Languages, Globe } from "lucide-react";
 
 export default function EducationSection() {
   const { language } = useLanguage();
@@ -36,23 +35,15 @@ export default function EducationSection() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 mb-4">
-              {education.logo && (
-                <div className="w-12 h-16 sm:w-14 sm:h-20 rounded-lg overflow-hidden shrink-0 border border-zinc-800 shadow-md bg-[#ea1f01] flex items-center justify-center p-0.5">
-                  <Image
-                    src={education.logo}
-                    alt={education.institution}
-                    width={56}
-                    height={80}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-              )}
+            <div className="flex items-start gap-3.5 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300 flex items-center justify-center shrink-0">
+                <GraduationCap className="w-5 h-5 text-zinc-300" />
+              </div>
               <div className="min-w-0 flex-1">
                 <h3 className="text-lg sm:text-xl font-bold text-white mb-1">
                   {education.degree[language]}
                 </h3>
-                <p className="text-emerald-400 font-medium text-sm">
+                <p className="text-zinc-300 font-medium text-sm">
                   {education.institution}
                 </p>
                 <p className="text-xs text-zinc-500 font-mono mt-0.5">
@@ -75,15 +66,24 @@ export default function EducationSection() {
                 key={idx}
                 className="p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
               >
-                <div className="flex items-center justify-between mb-1.5">
-                  <h3 className="text-base font-semibold text-white">
-                    {lang.name[language]}
-                  </h3>
-                  <span className="text-xs font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-zinc-400">
+                <div className="flex items-center justify-between gap-3 mb-2.5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-9 h-9 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300 flex items-center justify-center shrink-0">
+                      {idx === 0 ? (
+                        <Languages className="w-4.5 h-4.5 text-zinc-300" />
+                      ) : (
+                        <Globe className="w-4.5 h-4.5 text-zinc-300" />
+                      )}
+                    </div>
+                    <h3 className="text-base font-semibold text-white">
+                      {lang.name[language]}
+                    </h3>
+                  </div>
+                  <span className="text-xs font-mono px-2.5 py-1 rounded bg-zinc-950 border border-zinc-800 text-zinc-300 shrink-0">
                     {lang.level[language]}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed pl-0 sm:pl-12">
                   {lang.detail[language]}
                 </p>
               </div>

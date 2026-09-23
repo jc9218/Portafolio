@@ -56,7 +56,7 @@ export default function PortfolioTechStack() {
                 <div className="flex items-center justify-between mb-3">
                   <div className="p-2 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300 flex items-center justify-center">
                     {hasTechIcon ? (
-                      <TechIcon name={tech.name} className="w-4 h-4 text-emerald-400" />
+                      <TechIcon name={tech.name} className="w-4 h-4 text-zinc-200" />
                     ) : (
                       <IconComponent className="w-4 h-4 text-zinc-300" />
                     )}

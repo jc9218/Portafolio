@@ -508,7 +508,6 @@ export const PORTFOLIO_DATA = {
     institution: "Universidad del Valle",
     year: "2017",
     location: "Cali, Colombia",
-    logo: "/univalle.svg",
   },
 
   languages: [
@@ -664,7 +663,7 @@ export const PORTFOLIO_DATA = {
       badge: "Vercel",
     },
     {
-      name: "AI-Assisted Engineering",
+      name: "Antigravity",
       category: {
         es: "Ingeniería Agéntica & IA",
         en: "Agentic Engineering & AI",
@@ -673,7 +672,7 @@ export const PORTFOLIO_DATA = {
         es: "Desarrollo asistido y acelerado con agentes autónomos de IA (Antigravity), optimizando arquitectura, rendimiento y código limpio.",
         en: "Accelerated development using autonomous AI coding agents (Antigravity), streamlining architecture, performance, and clean code.",
       },
-      badge: "AI-Assisted",
+      badge: "Antigravity",
     },
   ] as SiteTechItem[],
 };
