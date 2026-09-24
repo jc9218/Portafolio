@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090a0f"/>
+      <stop offset="50%" stop-color="#0c0e17"/>
+      <stop offset="100%" stop-color="#07080c"/>
+    </linearGradient>
+
+    <radialGradient id="emerald-glow" cx="20%" cy="25%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="blue-glow" cx="85%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="0.75" stroke-opacity="0.25"/>
+    </pattern>
+
+    <linearGradient id="text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e4e4e7"/>
+    </linearGradient>
+
+    <linearGradient id="badge-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+
+  <!-- Ambient Glows -->
+  <rect width="1200" height="630" fill="url(#emerald-glow)"/>
+  <rect width="1200" height="630" fill="url(#blue-glow)"/>
+
+  <!-- Subtle Tech Grid -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Outer Framing Border -->
+  <rect x="24" y="24" width="1152" height="582" rx="16" fill="none" stroke="#27272a" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Top Monogram & Domain Header -->
+  <g transform="translate(80, 80)">
+    <!-- Sprocket & Monogram Icon (Scaled) -->
+    <g transform="scale(0.55)">
+      <path
+        d="M 51.5 19.7 L 56.7 6.5 L 71.3 6.5 L 76.5 19.7 L 86.5 23.9 L 99.5 18.2 L 109.8 28.5 L 104.1 41.5 L 108.3 51.5 L 121.5 56.7 L 121.5 71.3 L 108.3 76.5 L 104.1 86.5 L 109.8 99.5 L 99.5 109.8 L 86.5 104.1 L 76.5 108.3 L 71.3 121.5 L 56.7 121.5 L 51.5 108.3 L 41.5 104.1 L 28.5 109.8 L 18.2 99.5 L 23.9 86.5 L 19.7 76.5 L 6.5 71.3 L 6.5 56.7 L 19.7 51.5 L 23.9 41.5 L 18.2 28.5 L 28.5 18.2 L 41.5 23.9 Z"
+        fill="#0d1117"
+        stroke="#10b981"
+        stroke-width="5"
+        stroke-linejoin="round"
+      />
+      <path d="M 34 51 L 23 64 L 34 77" fill="none" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 45 44 L 57 44 M 53 44 L 53 74 A 9 9 0 0 1 40 82" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M 68 44 L 68 82 L 84 82" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="64" cy="64" r="8" fill="none" stroke="#10b981" stroke-width="3"/>
+    </g>
+
+    <!-- Location & Status Badge -->
+    <rect x="90" y="14" width="220" height="34" rx="17" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <circle cx="108" cy="31" r="5" fill="#10b981"/>
+    <text x="122" y="36" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#d4d4d8" letter-spacing="0.5">
+      CALI, COLOMBIA • REMOTO
+    </text>
+
+    <!-- Metrics Badge on right -->
+    <rect x="800" y="14" width="240" height="34" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="920" y="36" text-anchor="middle" font-family="ui-monospace, monospace" font-size="13" font-weight="600" fill="#a1a1aa">
+      +10 AÑOS DE EXPERIENCIA
+    </text>
+  </g>
+
+  <!-- Main Person Identity -->
+  <g transform="translate(80, 230)">
+    <!-- Full Name -->
+    <text x="0" y="0" font-family="system-ui, -apple-system, sans-serif" font-size="62" font-weight="800" fill="url(#text-grad)" letter-spacing="-1.5">
+      Juan Camilo López Espitia
+    </text>
+
+    <!-- Primary Roles (SEO Keywords) -->
+    <text x="0" y="56" font-family="system-ui, -apple-system, sans-serif" font-size="30" font-weight="700" fill="#34d399">
+      Desarrollador Full Stack <tspan fill="#71717a" font-weight="400">/</tspan> Líder Técnico
+    </text>
+
+    <!-- Secondary English Subtitle -->
+    <text x="0" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#a1a1aa">
+      Fullstack Developer &amp; Technical Lead • Enterprise Headless Commerce &amp; Decoupled Systems
+    </text>
+  </g>
+
+  <!-- Tech Stack Badges Row -->
+  <g transform="translate(80, 420)">
+    <!-- Next.js Badge -->
+    <rect x="0" y="0" width="135" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="67" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">Next.js 16</text>
+
+    <!-- React 19 Badge -->
+    <rect x="147" y="0" width="125" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="209" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">React 19</text>
+
+    <!-- TypeScript Badge -->
+    <rect x="284" y="0" width="145" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="356" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">TypeScript</text>
+
+    <!-- Ibexa DXP Badge -->
+    <rect x="441" y="0" width="140" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="511" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">Ibexa DXP</text>
+
+    <!-- Commerce Layer Badge -->
+    <rect x="593" y="0" width="185" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="685" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">Commerce Layer</text>
+
+    <!-- AWS & Cloud Badge -->
+    <rect x="790" y="0" width="100" height="42" rx="8" fill="#18181b" stroke="#27272a" stroke-width="1"/>
+    <text x="840" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#f4f4f5">AWS</text>
+
+    <!-- Antigravity Badge -->
+    <rect x="902" y="0" width="140" height="42" rx="8" fill="#18181b" stroke="#065f46" stroke-width="1.2"/>
+    <text x="972" y="26" text-anchor="middle" font-family="ui-monospace, monospace" font-size="15" font-weight="600" fill="#6ee7b7">✦ Antigravity</text>
+  </g>
+
+  <!-- Bottom Bar: Canonical URL & SEO Target Focus -->
+  <g transform="translate(80, 530)">
+    <text x="0" y="0" font-family="ui-monospace, monospace" font-size="16" font-weight="500" fill="#71717a">
+      https://jclopezespitia.sytes.net
+    </text>
+
+    <text x="1040" y="0" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500" fill="#a1a1aa">
+      Arquitectura Web Empresarial &amp; Comercio Headless
+    </text>
+  </g>
+</svg>

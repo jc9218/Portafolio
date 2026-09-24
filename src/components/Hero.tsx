@@ -57,6 +57,14 @@ export default function Hero() {
             {personal.summary[language]}
           </p>
 
+          {/* Accessible semantic context for search crawlers & screen readers */}
+          <div className="sr-only">
+            <h2>Desarrollador Full Stack, Web Developer &amp; Líder Técnico en Cali, Colombia</h2>
+            <p>
+              Perfil profesional de Juan Camilo López Espitia. Especialista en ingeniería de software, desarrollo web full stack con Next.js y React, arquitecturas desacopladas, comercio headless con Ibexa DXP y Commerce Layer, y soluciones cloud en AWS y Vercel.
+            </p>
+          </div>
+
           {/* Key tags */}
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8 sm:mb-10">
             {[
