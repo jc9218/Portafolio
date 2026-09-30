@@ -31,6 +31,7 @@ jobs:
         run: |
           yarn up "*" "@*/*"
           yarn up "eslint@^9.39.5"
+          yarn up "typescript@^5.9.3"
           yarn install
 
       - name: Run ESLint
