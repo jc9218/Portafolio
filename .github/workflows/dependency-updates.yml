@@ -1,0 +1,62 @@
+name: Scheduled Dependency & Corepack Updates
+
+on:
+  schedule:
+    # Runs every Monday at 06:00 UTC (1:00 AM Colombia)
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Enable Corepack & Yarn Berry
+        run: |
+          corepack enable
+          corepack use yarn@latest
+
+      - name: Update safe dependencies
+        run: |
+          yarn up "*" "@*/*"
+          yarn up "eslint@^9.39.5"
+          yarn install
+
+      - name: Run ESLint
+        run: yarn lint
+
+      - name: Run Production Build
+        run: yarn build
+
+      - name: Create Pull Request if updates are available
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore(deps): automated weekly dependency updates"
+          title: "chore(deps): automated weekly dependency updates"
+          body: |
+            ## Automated Weekly Dependency Updates 🤖
+            
+            This automated workflow updated Yarn and package dependencies to their latest compatible versions.
+            
+            ### Verification
+            - [x] `yarn lint` passed with 0 errors
+            - [x] `yarn build` compiled production bundle successfully
+            
+            *Triggered automatically by GitHub Actions.*
+          branch: "automated/weekly-deps-update"
+          delete-branch: true
+          labels: |
+            dependencies
+            automated-pr
