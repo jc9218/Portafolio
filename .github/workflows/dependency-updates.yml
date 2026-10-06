@@ -43,7 +43,7 @@ jobs:
       - name: Create Pull Request if updates are available
         uses: peter-evans/create-pull-request@v8
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           commit-message: "chore(deps): automated weekly dependency updates"
           title: "chore(deps): automated weekly dependency updates"
           body: |
