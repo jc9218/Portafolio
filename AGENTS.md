@@ -112,7 +112,8 @@ Portafolio/
 ├── .github/
 │   ├── dependabot.yml               # Grouped monthly dependency & GitHub Actions updates
 │   ├── skills/
-│   │   └── graphify/                # On-demand project knowledge graph workflow
+│   │   ├── graphify/                # On-demand project knowledge graph workflow
+│   │   └── solid-principles/        # SOLID architectural principles & refactoring guidelines
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate on push/PR (lint, typecheck, build)
 │       └── dependency-updates.yml   # Scheduled weekly dependency update PR automation
@@ -131,8 +132,8 @@ Portafolio/
 │   ├── components/
 │   │   ├── ContactSection.tsx       # Direct email, 1-click copy, LinkedIn & GitHub cards
 │   │   ├── EducationSection.tsx     # Systems Engineering degree (Univalle) & languages
-│   │   ├── ExperienceTimeline.tsx   # Career trajectory, achievements & enterprise projects
-│   │   ├── FeaturedProjects.tsx     # Personal projects showcase (KOM Trainer AI Cycling Coach)
+│   │   ├── ExperienceTimeline.tsx   # Career trajectory section orchestrator
+│   │   ├── FeaturedProjects.tsx     # Personal projects showcase section orchestrator
 │   │   ├── Footer.tsx               # Footer, Antigravity badge & stack summary
 │   │   ├── Hero.tsx                 # High-impact summary, agentic badge & CTAs
 │   │   ├── Icons.tsx                # Dedicated social vector SVGs (GitHub, LinkedIn)
@@ -142,13 +143,30 @@ Portafolio/
 │   │   ├── Navbar.tsx               # Fixed glassmorphism navbar with segmented ES/EN switcher
 │   │   ├── PortfolioTechStack.tsx   # Showcase of the technologies powering this website
 │   │   ├── SkillsSection.tsx        # Categorized technical competencies matrix
-│   │   └── TechIcon.tsx             # Inline SVG registry for official technology brand logos
+│   │   ├── TechIcon.tsx             # Inline SVG registry for 45+ official technology brand logos
+│   │   ├── experience/              # Modular SOLID experience timeline components
+│   │   │   ├── ExperienceCard.tsx   # Milestone card presentation (SRP / ISP)
+│   │   │   ├── ProjectExperienceItem.tsx # Enterprise client deliverable highlight
+│   │   │   └── types.ts             # Segregated interfaces for experience components
+│   │   └── projects/                # Modular SOLID project showcase components
+│   │       ├── ProjectActions.tsx   # Action CTAs (repo on left, app on right)
+│   │       ├── ProjectCard.tsx      # Single responsibility project card layout
+│   │       ├── ProjectFeatures.tsx  # Key capabilities checklist (ISP)
+│   │       ├── ProjectTechStack.tsx # Technology badge list (ISP)
+│   │       ├── types.ts             # Segregated interfaces for project components
+│   │       └── previews/            # Open/Closed preview registry & widgets
+│   │           ├── KomTrainerPreview.tsx # Banister model telemetry widget (LSP)
+│   │           ├── MultimodalRagPreview.tsx # Multimodal RAG pipeline widget (LSP)
+│   │           ├── PolyvaPreview.tsx    # AI conversational tutor & FSRS widget (LSP)
+│   │           └── registry.tsx         # Open/Closed registry host component (OCP / DIP)
 │   ├── config/
 │   │   └── site.ts                  # Single source of truth for canonical site URL
 │   ├── context/
 │   │   └── LanguageContext.tsx      # Global bilingual state with localStorage persistence
-│   └── data/
-│       └── portfolio.ts             # Single source of truth for all bilingual content (ES/EN)
+│   ├── data/
+│   │   └── portfolio.ts             # Single source of truth for all bilingual content (ES/EN)
+│   └── hooks/
+│       └── useClipboard.ts          # Decoupled clipboard copy hook & confetti feedback (DIP / SRP)
 ├── .env.example                     # Template for environment variables (NEXT_PUBLIC_SITE_URL)
 ├── .yarnrc.yml                      # Yarn Berry configuration (nodeLinker: node-modules)
 ├── AGENTS.md                        # Engineering standards, git hygiene & AI agent rules

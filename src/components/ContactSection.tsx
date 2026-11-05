@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
@@ -10,16 +10,15 @@ import {
   ArrowUpRight
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
+import { useClipboard } from "@/hooks/useClipboard";
 
 export default function ContactSection() {
   const { language } = useLanguage();
   const { personal } = PORTFOLIO_DATA;
-  const [copiedEmail, setCopiedEmail] = useState(false);
+  const { copied: copiedEmail, copy: copyEmail } = useClipboard();
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personal.email);
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
+    copyEmail(personal.email);
   };
 
   return (
@@ -70,8 +69,9 @@ export default function ContactSection() {
               </a>
               <button
                 onClick={handleCopyEmail}
-                className="px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-xs font-mono text-zinc-300 hover:text-white transition-colors"
+                className="px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700/60 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer"
                 title={language === "es" ? "Copiar correo" : "Copy email"}
+                aria-label={language === "es" ? "Copiar correo electrónico al portapapeles" : "Copy email address to clipboard"}
               >
                 {copiedEmail ? (
                   <Check className="w-3.5 h-3.5 text-emerald-400" />

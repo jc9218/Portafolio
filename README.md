@@ -47,7 +47,8 @@ Portafolio/
 ├── .github/
 │   ├── dependabot.yml               # Grouped monthly dependency & GitHub Actions security updates
 │   ├── skills/
-│   │   └── graphify/                # On-demand project knowledge graph workflow
+│   │   ├── graphify/                # On-demand project knowledge graph workflow
+│   │   └── solid-principles/        # SOLID architectural principles & refactoring guidelines
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate: ESLint, TypeScript check & production build
 │       └── dependency-updates.yml   # Automated weekly dependency maintenance PR workflow
@@ -66,8 +67,8 @@ Portafolio/
 │   ├── components/
 │   │   ├── ContactSection.tsx       # Recruiter-focused contact hub (1-click email copy, LinkedIn, GitHub)
 │   │   ├── EducationSection.tsx     # B.S. in Systems Engineering (Univalle) & language proficiencies
-│   │   ├── ExperienceTimeline.tsx   # Chronological career milestones, leadership impact & tech tags
-│   │   ├── FeaturedProjects.tsx     # Interactive KOM Trainer showcase & live telemetry preview
+│   │   ├── ExperienceTimeline.tsx   # Career trajectory section orchestrator
+│   │   ├── FeaturedProjects.tsx     # Personal projects showcase section orchestrator
 │   │   ├── Footer.tsx               # Location metadata, quick navigation & stack summary
 │   │   ├── Hero.tsx                 # Value proposition, executive summary & primary CTAs
 │   │   ├── Icons.tsx                # Dedicated vector SVGs for social/brand links
@@ -77,13 +78,30 @@ Portafolio/
 │   │   ├── Navbar.tsx               # Fixed glassmorphism navigation & segmented ES/EN switcher
 │   │   ├── PortfolioTechStack.tsx   # Architectural overview of the technologies powering this site
 │   │   ├── SkillsSection.tsx        # Categorized technical competencies matrix
-│   │   └── TechIcon.tsx             # Inline SVG path registry for 45+ official technology brand logos
+│   │   ├── TechIcon.tsx             # Inline SVG path registry for 45+ official technology brand logos
+│   │   ├── experience/              # Modular SOLID experience timeline components
+│   │   │   ├── ExperienceCard.tsx   # Milestone card presentation (SRP / ISP)
+│   │   │   ├── ProjectExperienceItem.tsx # Enterprise client deliverable highlight
+│   │   │   └── types.ts             # Segregated interfaces for experience components
+│   │   └── projects/                # Modular SOLID project showcase components
+│   │       ├── ProjectActions.tsx   # Action CTAs (repo on left, app on right)
+│   │       ├── ProjectCard.tsx      # Single responsibility project card layout
+│   │       ├── ProjectFeatures.tsx  # Key capabilities checklist (ISP)
+│   │       ├── ProjectTechStack.tsx # Technology badge list (ISP)
+│   │       ├── types.ts             # Segregated interfaces for project components
+│   │       └── previews/            # Open/Closed preview registry & widgets
+│   │           ├── KomTrainerPreview.tsx # Banister model telemetry widget (LSP)
+│   │           ├── MultimodalRagPreview.tsx # Multimodal RAG pipeline widget (LSP)
+│   │           ├── PolyvaPreview.tsx    # AI conversational tutor & FSRS widget (LSP)
+│   │           └── registry.tsx         # Open/Closed registry host component (OCP / DIP)
 │   ├── config/
 │   │   └── site.ts                  # Single source of truth for canonical domain & environment config
 │   ├── context/
 │   │   └── LanguageContext.tsx      # Reactive bilingual state provider with localStorage sync
-│   └── data/
-│       └── portfolio.ts             # Strongly-typed single source of truth for all ES/EN content
+│   ├── data/
+│   │   └── portfolio.ts             # Strongly-typed single source of truth for all ES/EN content
+│   └── hooks/
+│       └── useClipboard.ts          # Decoupled clipboard copy hook & confetti feedback (DIP / SRP)
 ├── .env.example                     # Environment variable template (NEXT_PUBLIC_SITE_URL)
 ├── .yarnrc.yml                      # Yarn 4 configuration (nodeLinker: node-modules)
 ├── AGENTS.md                        # Engineering standards, git hygiene & AI agent rules
