@@ -531,8 +531,8 @@ export const PORTFOLIO_DATA = {
         en: "English",
       },
       level: {
-        es: "B1 Profesional (Working Proficiency)",
-        en: "B1 Level (Professional Working Proficiency)",
+        es: "B2 Profesional (Working Proficiency)",
+        en: "B2 Level (Professional Working Proficiency)",
       },
       detail: {
         es: "Capaz de liderar alineación técnica en vivo o asíncrona, redactar especificaciones técnicas complejas y diseñar arquitecturas de sistemas.",
