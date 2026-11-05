@@ -43,6 +43,8 @@
 Portafolio/
 ├── .github/
 │   ├── dependabot.yml               # Grouped monthly dependency & GitHub Actions security updates
+│   ├── skills/
+│   │   └── graphify/                # On-demand project knowledge graph workflow
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate: ESLint, TypeScript check & production build
 │       └── dependency-updates.yml   # Automated weekly dependency maintenance PR workflow
@@ -87,6 +89,13 @@ Portafolio/
 ├── package.json                     # Project manifest, scripts & dependencies
 └── tsconfig.json                    # Strict TypeScript compiler configuration
 ```
+
+### Project Knowledge Graph
+
+The repository includes the [Graphify](https://github.com/Graphify-Labs/graphify) skill for
+building and querying a local architecture graph. Run `graphify . --code-only` to refresh
+the code graph without external credentials; generated artifacts are written to the ignored
+`graphify-out/` directory.
 
 ---
 

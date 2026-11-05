@@ -111,6 +111,8 @@ Every commit message **MUST** strictly follow the [Conventional Commits](https:/
 Portafolio/
 ├── .github/
 │   ├── dependabot.yml               # Grouped monthly dependency & GitHub Actions updates
+│   ├── skills/
+│   │   └── graphify/                # On-demand project knowledge graph workflow
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate on push/PR (lint, typecheck, build)
 │       └── dependency-updates.yml   # Scheduled weekly dependency update PR automation
@@ -171,6 +173,11 @@ Portafolio/
 3. Import and render within `src/app/page.tsx`.
 4. Update navigation anchors in `src/components/Navbar.tsx`.
 5. Update the directory tree in both `README.md` and `AGENTS.md`.
+
+### C. Maintaining the Project Knowledge Graph
+- Keep the Graphify graph current after changes to source code, architecture, dependencies, or project structure.
+- Run `graphify update .` before completing those changes. If `graphify-out/` does not exist, run `graphify . --code-only` instead.
+- Keep generated files in `graphify-out/`; this directory is intentionally excluded from Git and must not be committed.
 
 ---
 
