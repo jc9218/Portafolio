@@ -61,6 +61,18 @@ export default function FeaturedProjects() {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2 pt-1 sm:pt-0">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors w-full sm:w-auto"
+                    >
+                      <GithubIcon className="w-3.5 h-3.5" />
+                      <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
+                      <ExternalLink className="w-3 h-3 text-zinc-400" />
+                    </a>
+                  )}
                   {project.isPrivateRepo && (
                     <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-950/90 border border-zinc-800 text-zinc-400 text-xs font-mono">
                       <Lock className="w-3.5 h-3.5 text-zinc-500" />
@@ -77,18 +89,6 @@ export default function FeaturedProjects() {
                       <Globe className="w-3.5 h-3.5" />
                       <span>{language === "es" ? "Visitar Aplicación" : "Visit Application"}</span>
                       <ExternalLink className="w-3 h-3 text-zinc-950 opacity-70" />
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700 text-zinc-200 hover:text-white text-xs font-medium transition-colors w-full sm:w-auto"
-                    >
-                      <GithubIcon className="w-3.5 h-3.5" />
-                      <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
-                      <ExternalLink className="w-3 h-3 text-zinc-400" />
                     </a>
                   )}
                 </div>
