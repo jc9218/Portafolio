@@ -169,7 +169,63 @@ export const PORTFOLIO_DATA = {
 
   personalProjects: [
     {
-      id: "kom-trainer",
+      id: "multimodal-rag",
+      name: "Multimodal RAG — Spatial Document Engine",
+      badge: {
+        es: "Proyecto Destacado • AI & Multimodal Search",
+        en: "Featured Project • AI & Multimodal Search",
+      },
+      tagline: {
+        es: "Sistema RAG de grado de producción con arquitectura limpia, correlación geométrica espacial y recuperación híbrida para PDFs complejos.",
+        en: "Production-grade RAG system with clean architecture, spatial geometric bounding-box extraction, and hybrid retrieval for complex technical PDFs.",
+      },
+      utility: {
+        es: "Motor de análisis e indexación documental que preserva la correlación espacial entre texto, tablas y diagramas técnicos en PDF. Implementa búsqueda híbrida fusionada mediante Reciprocal Rank Fusion (RRF k=60), memoria conversacional multi-turno, streaming de ingesta asíncrona no bloqueante y auto-reparación dimensional en bases vectoriales.",
+        en: "Document indexing and reasoning engine preserving spatial correlation between text, tables, and technical figures in PDFs. Features hybrid search fused via Reciprocal Rank Fusion (RRF k=60), multi-turn conversational memory, non-blocking asynchronous ingestion streaming, and automatic dimension self-healing in vector databases.",
+      },
+      description: {
+        es: "Diseñado bajo Clean Architecture (Puertos y Adaptadores / Hexagonal) desacoplando la capa de transporte (FastAPI) del dominio. Integra PyMuPDF con extracción de Bounding Boxes [x0, y0, x1, y1] y OCR fallback (Tesseract), base vectorial Qdrant, índice léxico BM25Okapi en memoria, jobs asíncronos en Redis y frontend modular en Next.js 16 con React 19.",
+        en: "Engineered under Clean Architecture (Ports and Adapters / Hexagonal) fully decoupling transport (FastAPI) from domain logic. Integrates PyMuPDF with spatial bounding boxes [x0, y0, x1, y1] and Tesseract OCR fallback, Qdrant vector database, in-memory BM25Okapi lexical index, Redis background jobs, and a modular Next.js 16 frontend with React 19.",
+      },
+      features: {
+        es: [
+          "Extracción geométrica y correlación espacial de bloques de texto e imágenes mediante cálculo de distancia euclidiana.",
+          "Búsqueda híbrida (Dense + Sparse) combinando embeddings vectoriales (Qdrant) y BM25Okapi con fusión RRF (k=60).",
+          "Ingesta asíncrona no bloqueante con streaming de subida, cola secuencial de archivos y recuperación de jobs interrumpidos en Redis.",
+          "Generación defensiva con Google GenAI (gemini-3.5-flash-lite / gemini-embedding-001) a temperatura 0.0 anti-alucinaciones.",
+          "Resiliencia ante cuotas de IA: degradación transparente a índice léxico BM25 ante límite diario sin bloquear al usuario.",
+          "Suite exhaustiva de pruebas unitarias y de integración (47 tests) con cobertura de seguridad, bounding boxes y resiliencia.",
+        ],
+        en: [
+          "Geometric extraction and spatial correlation between text chunks and adjacent figures via Euclidean distance metrics.",
+          "Hybrid search (Dense + Sparse) combining vector embeddings (Qdrant) and BM25Okapi fused via Reciprocal Rank Fusion (k=60).",
+          "Non-blocking async ingestion pipeline with streaming upload, client-side sequential file queue, and Redis job recovery.",
+          "Defensive generation with Google GenAI (gemini-3.5-flash-lite / gemini-embedding-001) at temperature 0.0 against hallucinations.",
+          "AI quota resilience: graceful transparent fallback to BM25 lexical search upon daily limits without failing uploads.",
+          "Comprehensive unit and integration test suite (47 tests) covering security, geometric bounding boxes, and resilience.",
+        ],
+      },
+      technologies: [
+        "Python 3.12",
+        "FastAPI",
+        "Clean Architecture",
+        "Qdrant",
+        "Redis",
+        "Google GenAI (Gemini)",
+        "PyMuPDF",
+        "BM25 / RRF",
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Docker Compose",
+      ],
+      githubUrl: "https://github.com/jc9218/multimodal-rag",
+      isPrivateRepo: false,
+    },
+    {
+      id: "kom-trainer",
+
       name: "KOM Trainer — AI Cycling Coach",
       badge: {
         es: "Proyecto Destacado • AI & Sports Tech",
