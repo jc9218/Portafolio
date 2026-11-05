@@ -169,6 +169,111 @@ export const PORTFOLIO_DATA = {
 
   personalProjects: [
     {
+      id: "kom-trainer",
+      name: "KOM Trainer — AI Cycling Coach",
+      badge: {
+        es: "Proyecto Destacado • AI & Sports Tech",
+        en: "Featured Project • AI & Sports Tech",
+      },
+      tagline: {
+        es: "Entrenador personal de ciclismo con IA que analiza rendimiento fisiológico y prescribe entrenamientos adaptativos en tiempo real.",
+        en: "AI-powered personal cycling coach analyzing physiological telemetry and prescribing adaptive training plans in real time.",
+      },
+      utility: {
+        es: "Plataforma integral para ciclistas de ruta, gravel y MTB. Sincroniza automáticamente telemetría con Strava e Intervals.icu para computar el modelo Banister (Fitness CTL, Fatiga ATL, Forma TSB) y distribución de potencia Coggan (Z1–Z7, NP, IF, TSS). El motor de IA diagnostica el estado del atleta y prescribe entrenamientos adaptativos y sesiones de fuerza con regla de recuperación de 48h, publicando directamente en ciclocomputadores Garmin, Wahoo, Karoo y COROS.",
+        en: "Comprehensive platform for road, gravel, and MTB cyclists. Synchronizes telemetry with Strava and Intervals.icu to compute the Banister impulse-response model (Fitness CTL, Fatigue ATL, Form TSB) and Coggan 7-zone power metrics (NP, IF, TSS). The AI engine diagnoses athlete status and prescribes adaptive workouts and RPE strength sessions with a 48h recovery guardrail, publishing directly to Garmin, Wahoo, Karoo, and COROS devices.",
+      },
+      description: {
+        es: "Desarrollada con arquitectura moderna full-stack sobre Next.js 16 y PostgreSQL serverless. Integra mapas de ruta GPS interactivos con Leaflet, capas de telemetría multi-métrica, curvas de potencia máxima y sincronización mediante cron jobs y webhooks.",
+        en: "Built with a modern full-stack architecture on Next.js 16 and serverless PostgreSQL. Integrates interactive Leaflet GPS elevation profiles, multi-metric telemetry charts, peak power curves, and automated background sync via cron jobs and webhooks.",
+      },
+      features: {
+        es: [
+          "Prescripción de entrenamientos 100% generada por IA contra datos reales del atleta (sin rutinas predefinidas).",
+          "Dashboard de rendimiento Banister: Fitness (CTL, 42d), Fatiga (ATL, 7d) y Forma (TSB) por día civil.",
+          "Mapas interactivos de rutas GPS con Leaflet, perfiles de elevación con gradiente de pendientes y telemetría de potencia, FC y cadencia.",
+          "Curvas de mejor potencia: 5s (sprint), 1min (ataque), 5min (Vo2 max) y 20min (FTP) en vatios y W/kg.",
+          "Módulo de entrenamiento de fuerza con 25 ejercicios guiados por RPE y bloqueo preventivo de 48h antes de sesiones clave.",
+          "Publicación directa a Intervals.icu para sincronización inalámbrica con Garmin, Wahoo, Hammerhead Karoo y COROS.",
+        ],
+        en: [
+          "AI-driven training prescriptions generated against the athlete's real telemetry (zero pre-canned workouts).",
+          "Banister impulse-response dashboard: Fitness (CTL, 42d), Fatigue (ATL, 7d), and Form (TSB) per civil day.",
+          "Interactive GPS route maps with Leaflet, slope-graded elevation profiles, and synchronized multi-metric telemetry.",
+          "Best power curves: 5s (sprint), 1min (attack), 5min (Vo2 max), and 20min (FTP) in Watts and W/kg.",
+          "Strength training module featuring 25 RPE-guided exercises with a strict 48h recovery rule before key rides.",
+          "Direct publishing to Intervals.icu pushing wirelessly to Garmin, Wahoo, Karoo, and COROS head units.",
+        ],
+      },
+      technologies: [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Drizzle ORM",
+        "Neon Serverless PostgreSQL",
+        "NextAuth v5 (Auth.js)",
+        "Leaflet GPS",
+        "Strava API v3",
+        "Intervals.icu API",
+        "AI Coaching Engine",
+        "Tailwind CSS",
+      ],
+      liveUrl: "https://www.kom-trainer.tech",
+      isPrivateRepo: true,
+    },
+    {
+      id: "polyva",
+      name: "Polyva — AI-Powered Language Learning",
+      badge: {
+        es: "Proyecto Destacado • AI & EdTech",
+        en: "Featured Project • AI & EdTech",
+      },
+      tagline: {
+        es: "Plataforma adaptativa con tutor conversacional de IA y libro de ruta dinámico que se recalibra en tiempo real tras cada frase.",
+        en: "Adaptive language platform featuring an AI conversational tutor and dynamic roadmap recalibrating in real time after every sentence.",
+      },
+      utility: {
+        es: "Entorno de aprendizaje de idiomas personalizado (A1 a C2) con IA. Elimina los cursos rígidos pregrabados mediante un tutor interactivo que detecta errores en tiempo real, muta el sendero curricular dinámicamente e inyecta tarjetas de memoria espaciada (FSRS) ancladas exactamente a las equivocaciones contextuales del estudiante.",
+        en: "Personalized AI language learning environment covering CEFR A1 to C2. Replaces rigid pre-recorded courses with an interactive tutor that detects errors during live conversation, mutates the curricular path dynamically, and generates spaced repetition flashcards (FSRS) rooted in the student's actual mistakes.",
+      },
+      description: {
+        es: "Construida sobre Next.js 16 (App Router) y React 19 con Tailwind CSS v4 y estética editorial dark. Integra persistencia serverless sobre Neon PostgreSQL gestionada mediante Drizzle ORM, autenticación segura con NextAuth v5 (Auth.js) y Google OAuth, evaluación diagnóstica por IA y despliegue continuo en Vercel.",
+        en: "Engineered on Next.js 16 (App Router) and React 19 with Tailwind CSS v4 and a refined editorial dark UI. Integrates serverless persistence on Neon PostgreSQL managed via Drizzle ORM, secure authentication with NextAuth v5 (Auth.js) and Google OAuth, AI diagnostic assessment, and continuous deployment on Vercel.",
+      },
+      features: {
+        es: [
+          "Tutor conversacional inteligente con retroalimentación y corrección gramatical invisible en tiempo real.",
+          "Roadmap de aprendizaje que muta en vivo acelerando módulos dominados o inyectando refuerzos específicos.",
+          "Sistema de repetición espaciada (FSRS) alimentado por los errores reales cometidos en conversación.",
+          "Test diagnóstico adaptativo de nivel alineado con los estándares del Marco Común Europeo (CEFR A1–C2).",
+          "Arquitectura serverless de latencia ultrabaja sobre Neon PostgreSQL y Drizzle ORM.",
+          "Autenticación moderna con NextAuth v5 compatible con sesiones JWT y proveedores OAuth.",
+        ],
+        en: [
+          "Intelligent conversational tutor delivering non-intrusive real-time grammar feedback and contextual corrections.",
+          "Live-mutating roadmap accelerating mastered topics and injecting contextual reinforcement nodes for struggles.",
+          "Spaced Repetition System (FSRS) automatically populated by the exact mistakes made during live interactions.",
+          "Adaptive diagnostic placement assessment aligned with Common European Framework (CEFR A1–C2) standards.",
+          "Ultra-low latency serverless persistence architecture on Neon PostgreSQL with Drizzle ORM.",
+          "Modern authentication flow via NextAuth v5 supporting JWT sessions and Google OAuth.",
+        ],
+      },
+      technologies: [
+        "Next.js 16 (App Router)",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Drizzle ORM",
+        "Neon Serverless PostgreSQL",
+        "NextAuth v5 (Auth.js)",
+        "AI Conversational Engine",
+        "FSRS Algorithm",
+        "Vercel Edge",
+      ],
+      liveUrl: "https://polyva.vercel.app/",
+      isPrivateRepo: true,
+    },
+    {
       id: "multimodal-rag",
       name: "Multimodal RAG — Spatial Document Engine",
       badge: {
@@ -221,61 +326,8 @@ export const PORTFOLIO_DATA = {
         "Docker Compose",
       ],
       githubUrl: "https://github.com/jc9218/multimodal-rag",
+      liveUrl: "https://multimodal-rag-beta.vercel.app/",
       isPrivateRepo: false,
-    },
-    {
-      id: "kom-trainer",
-
-      name: "KOM Trainer — AI Cycling Coach",
-      badge: {
-        es: "Proyecto Destacado • AI & Sports Tech",
-        en: "Featured Project • AI & Sports Tech",
-      },
-      tagline: {
-        es: "Entrenador personal de ciclismo con IA que analiza rendimiento fisiológico y prescribe entrenamientos adaptativos en tiempo real.",
-        en: "AI-powered personal cycling coach analyzing physiological telemetry and prescribing adaptive training plans in real time.",
-      },
-      utility: {
-        es: "Plataforma integral para ciclistas de ruta, gravel y MTB. Sincroniza automáticamente telemetría con Strava e Intervals.icu para computar el modelo Banister (Fitness CTL, Fatiga ATL, Forma TSB) y distribución de potencia Coggan (Z1–Z7, NP, IF, TSS). El motor de IA diagnostica el estado del atleta y prescribe entrenamientos adaptativos y sesiones de fuerza con regla de recuperación de 48h, publicando directamente en ciclocomputadores Garmin, Wahoo, Karoo y COROS.",
-        en: "Comprehensive platform for road, gravel, and MTB cyclists. Synchronizes telemetry with Strava and Intervals.icu to compute the Banister impulse-response model (Fitness CTL, Fatigue ATL, Form TSB) and Coggan 7-zone power metrics (NP, IF, TSS). The AI engine diagnoses athlete status and prescribes adaptive workouts and RPE strength sessions with a 48h recovery guardrail, publishing directly to Garmin, Wahoo, Karoo, and COROS devices.",
-      },
-      description: {
-        es: "Desarrollada con arquitectura moderna full-stack sobre Next.js 16 y PostgreSQL serverless. Integra mapas de ruta GPS interactivos con Leaflet, capas de telemetría multi-métrica, curvas de potencia máxima y sincronización mediante cron jobs y webhooks.",
-        en: "Built with a modern full-stack architecture on Next.js 16 and serverless PostgreSQL. Integrates interactive Leaflet GPS elevation profiles, multi-metric telemetry charts, peak power curves, and automated background sync via cron jobs and webhooks.",
-      },
-      features: {
-        es: [
-          "Prescripción de entrenamientos 100% generada por IA contra datos reales del atleta (sin rutinas predefinidas).",
-          "Dashboard de rendimiento Banister: Fitness (CTL, 42d), Fatiga (ATL, 7d) y Forma (TSB) por día civil.",
-          "Mapas interactivos de rutas GPS con Leaflet, perfiles de elevación con gradiente de pendientes y telemetría de potencia, FC y cadencia.",
-          "Curvas de mejor potencia: 5s (sprint), 1min (ataque), 5min (Vo2 max) y 20min (FTP) en vatios y W/kg.",
-          "Módulo de entrenamiento de fuerza con 25 ejercicios guiados por RPE y bloqueo preventivo de 48h antes de sesiones clave.",
-          "Publicación directa a Intervals.icu para sincronización inalámbrica con Garmin, Wahoo, Hammerhead Karoo y COROS.",
-        ],
-        en: [
-          "AI-driven training prescriptions generated against the athlete's real telemetry (zero pre-canned workouts).",
-          "Banister impulse-response dashboard: Fitness (CTL, 42d), Fatigue (ATL, 7d), and Form (TSB) per civil day.",
-          "Interactive GPS route maps with Leaflet, slope-graded elevation profiles, and synchronized multi-metric telemetry.",
-          "Best power curves: 5s (sprint), 1min (attack), 5min (Vo2 max), and 20min (FTP) in Watts and W/kg.",
-          "Strength training module featuring 25 RPE-guided exercises with a strict 48h recovery rule before key rides.",
-          "Direct publishing to Intervals.icu pushing wirelessly to Garmin, Wahoo, Karoo, and COROS head units.",
-        ],
-      },
-      technologies: [
-        "Next.js 16 (App Router)",
-        "React 19",
-        "TypeScript",
-        "Drizzle ORM",
-        "Neon Serverless PostgreSQL",
-        "NextAuth v5 (Auth.js)",
-        "Leaflet GPS",
-        "Strava API v3",
-        "Intervals.icu API",
-        "AI Coaching Engine",
-        "Tailwind CSS",
-      ],
-      liveUrl: "https://www.kom-trainer.tech",
-      isPrivateRepo: true,
     },
   ] as PersonalProject[],
 
