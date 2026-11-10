@@ -326,7 +326,6 @@ export const PORTFOLIO_DATA = {
         "Docker Compose",
       ],
       githubUrl: "https://github.com/jc9218/multimodal-rag",
-      liveUrl: "https://multimodal-rag-beta.vercel.app/",
       isPrivateRepo: false,
     },
   ] as PersonalProject[],
