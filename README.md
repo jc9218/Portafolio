@@ -52,6 +52,11 @@ Portafolio/
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate: ESLint, TypeScript check & production build
 │       └── dependency-updates.yml   # Automated weekly dependency maintenance PR workflow
+├── graphify-out/                    # Persistent project knowledge graph for remote AI agents
+│   ├── graph.html                   # Interactive web visualizer
+│   ├── graph.json                   # AST & semantic knowledge graph structure
+│   ├── GRAPH_REPORT.md              # Architectural analysis & God Nodes report
+│   └── manifest.json                # Incremental AST tracking manifest
 ├── public/
 │   ├── favicon.svg                  # Custom high-contrast monogram + chainring vector favicon
 │   ├── icon.svg                     # App icon vector asset
@@ -114,9 +119,11 @@ Portafolio/
 ### Project Knowledge Graph
 
 The repository includes the [Graphify](https://github.com/Graphify-Labs/graphify) skill for
-building and querying a local architecture graph. Run `graphify . --code-only` to refresh
-the code graph without external credentials; generated artifacts are written to the ignored
-`graphify-out/` directory.
+building and querying a project architecture graph. Core graph artifacts (`graphify-out/graph.json`,
+`graphify-out/graph.html`, `graphify-out/GRAPH_REPORT.md`, `graphify-out/manifest.json`) are version-controlled
+so Antigravity and other AI agents in remote sessions can immediately inspect architecture,
+components, and relationships with zero configuration or API cost. Run `graphify update .` to
+refresh the graph after architectural changes.
 
 ---
 

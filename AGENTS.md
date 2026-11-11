@@ -46,7 +46,7 @@ Every commit message **MUST** strictly follow the [Conventional Commits](https:/
 - **Atomic Commits:** Each commit must represent a single, cohesive logical unit of work that compiles and passes all checks on its own. Never bundle unrelated changes into a "misc fixes" or "wip" commit.
 - **Linear History (`main`):** Prefer **Squash and Merge** or **Rebase** for Pull Requests (including automated dependency PRs) to avoid noisy merge commits (`Merge pull request #...`) cluttering `git log`.
 - **Clean Working Tree:**
-  - Never commit scratch files, editor backups, local AI agent folders (`.agent/`, `.agents/`, `CLAUDE.md`, `graphify-out/`), or unused boilerplate assets.
+  - Never commit scratch files, editor backups, local AI agent internal state (`.agent/`, `.agents/`, `CLAUDE.md`, internal `graphify-out/` caches/virtualenvs), or unused boilerplate assets.
   - Keep file permissions normalized (`644` for source/config files; never `755` unless executing a shell script).
   - Always keep `README.md` and `AGENTS.md` 100% synchronized with the actual directory structure whenever components are added, renamed, or removed.
 
@@ -117,6 +117,11 @@ Portafolio/
 │   └── workflows/
 │       ├── ci.yml                   # Quality Gate on push/PR (lint, typecheck, build)
 │       └── dependency-updates.yml   # Scheduled weekly dependency update PR automation
+├── graphify-out/                    # Persistent project knowledge graph for remote AI agents
+│   ├── graph.html                   # Interactive web visualizer
+│   ├── graph.json                   # AST & semantic knowledge graph structure
+│   ├── GRAPH_REPORT.md              # Architectural analysis & God Nodes report
+│   └── manifest.json                # Incremental AST tracking manifest
 ├── public/
 │   ├── favicon.svg                  # High-contrast vector favicon
 │   ├── icon.svg                     # Vector app icon
@@ -193,9 +198,10 @@ Portafolio/
 5. Update the directory tree in both `README.md` and `AGENTS.md`.
 
 ### C. Maintaining the Project Knowledge Graph
-- Keep the Graphify graph current after changes to source code, architecture, dependencies, or project structure.
-- Run `graphify update .` before completing those changes. If `graphify-out/` does not exist, run `graphify . --code-only` instead.
-- Keep generated files in `graphify-out/`; this directory is intentionally excluded from Git and must not be committed.
+- Keep the Graphify knowledge graph current after changes to source code, architecture, dependencies, or project structure.
+- Run `graphify update .` to refresh `graphify-out/graph.json`, `graphify-out/graph.html`, and `graphify-out/GRAPH_REPORT.md`.
+- Commit the core knowledge graph (`graphify-out/graph.json`, `graphify-out/graph.html`, `graphify-out/GRAPH_REPORT.md`, `graphify-out/manifest.json`) so Antigravity and other AI agents in remote sessions have immediate structural awareness upon checkout.
+- Internal build caches, environment folders (`.venv/`), and local backups within `graphify-out/` remain excluded via `.gitignore`.
 
 ---
 
