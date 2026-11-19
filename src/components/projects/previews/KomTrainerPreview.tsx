@@ -19,8 +19,8 @@ export function KomTrainerPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "TELEMETRÍA / MODELO BANISTER" : "TELEMETRY / BANISTER MODEL"}
           </span>
         </span>
-        <span className="text-[11px] text-zinc-400">
-          {language === "es" ? "SINCRONIZADO" : "SYNC READY"}
+        <span className="text-[11px] text-emerald-400 font-semibold">
+          {language === "es" ? "v1.21.0 • ACTIVO" : "v1.21.0 • LIVE"}
         </span>
       </div>
 
@@ -57,24 +57,26 @@ export function KomTrainerPreview({ language }: ProjectPreviewProps) {
       <div className="space-y-1 text-[11px] sm:text-xs text-zinc-300">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
           <span className="text-zinc-400">
-            {language === "es" ? "Distribución Potencia:" : "Power Distribution:"}
+            {language === "es" ? "Modos & Zonas:" : "Modes & Zones:"}
           </span>
           <span className="text-zinc-200">
-            {language === "es" ? "7 Zonas Coggan (Z1-Z7)" : "Coggan 7-Zones (Z1-Z7)"}
+            {language === "es" ? "Potencia (Z1-Z7) • Pulso (FC)" : "Power (Z1-Z7) • Heart Rate"}
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
           <span className="text-zinc-400">
-            {language === "es" ? "Sincronización GPS:" : "Device Push:"}
+            {language === "es" ? "Biometría & IA:" : "Readiness & AI:"}
           </span>
-          <span className="text-zinc-200">Garmin • Wahoo • Karoo</span>
+          <span className="text-zinc-200">
+            {language === "es" ? "Sueño / HRV • Coach Chat" : "Sleep / HRV • AI Coach Chat"}
+          </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-1 border-t border-zinc-900 gap-0.5">
           <span className="text-zinc-400">
-            {language === "es" ? "Regla Recuperación:" : "Recovery Rule:"}
+            {language === "es" ? "Cumplimiento & GPS:" : "Compliance & Push:"}
           </span>
           <span className="text-zinc-200 font-medium">
-            {language === "es" ? "Límite 48h Carga Muscular" : "48h Heavy-Leg Guardrail"}
+            {language === "es" ? "% Bloque a Bloque • Garmin/Wahoo" : "Block-by-Block % • Garmin/Wahoo"}
           </span>
         </div>
       </div>
