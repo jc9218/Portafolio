@@ -15,7 +15,7 @@
 ## ⚡ Key Highlights
 
 - **Server-First Architecture:** Built on **Next.js 16 (App Router + Turbopack)** and **React 19 Server Components**, shipping minimal client-side JavaScript for near-instant First Contentful Paint (FCP) and optimal Core Web Vitals.
-- **Enterprise Career Trajectory & Case Studies:** Detailed architectural breakdowns of leadership and senior engineering roles at **Aplyca**, **Asesoftware**, **Blaucast Media**, and **Universidad del Valle**.
+- **Enterprise Career Trajectory & Case Studies:** Detailed architectural breakdowns of leadership and senior engineering roles at **Aplyca**, **Blaucast Media**, and **Universidad del Valle**.
 - **Featured AI & Systems Showcases:**
   - **[KOM Trainer](https://www.kom-trainer.tech):** Personal SaaS platform (v1.21.0) — a conversational AI cycling coach integrating Strava API v3 and Intervals.icu telemetry, dual-mode training (Coggan Z1–Z7 power or heart rate), Banister physiological modeling (CTL, ATL, TSB), biometric readiness auto-regulation (sleep, HRV, resting HR), block-by-block compliance scoring, RPE strength plans, and bidirectional workout sync to Garmin, Wahoo, Karoo, and COROS.
   - **[Polyva](https://polyva.vercel.app/):** AI-powered language acquisition ecosystem featuring a dual-channel adaptive conversational tutor, FSRS spaced repetition engine, CEFR-aligned progression, active auditory & phonetic training, and dynamic contextual vocabulary generation.
