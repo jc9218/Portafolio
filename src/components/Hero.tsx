@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import { PORTFOLIO_DATA } from "@/data/portfolio";
 import { 
@@ -12,16 +12,15 @@ import {
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/Icons";
 import { TechIcon } from "@/components/TechIcon";
+import { useClipboard } from "@/hooks/useClipboard";
 
 export default function Hero() {
   const { language } = useLanguage();
   const { personal } = PORTFOLIO_DATA;
-  const [copied, setCopied] = useState(false);
+  const { copied, copy } = useClipboard();
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personal.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    void copy(personal.email);
   };
 
   return (

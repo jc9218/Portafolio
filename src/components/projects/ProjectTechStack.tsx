@@ -8,13 +8,13 @@ import { ProjectTechStackProps } from "./types";
  * Single Responsibility Principle (SRP):
  * Renders technology badges with monochrome brand icons.
  */
-export function ProjectTechStack({ technologies, language }: ProjectTechStackProps) {
+export function ProjectTechStack({ technologies }: ProjectTechStackProps) {
   if (!technologies || technologies.length === 0) return null;
 
   return (
     <div className="pt-4 border-t border-zinc-800 flex flex-wrap items-center gap-1.5">
       <span className="text-xs text-zinc-400 font-mono mr-1">
-        {language === "es" ? "Stack:" : "Stack:"}
+        Stack:
       </span>
       {technologies.map((tech) => (
         <span

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import confetti from "canvas-confetti";
 
 export interface UseClipboardOptions {
@@ -21,6 +21,15 @@ export interface UseClipboardReturn {
 export function useClipboard(options: UseClipboardOptions = {}): UseClipboardReturn {
   const { timeout = 2000, enableConfetti = true } = options;
   const [copied, setCopied] = useState<boolean>(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   const copy = useCallback(
     async (text: string): Promise<boolean> => {
@@ -47,7 +56,13 @@ export function useClipboard(options: UseClipboardOptions = {}): UseClipboardRet
           }
         }
 
-        setTimeout(() => setCopied(false), timeout);
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+        timeoutRef.current = setTimeout(() => {
+          setCopied(false);
+          timeoutRef.current = null;
+        }, timeout);
         return true;
       } catch (err) {
         console.error("Failed to copy text to clipboard:", err);
@@ -58,7 +73,13 @@ export function useClipboard(options: UseClipboardOptions = {}): UseClipboardRet
     [timeout, enableConfetti]
   );
 
-  const reset = useCallback(() => setCopied(false), []);
+  const reset = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setCopied(false);
+  }, []);
 
   return { copied, copy, reset };
 }

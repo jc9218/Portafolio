@@ -39,10 +39,10 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               className="md:hidden p-2 rounded-lg bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-white transition-colors flex items-center justify-center shrink-0"
-              aria-label="Back to top"
+              aria-label={language === "es" ? "Subir al inicio" : "Back to top"}
               title={language === "es" ? "Subir al inicio" : "Back to top"}
             >
-              <ArrowUp className="w-4 h-4" />
+              <ArrowUp className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
 
@@ -70,7 +70,7 @@ export default function Footer() {
               href={`mailto:${personal.email}`}
               className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
-              <Mail className="w-3.5 h-3.5" />
+              <Mail className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Email</span>
             </a>
 
@@ -78,16 +78,16 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               className="hidden md:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors ml-2"
-              aria-label="Back to top"
+              aria-label={language === "es" ? "Subir al inicio" : "Back to top"}
             >
               <span>{language === "es" ? "Subir" : "Top"}</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <ArrowUp className="w-3.5 h-3.5" aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* Bottom copyright & tech stack row */}
-        <div className="pt-6 border-t border-zinc-800/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono text-center md:text-left">
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-zinc-400 font-mono text-center md:text-left">
           <div>
             <p>
               © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}

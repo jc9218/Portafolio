@@ -82,10 +82,7 @@ export function ProjectCard({ project, language }: ProjectCardProps) {
       />
 
       {/* Tech Stack */}
-      <ProjectTechStack
-        technologies={project.technologies}
-        language={language}
-      />
+      <ProjectTechStack technologies={project.technologies} />
     </article>
   );
 }

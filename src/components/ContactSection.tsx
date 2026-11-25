@@ -25,7 +25,7 @@ export default function ContactSection() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="py-16 sm:py-20 border-b border-zinc-800/80"
+      className="scroll-mt-20 py-16 sm:py-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10 sm:mb-12">
@@ -52,7 +52,7 @@ export default function ContactSection() {
             <div>
               <div className="flex items-center justify-between mb-4">
                 <div className="p-2.5 rounded-lg bg-zinc-800 text-zinc-200">
-                  <Mail className="w-5 h-5" />
+                  <Mail className="w-5 h-5" aria-hidden="true" />
                 </div>
                 <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-zinc-950 border border-zinc-800 text-emerald-400">
                   {language === "es" ? "Principal" : "Primary"}
@@ -72,11 +72,11 @@ export default function ContactSection() {
                 className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium transition-colors"
               >
                 <span>{language === "es" ? "Escribir" : "Send Email"}</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
+                <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
               </a>
               <button
                 onClick={handleCopyEmail}
-                className="px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-750 border border-zinc-700/60 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                className="px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700/60 text-xs font-mono text-zinc-300 hover:text-white transition-colors cursor-pointer"
                 title={language === "es" ? "Copiar correo" : "Copy email"}
                 aria-label={language === "es" ? "Copiar correo electrónico al portapapeles" : "Copy email address to clipboard"}
               >

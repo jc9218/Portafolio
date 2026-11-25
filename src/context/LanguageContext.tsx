@@ -15,11 +15,15 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("es");
 
   useEffect(() => {
-    const saved = localStorage.getItem("portfolio_lang") as Language;
-    if (saved === "es" || saved === "en") {
-      queueMicrotask(() => {
-        setLanguage(saved);
-      });
+    try {
+      const saved = localStorage.getItem("portfolio_lang") as Language | null;
+      if (saved === "es" || saved === "en") {
+        queueMicrotask(() => {
+          setLanguage(saved);
+        });
+      }
+    } catch {
+      // Ignore storage access errors in restricted privacy contexts
     }
   }, []);
 
@@ -29,7 +33,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
-    localStorage.setItem("portfolio_lang", lang);
+    try {
+      localStorage.setItem("portfolio_lang", lang);
+    } catch {
+      // Ignore storage write errors in restricted privacy contexts
+    }
   };
 
   const toggleLanguage = () => {

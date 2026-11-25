@@ -67,7 +67,7 @@ export function ExperienceCard({ experience, language }: ExperienceCardProps) {
         {/* Overall Company Tech Stack */}
         <div className="mt-5 pt-3.5 border-t border-zinc-800 flex flex-wrap items-center gap-1.5">
           <span className="text-xs text-zinc-400 font-mono mr-1">
-            {language === "es" ? "Stack:" : "Stack:"}
+            Stack:
           </span>
           {experience.technologies.map((tech) => (
             <span

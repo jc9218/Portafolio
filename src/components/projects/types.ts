@@ -23,7 +23,6 @@ export interface ProjectFeaturesProps {
 
 export interface ProjectTechStackProps {
   technologies: string[];
-  language: Language;
 }
 
 export interface ProjectCardProps {
