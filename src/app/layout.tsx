@@ -129,7 +129,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
-    apple: "/icon.svg",
   },
 };
 
@@ -146,7 +145,7 @@ export default function RootLayout({
       <head>
         <JsonLd />
       </head>
-      <body className="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-emerald-500 selection:text-slate-950 font-sans">
+      <body className="min-h-screen bg-[#090a0f] text-zinc-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-300 font-sans">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

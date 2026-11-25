@@ -16,9 +16,21 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { href: "#experience", label: language === "es" ? "Experiencia" : "Experience" },
@@ -103,7 +115,7 @@ export default function Navbar() {
             className="inline-flex items-center gap-1 px-3.5 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors shadow-sm"
           >
             <span>{language === "es" ? "Contacto" : "Contact"}</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
         </div>
 
@@ -113,6 +125,8 @@ export default function Navbar() {
           <div className="flex items-center p-0.5 rounded-lg bg-zinc-900 border border-zinc-800">
             <button
               onClick={() => setLanguage("es")}
+              aria-label="Cambiar idioma a Español"
+              aria-pressed={language === "es"}
               className={`px-2 py-1 rounded text-xs font-mono font-medium ${
                 language === "es"
                   ? "bg-zinc-800 text-zinc-100"
@@ -123,6 +137,8 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setLanguage("en")}
+              aria-label="Switch language to English"
+              aria-pressed={language === "en"}
               className={`px-2 py-1 rounded text-xs font-mono font-medium ${
                 language === "en"
                   ? "bg-zinc-800 text-zinc-100"
@@ -136,16 +152,34 @@ export default function Navbar() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white"
-            aria-label="Toggle navigation menu"
+            aria-label={
+              language === "es"
+                ? mobileMenuOpen
+                  ? "Cerrar menú de navegación"
+                  : "Abrir menú de navegación"
+                : mobileMenuOpen
+                  ? "Close navigation menu"
+                  : "Open navigation menu"
+            }
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" aria-hidden="true" />
+            ) : (
+              <Menu className="w-5 h-5" aria-hidden="true" />
+            )}
           </button>
         </div>
       </div>
 
       {/* Mobile dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#090a0f]/98 backdrop-blur-2xl border-b border-zinc-800 px-5 py-4 space-y-1">
+        <nav
+          id="mobile-menu"
+          aria-label={language === "es" ? "Navegación móvil" : "Mobile navigation"}
+          className="md:hidden bg-[#090a0f]/98 backdrop-blur-2xl border-b border-zinc-800 px-5 py-4 space-y-1"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -154,7 +188,7 @@ export default function Navbar() {
               className="flex items-center justify-between text-sm text-zinc-300 hover:text-white font-medium py-2.5 px-3 rounded-lg hover:bg-zinc-900/60 transition-colors"
             >
               <span>{link.label}</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
             </a>
           ))}
           <div className="pt-3 mt-2 border-t border-zinc-800/80">
@@ -164,10 +198,10 @@ export default function Navbar() {
               className="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-zinc-100 text-zinc-950 font-medium text-sm hover:bg-white transition-colors"
             >
               <span>{language === "es" ? "Contacto" : "Contact Me"}</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
             </a>
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );

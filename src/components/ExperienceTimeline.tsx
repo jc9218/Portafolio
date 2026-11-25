@@ -20,7 +20,7 @@ export default function ExperienceTimeline() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="py-16 sm:py-20 border-b border-zinc-800/80"
+      className="scroll-mt-20 py-16 sm:py-20 border-b border-zinc-800/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

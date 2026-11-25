@@ -10,10 +10,13 @@ export default function Metrics() {
 
   return (
     <section
-      aria-label={language === "es" ? "Métricas de impacto" : "Impact metrics"}
+      aria-labelledby="metrics-heading"
       className="py-10 sm:py-12 border-b border-zinc-800/80 bg-zinc-950/40"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="metrics-heading" className="sr-only">
+          {language === "es" ? "Métricas de impacto" : "Impact metrics"}
+        </h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {metrics.map((metric, index) => (
             <div
