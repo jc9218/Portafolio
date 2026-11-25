@@ -76,7 +76,10 @@ export interface PersonalProject {
 }
 
 export interface SiteTechItem {
-  name: string;
+  name: string | {
+    es: string;
+    en: string;
+  };
   category: {
     es: string;
     en: string;
@@ -105,12 +108,10 @@ export const PORTFOLIO_DATA = {
       en: "Fullstack Developer & Technical Lead",
     },
     location: "Cali, Colombia",
-    phone: "+57 316 243 8345",
     email: "juancamilolopez10a@gmail.com",
     linkedin: "https://linkedin.com/in/juan-camilo-lopez-espitia",
     github: "https://github.com/jc9218",
     website: SITE_URL,
-    whatsapp: "https://wa.me/573162438345",
     summary: {
       es: "Ingeniero de Sistemas con más de 10 años de experiencia en ingeniería de software, arquitectura web empresarial y liderazgo técnico en iniciativas de transformación digital. Especializado en el diseño y construcción de complejos ecosistemas modernos de comercio headless, plataformas CMS empresariales y arquitecturas desacopladas con Next.js, Ibexa DXP y Commerce Layer. Capacidad probada para liderar equipos multifuncionales (4-6 ingenieros), mitigar deuda técnica, alinear objetivos de negocio con software de alto rendimiento y desplegar canales transaccionales de pago de misión crítica para sistemas de alta disponibilidad y tráfico masivo.",
       en: "Systems Engineer with over 10 years of experience in software engineering, enterprise web architecture, and technical leadership for digital transformation initiatives. Specialized in the design and construction of complex modern headless commerce ecosystems, enterprise-grade CMS platforms, and decoupled architectures using Next.js, Ibexa DXP, and Commerce Layer. Proven ability to lead cross-functional engineering teams (4-6 developers), mitigate technical debt, align complex business goals with high-performing software design, and deploy mission-critical transactional checkout and payment pipelines for highly available, high-traffic systems.",
@@ -538,7 +539,7 @@ export const PORTFOLIO_DATA = {
         en: "Backend & APIs",
       },
       iconName: "Server",
-      skills: ["PHP", "Symfony", "Laravel", "Node.js", "RESTful APIs", "GraphQL", "Microservicios", "API Orchestration"],
+      skills: ["PHP", "Symfony", "Laravel", "Node.js", "Python", "FastAPI", "RESTful APIs", "GraphQL", "Microservices", "API Orchestration"],
     },
     {
       title: {
@@ -546,7 +547,7 @@ export const PORTFOLIO_DATA = {
         en: "Headless Commerce & CMS",
       },
       iconName: "ShoppingBag",
-      skills: ["Ibexa DXP", "Commerce Layer", "Contentful", "Decoupled Architecture", "Catálogos de Productos", "Payment Workflows", "Sistemas de Ticketing"],
+      skills: ["Ibexa DXP", "Commerce Layer", "Contentful", "Decoupled Architecture", "Product Catalogs", "Payment Workflows", "Ticketing Systems"],
     },
     {
       title: {
@@ -562,7 +563,7 @@ export const PORTFOLIO_DATA = {
         en: "Databases & Storage",
       },
       iconName: "Database",
-      skills: ["PostgreSQL", "MySQL", "Query Optimization", "Index Engineering", "Modelado Relacional Complejo"],
+      skills: ["PostgreSQL", "MySQL", "Drizzle ORM", "Qdrant", "Redis", "Query Optimization", "Index Engineering", "Relational Data Modeling"],
     },
     {
       title: {
@@ -585,7 +586,7 @@ export const PORTFOLIO_DATA = {
         en: "Engineering Practices & Leadership",
       },
       iconName: "Award",
-      skills: ["System Design", "Technical Leadership (4-6 devs)", "Git & GitFlow", "Rigorous Code Reviews", "Scrum / Agile", "Mitigación de Deuda Técnica"],
+      skills: ["System Design", "Technical Leadership (4-6 devs)", "Git & GitFlow", "Rigorous Code Reviews", "Scrum / Agile", "Technical Debt Mitigation"],
     },
   ] as SkillCategory[],
 
@@ -692,16 +693,19 @@ export const PORTFOLIO_DATA = {
       badge: "Yarn 4.18",
     },
     {
-      name: "Cabeceras de Seguridad HTTP",
+      name: {
+        es: "Cabeceras de Seguridad HTTP",
+        en: "HTTP Security Headers",
+      },
       category: {
         es: "Seguridad & Hardening",
         en: "Security & Hardening",
       },
       description: {
-        es: "Hardening OWASP en next.config.ts: HSTS estricto, X-Frame-Options (DENY), nosniff, Referrer-Policy y Permissions-Policy.",
-        en: "OWASP hardening in next.config.ts: Strict HSTS, X-Frame-Options (DENY), nosniff, Referrer-Policy, and Permissions-Policy.",
+        es: "Hardening OWASP en next.config.ts: CSP, HSTS estricto, X-Frame-Options (DENY), nosniff, Referrer-Policy y Permissions-Policy.",
+        en: "OWASP hardening in next.config.ts: CSP, strict HSTS, X-Frame-Options (DENY), nosniff, Referrer-Policy, and Permissions-Policy.",
       },
-      badge: "OWASP / HSTS",
+      badge: "OWASP / CSP",
     },
     {
       name: "Lucide React & Custom SVG",
@@ -726,6 +730,18 @@ export const PORTFOLIO_DATA = {
         en: "Precision typographic system engineered for high-contrast technical interfaces.",
       },
       badge: "Fonts",
+    },
+    {
+      name: "Schema.org JSON-LD & SEO",
+      category: {
+        es: "SEO Técnico & Semántica",
+        en: "Technical SEO & Semantics",
+      },
+      description: {
+        es: "Grafo estructurado JSON-LD, tarjetas OpenGraph/Twitter PNG dinámicas, sitemap.xml, robots.txt y manifiesto PWA.",
+        en: "Structured JSON-LD graph, dynamic PNG OpenGraph/Twitter cards, sitemap.xml, robots.txt, and PWA manifest.",
+      },
+      badge: "JSON-LD / OG",
     },
     {
       name: "Git & GitHub Actions",

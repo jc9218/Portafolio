@@ -43,7 +43,7 @@ export default function SkillsSection() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="py-16 sm:py-20 border-b border-zinc-800/80"
+      className="scroll-mt-20 py-16 sm:py-20 border-b border-zinc-800/80"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
@@ -66,10 +66,15 @@ export default function SkillsSection() {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          {skillCategories.map((category, index) => (
+          {skillCategories.map((category, index) => {
+            const isOrphanLast =
+              index === skillCategories.length - 1 && skillCategories.length % 3 === 1;
+            return (
             <div
-              key={index}
-              className="p-4 sm:p-5 rounded-xl bg-zinc-900/50 border border-zinc-800"
+              key={category.title.en}
+              className={`p-4 sm:p-5 rounded-xl bg-zinc-900/50 border border-zinc-800${
+                isOrphanLast ? " md:col-span-2 lg:col-span-3" : ""
+              }`}
             >
               <div className="flex items-center gap-2.5 mb-4">
                 <div className="p-2 rounded-lg bg-zinc-800 border border-zinc-700/80">
@@ -92,7 +97,8 @@ export default function SkillsSection() {
                 ))}
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
