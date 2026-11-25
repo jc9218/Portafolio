@@ -33,7 +33,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "update:deps": "yarn up \"*\" \"@*/*\" && yarn up \"eslint@^9.39.5\" && yarn install"
+    "update:deps": "yarn up \"*\" \"@*/*\" && yarn up \"eslint@^9.39.5\" \"typescript@^6.0.3\" && yarn install"
   },
   "dependencies": {
     "canvas-confetti": "^1.9.4",

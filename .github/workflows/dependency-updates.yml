@@ -30,7 +30,7 @@ jobs:
       - name: Update safe dependencies
         run: |
           yarn up "*" "@*/*"
-          yarn up "eslint@^9.39.5"
+          yarn up "eslint@^9.39.5" "typescript@^6.0.3"
           yarn install
 
       - name: Run ESLint
