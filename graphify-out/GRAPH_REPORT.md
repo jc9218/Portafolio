@@ -1,7 +1,7 @@
 # Graph Report - Portafolio  (2026-11-25)
 
 ## Corpus Check
-- 52 files · ~23,551 words
+- 52 files · ~23,578 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 2, .example 1, .css 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `db23f762`
+- Built from commit: `1d114280`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -48,7 +48,7 @@
 7. `PORTFOLIO_DATA` - 12 edges
 8. `Language` - 11 edges
 9. `next` - 10 edges
-10. `with` - 9 edges
+10. `GithubIcon()` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `💡 Refactoring Recipe` --references--> `ProjectPreviewProps`  [INFERRED]
@@ -57,10 +57,10 @@
   .github/skills/solid-principles/SKILL.md → src/context/LanguageContext.tsx
 - `🚩 Anti-Patterns (Smells)` --references--> `PersonalProject`  [INFERRED]
   .github/skills/solid-principles/SKILL.md → src/data/portfolio.ts
-- `ExperienceTimeline()` --calls--> `ExperienceCard()`  [EXTRACTED]
-  src/components/ExperienceTimeline.tsx → src/components/experience/ExperienceCard.tsx
-- `FeaturedProjects()` --calls--> `ProjectCard()`  [EXTRACTED]
-  src/components/FeaturedProjects.tsx → src/components/projects/ProjectCard.tsx
+- `Footer()` --calls--> `TechIcon()`  [EXTRACTED]
+  src/components/Footer.tsx → src/components/TechIcon.tsx
+- `ProjectPreviewHostProps` --inherits--> `ProjectPreviewProps`  [EXTRACTED]
+  src/components/projects/previews/registry.tsx → src/components/projects/types.ts
 
 ## Import Cycles
 - None detected.
