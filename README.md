@@ -15,14 +15,14 @@
 ## ⚡ Key Highlights
 
 - **Server-First Architecture:** Built on **Next.js 16 (App Router + Turbopack)** and **React 19 Server Components**, shipping minimal client-side JavaScript for near-instant First Contentful Paint (FCP) and optimal Core Web Vitals.
-- **Enterprise Career Trajectory & Case Studies:** Detailed architectural breakdowns of leadership and senior engineering roles at **Aplyca**, **Blaucast Media**, and **Universidad del Valle**.
+- **Enterprise Career Trajectory & Case Studies:** Detailed architectural breakdowns of leadership and senior engineering roles at **Aplyca**, **Blaucast**, and **Universidad del Valle**.
 - **Featured AI & Systems Showcases:**
   - **[KOM Trainer](https://www.kom-trainer.tech):** Personal SaaS platform (v1.21.0) — a conversational AI cycling coach integrating Strava API v3 and Intervals.icu telemetry, dual-mode training (Coggan Z1–Z7 power or heart rate), Banister physiological modeling (CTL, ATL, TSB), biometric readiness auto-regulation (sleep, HRV, resting HR), block-by-block compliance scoring, RPE strength plans, and bidirectional workout sync to Garmin, Wahoo, Karoo, and COROS.
   - **[Polyva](https://polyva.vercel.app/):** AI-powered language acquisition ecosystem featuring a dual-channel adaptive conversational tutor, FSRS spaced repetition engine, CEFR-aligned progression, active auditory & phonetic training, and dynamic contextual vocabulary generation.
   - **[Multimodal RAG System](https://github.com/jc9218/multimodal-rag):** Production-grade document intelligence engine built with Clean Architecture (FastAPI, Python 3.12, Qdrant, Redis, Supabase Storage, Google GenAI), featuring isolated multi-chat workspaces, spatial geometric bounding-box extraction with PyMuPDF, OCR fallback, and hybrid search fused via Reciprocal Rank Fusion (RRF $k=60$).
 - **Instant Bilingual Engine (`ES` / `EN`):** Zero-reload, type-safe internationalization powered by React Context with automatic `localStorage` persistence and 100% bilingual parity across all data structures.
-- **Technical SEO & Semantic Web:** Dynamic OpenGraph (`1200x630`), Twitter Cards, localized `sitemap.xml`, `robots.txt`, and rich **Schema.org JSON-LD** (`ProfilePage`, `Person`, `WebSite`) structured graph.
-- **Hardened Security Posture:** Production-grade OWASP HTTP security headers configured at the framework edge (`Strict-Transport-Security`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`).
+- **Technical SEO & Semantic Web:** Dynamic OpenGraph (`1200x630`), Twitter Cards, dynamic PNG `apple-icon`, localized `sitemap.xml`, `robots.txt`, and rich **Schema.org JSON-LD** (`ProfilePage`, `Person`, `WebSite`) structured graph.
+- **Hardened Security Posture:** Production-grade OWASP HTTP security headers configured at the framework edge (`Content-Security-Policy`, `Strict-Transport-Security`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`).
 
 ---
 
@@ -58,16 +58,16 @@ Portafolio/
 │   ├── GRAPH_REPORT.md              # Architectural analysis & God Nodes report
 │   └── manifest.json                # Incremental AST tracking manifest
 ├── public/
-│   ├── favicon.svg                  # Custom high-contrast monogram + chainring vector favicon
 │   ├── googlecf4418c4927fee54.html  # Google Search Console ownership verification file
-│   ├── icon.svg                     # App icon vector asset
-│   └── og-image.svg                 # 1200x630 OpenGraph social preview card
+│   └── icon.svg                     # App icon vector asset
 ├── src/
 │   ├── app/
+│   │   ├── apple-icon.tsx           # Dynamic 180x180 PNG Apple Touch Icon
 │   │   ├── globals.css              # Tailwind CSS v4 imports and dark editorial theme tokens
 │   │   ├── icon.svg                 # Next.js App Router dynamic icon metadata
 │   │   ├── layout.tsx               # Root layout, Geist typography, OpenGraph & LanguageProvider
 │   │   ├── manifest.ts              # Dynamic Web App Manifest route
+│   │   ├── not-found.tsx            # Branded bilingual 404 Not Found page
 │   │   ├── opengraph-image.tsx      # Dynamic 1200x630 PNG OpenGraph social card
 │   │   ├── page.tsx                 # Main portfolio page orchestrating all sections
 │   │   ├── robots.ts                # Dynamic robots.txt generation
@@ -87,6 +87,7 @@ Portafolio/
 │   │   ├── Navbar.tsx               # Fixed glassmorphism navigation & segmented ES/EN switcher
 │   │   ├── PortfolioTechStack.tsx   # Architectural overview of the technologies powering this site
 │   │   ├── SkillsSection.tsx        # Categorized technical competencies matrix
+│   │   ├── SkipLink.tsx             # Bilingual keyboard skip-to-content accessibility link
 │   │   ├── TechIcon.tsx             # Inline SVG path registry for 45+ official technology brand logos
 │   │   ├── experience/              # Modular SOLID experience timeline components
 │   │   │   ├── ExperienceCard.tsx   # Milestone card presentation (SRP / ISP)

@@ -98,7 +98,7 @@ Every commit message **MUST** strictly follow the [Conventional Commits](https:/
 - **Typing:** TypeScript 6 in strict mode (`tsc --noEmit`).
 - **Styling:** Tailwind CSS v4 using `@import "tailwindcss";` in `src/app/globals.css`.
 - **Package Manager:** Yarn 4 (Berry) via Corepack with `.yarnrc.yml` (`nodeLinker: node-modules`).
-- **Security:** OWASP HTTP Security Headers configured in `next.config.ts` (`Strict-Transport-Security`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-XSS-Protection`).
+- **Security:** OWASP HTTP Security Headers configured in `next.config.ts` (`Content-Security-Policy`, `Strict-Transport-Security`, `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`).
 - **Iconography:** Lucide React for general UI icons, `src/components/Icons.tsx` for social vectors, and `src/components/TechIcon.tsx` for 45+ official monochrome technology brand SVGs.
 - **Interactive Feedback:** Canvas Confetti for recruiter interaction feedback (1-click email copy).
 - **Internationalization (i18n):** React Context (`LanguageProvider`) supporting instant English (`en`) and Spanish (`es`) switching with `localStorage` persistence.
@@ -123,16 +123,16 @@ Portafolio/
 │   ├── GRAPH_REPORT.md              # Architectural analysis & God Nodes report
 │   └── manifest.json                # Incremental AST tracking manifest
 ├── public/
-│   ├── favicon.svg                  # High-contrast vector favicon
 │   ├── googlecf4418c4927fee54.html  # Google Search Console ownership verification file
-│   ├── icon.svg                     # Vector app icon
-│   └── og-image.svg                 # 1200x630 OpenGraph preview card
+│   └── icon.svg                     # Vector app icon
 ├── src/
 │   ├── app/
+│   │   ├── apple-icon.tsx           # Dynamic 180x180 PNG Apple Touch Icon
 │   │   ├── globals.css              # Tailwind CSS v4 setup & dark theme tokens
 │   │   ├── icon.svg                 # Next.js App Router icon metadata asset
 │   │   ├── layout.tsx               # SEO metadata, Geist fonts, OpenGraph & LanguageProvider
 │   │   ├── manifest.ts              # Dynamic Web App Manifest route
+│   │   ├── not-found.tsx            # Branded bilingual 404 Not Found page
 │   │   ├── opengraph-image.tsx      # Dynamic 1200x630 PNG OpenGraph social card
 │   │   ├── page.tsx                 # Main orchestrator page composing all sections
 │   │   ├── robots.ts                # Dynamic robots.txt route
@@ -152,6 +152,7 @@ Portafolio/
 │   │   ├── Navbar.tsx               # Fixed glassmorphism navbar with segmented ES/EN switcher
 │   │   ├── PortfolioTechStack.tsx   # Showcase of the technologies powering this website
 │   │   ├── SkillsSection.tsx        # Categorized technical competencies matrix
+│   │   ├── SkipLink.tsx             # Bilingual keyboard skip-to-content accessibility link
 │   │   ├── TechIcon.tsx             # Inline SVG registry for 45+ official technology brand logos
 │   │   ├── experience/              # Modular SOLID experience timeline components
 │   │   │   ├── ExperienceCard.tsx   # Milestone card presentation (SRP / ISP)
