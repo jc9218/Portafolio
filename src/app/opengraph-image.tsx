@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { SITE_URL } from "@/config/site";
 
 export const alt =
   "Juan Camilo López Espitia — Desarrollador Full Stack & Líder Técnico";
@@ -9,6 +10,8 @@ export const size = {
 };
 
 export const contentType = "image/png";
+
+const siteHost = new URL(SITE_URL).host;
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -158,7 +161,7 @@ export default function OpenGraphImage() {
               color: "#71717a",
             }}
           >
-            jclopezespitia.sytes.net
+            {siteHost}
           </div>
         </div>
       </div>
