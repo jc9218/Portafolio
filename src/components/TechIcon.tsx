@@ -264,6 +264,11 @@ export const TECH_ICONS: Record<string, IconDefinition> = {
       "M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z",
     ],
   },
+  "supabase": {
+    paths: [
+      "M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C-.33 13.427.65 15.455 2.409 15.455h9.579l.113 7.51c.014.985 1.259 1.408 1.873.636l9.262-11.653c1.093-1.375.113-3.403-1.645-3.403h-9.642z",
+    ],
+  },
   "confetti": {
     stroke: true,
     paths: [
@@ -280,11 +285,12 @@ export function getTechIconKey(techName: string): string | null {
   if (n.includes("commerce layer") || n.includes("commercelayer")) return "commercelayer";
   if (n.includes("ibexa")) return "ibexa";
   if (n.includes("contentful")) return "contentful";
+  if (n.includes("supabase")) return "supabase";
   if (n.includes("python")) return "python";
   if (n.includes("fastapi")) return "fastapi";
   if (n.includes("redis")) return "redis";
   if (n.includes("qdrant")) return "qdrant";
-  if (n.includes("rag") || n.includes("multimodal")) return "ai";
+  if (/\brag\b/.test(n) || n.includes("multimodal")) return "ai";
   if (n.includes("next.js") || n.includes("nextjs") || n === "next") return "nextjs";
   if (n.includes("react")) return "react";
   if (n.includes("typescript") || n === "ts") return "typescript";
@@ -326,24 +332,25 @@ export function getTechIconKey(techName: string): string | null {
   if (n.includes("antigravity")) return "antigravity";
   if (n.includes("prompt") || n.includes("context")) return "prompt";
   if (n.includes("tooling") || n.includes("herramienta")) return "tools";
+  if (n.includes("fsrs")) return "ai";
   if (n.includes("ia") || n.includes("ai") || n.includes("agent") || n.includes("agéntico") || n.includes("coach")) return "ai";
 
   // 4. Decoupled & Enterprise Headless Architecture
   if (n.includes("desacoplada") || n.includes("decoupled")) return "decoupled";
   if (n.includes("microservicio") || n.includes("microservice")) return "microservices";
+  if (n.includes("payment") || n.includes("pago") || n.includes("checkout")) return "payment";
   if (n.includes("orchestration") || n.includes("orquestación") || n.includes("workflow") || n.includes("ci/cd")) return "orchestration";
   if (n.includes("rest")) return "rest";
-  if (n.includes("catálogo") || n.includes("catalog")) return "catalog";
-  if (n.includes("payment") || n.includes("pago") || n.includes("checkout")) return "payment";
+  if (n.includes("catálogo") || n.includes("catalog") || n.includes("pymupdf")) return "catalog";
   if (n.includes("ticket")) return "ticketing";
 
   // 5. Database Engineering & Optimization
-  if (n.includes("query") || n.includes("optimización")) return "query";
+  if (n.includes("query") || n.includes("optimización") || n.includes("bm25") || n.includes("rrf")) return "query";
   if (n.includes("index") || n.includes("índice")) return "index";
   if (n.includes("modelado") || n.includes("relacional") || n.includes("relational")) return "modeling";
 
   // 6. Leadership & Engineering Practices
-  if (n.includes("system design") || n.includes("diseño de sistema")) return "systemdesign";
+  if (n.includes("system design") || n.includes("diseño de sistema") || n.includes("clean architecture")) return "systemdesign";
   if (n.includes("leadership") || n.includes("liderazgo") || n.includes("mentor")) return "leadership";
   if (n.includes("code review") || n.includes("revisión de código")) return "codereview";
   if (n.includes("agile") || n.includes("scrum")) return "agile";
