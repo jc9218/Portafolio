@@ -1,22 +1,22 @@
-# Graph Report - Portafolio  (2026-11-11)
+# Graph Report - Portafolio  (2026-11-25)
 
 ## Corpus Check
-- 46 files · ~23,083 words
+- 52 files · ~23,551 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 2, .example 1, .css 1)
 
 ## Summary
-- 301 nodes · 537 edges · 15 communities (14 shown, 1 thin omitted)
+- 317 nodes · 573 edges · 21 communities (19 shown, 2 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.9)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `90f42d8b`
+- Built from commit: `db23f762`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- package.json
+- devDependencies
 - react
 - projects/types.ts
 - layout.tsx
@@ -31,18 +31,24 @@
 - Engineering Guidelines & AI Agent Rules (`AGENTS.md`)
 - Juan Camilo López Espitia — Engineering Portfolio
 - .yarnrc.yml
+- package.json
+- dependencies
+- eslint.config.mjs
+- author
+- repository
+- @types/react-dom@^19.3.0
 
 ## God Nodes (most connected - your core abstractions)
-1. `react` - 28 edges
-2. `useLanguage()` - 22 edges
-3. `TechIcon()` - 17 edges
-4. `lucide-react` - 16 edges
+1. `react` - 30 edges
+2. `useLanguage()` - 26 edges
+3. `lucide-react` - 17 edges
+4. `TechIcon()` - 16 edges
 5. `compilerOptions` - 16 edges
-6. `Language` - 12 edges
+6. `Home()` - 12 edges
 7. `PORTFOLIO_DATA` - 12 edges
-8. `Home()` - 11 edges
-9. `with` - 9 edges
-10. `GithubIcon()` - 9 edges
+8. `Language` - 11 edges
+9. `next` - 10 edges
+10. `with` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `💡 Refactoring Recipe` --references--> `ProjectPreviewProps`  [INFERRED]
@@ -59,35 +65,35 @@
 ## Import Cycles
 - None detected.
 
-## Communities (15 total, 1 thin omitted)
+## Communities (21 total, 2 thin omitted)
 
-### Community 0 - "package.json"
-Cohesion: 0.05
-Nodes (46): eslintConfig, author, email, name, url, dependencies, canvas-confetti@^1.9.4, lucide-react@^1.68.0 (+38 more)
+### Community 0 - "devDependencies"
+Cohesion: 0.15
+Nodes (13): devDependencies, tailwindcss@^4.3.5, @tailwindcss/postcss@^4.3.5, @types/canvas-confetti@^1.9.0, @types/node@^26.6.6, @types/react@^19.3.0, typescript@^6.0.3, tailwindcss (+5 more)
 
 ### Community 1 - "react"
-Cohesion: 0.22
-Nodes (21): react, Home(), ContactSection(), EducationSection(), ExperienceTimeline(), FeaturedProjects(), Footer(), Hero() (+13 more)
+Cohesion: 0.17
+Nodes (26): react, NotFound(), Home(), ContactSection(), EducationSection(), ExperienceTimeline(), FeaturedProjects(), Footer() (+18 more)
 
 ### Community 2 - "projects/types.ts"
-Cohesion: 0.17
-Nodes (19): lucide-react, KomTrainerPreview(), MultimodalRagPreview(), PolyvaPreview(), PROJECT_PREVIEW_REGISTRY, ProjectPreview(), ProjectPreviewHostProps, ProjectActions() (+11 more)
+Cohesion: 0.16
+Nodes (20): 🚩 Anti-Patterns (Smells), lucide-react, KomTrainerPreview(), MultimodalRagPreview(), PolyvaPreview(), PROJECT_PREVIEW_REGISTRY, ProjectPreview(), ProjectPreviewHostProps (+12 more)
 
 ### Community 3 - "layout.tsx"
-Cohesion: 0.14
-Nodes (11): nextConfig, securityHeaders, next, geistMono, geistSans, metadata, RootLayout(), viewport (+3 more)
+Cohesion: 0.08
+Nodes (18): contentSecurityPolicy, nextConfig, securityHeaders, next, contentType, size, geistMono, geistSans (+10 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.11
 Nodes (18): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+10 more)
 
 ### Community 5 - "TechIcon.tsx"
-Cohesion: 0.22
-Nodes (13): ExperienceCard(), ProjectExperienceItem(), ExperienceCardProps, ProjectExperienceItemProps, getTechIconKey(), IconDefinition, TECH_ICONS, TechBadge() (+5 more)
+Cohesion: 0.27
+Nodes (10): ExperienceCard(), ProjectExperienceItem(), ExperienceCardProps, ProjectExperienceItemProps, IconDefinition, TECH_ICONS, TechIcon(), TechIconProps (+2 more)
 
 ### Community 6 - "🏛️ The Five SOLID Principles in React & TypeScript"
 Cohesion: 0.08
-Nodes (24): 1. S — Single Responsibility Principle (SRP), 2. O — Open/Closed Principle (OCP), 3. L — Liskov Substitution Principle (LSP), 4. I — Interface Segregation Principle (ISP), 5. D — Dependency Inversion Principle (DIP), 🚩 Anti-Patterns (Smells), 🚩 Anti-Patterns (Smells), 🚩 Anti-Patterns (Smells) (+16 more)
+Nodes (23): 1. S — Single Responsibility Principle (SRP), 2. O — Open/Closed Principle (OCP), 3. L — Liskov Substitution Principle (LSP), 4. I — Interface Segregation Principle (ISP), 5. D — Dependency Inversion Principle (DIP), 🚩 Anti-Patterns (Smells), 🚩 Anti-Patterns (Smells), 🚩 Anti-Patterns (Smells) (+15 more)
 
 ### Community 7 - "with"
 Cohesion: 0.08
@@ -117,23 +123,43 @@ Nodes (11): 📬 Contact, 📐 Engineering & Commit Standards, 🚀 Getting Star
 Cohesion: 0.40
 Nodes (4): approvedGitRepositories, enableScripts, nodeLinker, npmMinimalAgeGate
 
+### Community 15 - "package.json"
+Cohesion: 0.20
+Nodes (9): description, engines, node, homepage, keywords, license, name, packageManager (+1 more)
+
+### Community 16 - "dependencies"
+Cohesion: 0.25
+Nodes (8): dependencies, canvas-confetti@^1.9.4, lucide-react@^1.76.0, next@^16.4.6, react@^19.3.1, react-dom@^19.3.1, canvas-confetti, react-dom
+
+### Community 17 - "eslint.config.mjs"
+Cohesion: 0.33
+Nodes (5): eslintConfig, eslint@^9.39.5, eslint-config-next@^16.4.6, eslint, eslint-config-next
+
+### Community 18 - "author"
+Cohesion: 0.50
+Nodes (4): author, email, name, url
+
+### Community 19 - "repository"
+Cohesion: 0.67
+Nodes (3): repository, type, url
+
 ## Knowledge Gaps
-- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `react` to `package.json`, `projects/types.ts`, `layout.tsx`, `TechIcon.tsx`?**
-  _High betweenness centrality (0.121) - this node is a cross-community bridge._
-- **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.05102040816326531 - nodes in this community are weakly interconnected._
-- **Why does `useLanguage()` connect `react` to `🏛️ The Five SOLID Principles in React & TypeScript`?**
-  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `react` connect `react` to `projects/types.ts`, `layout.tsx`, `TechIcon.tsx`, `package.json`, `dependencies`?**
+  _High betweenness centrality (0.117) - this node is a cross-community bridge._
 - **Should `layout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08235294117647059 - nodes in this community are weakly interconnected._
+- **Why does `next` connect `layout.tsx` to `dependencies`, `react`, `package.json`?**
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+- **Why does `useLanguage()` connect `react` to `🏛️ The Five SOLID Principles in React & TypeScript`?**
+  _High betweenness centrality (0.056) - this node is a cross-community bridge._
 - **Should `🏛️ The Five SOLID Principles in React & TypeScript` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `with` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
