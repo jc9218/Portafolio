@@ -124,6 +124,7 @@ Portafolio/
 │   └── manifest.json                # Incremental AST tracking manifest
 ├── public/
 │   ├── favicon.svg                  # High-contrast vector favicon
+│   ├── googlecf4418c4927fee54.html  # Google Search Console ownership verification file
 │   ├── icon.svg                     # Vector app icon
 │   └── og-image.svg                 # 1200x630 OpenGraph preview card
 ├── src/
