@@ -74,9 +74,9 @@ export default function EducationSection() {
                   <div className="flex items-center gap-3">
                     <div className="w-9 h-9 rounded-lg bg-zinc-800 border border-zinc-700/80 text-zinc-300 flex items-center justify-center shrink-0">
                       {idx === 0 ? (
-                        <Languages className="w-4.5 h-4.5 text-zinc-300" />
+                        <Languages className="w-4.5 h-4.5 text-zinc-300" aria-hidden="true" />
                       ) : (
-                        <Globe className="w-4.5 h-4.5 text-zinc-300" />
+                        <Globe className="w-4.5 h-4.5 text-zinc-300" aria-hidden="true" />
                       )}
                     </div>
                     <h3 className="text-base font-semibold text-white">

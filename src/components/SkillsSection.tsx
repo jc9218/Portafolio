@@ -21,21 +21,21 @@ export default function SkillsSection() {
   const getIcon = (iconName: string) => {
     switch (iconName) {
       case "Layout":
-        return <Code2 className="w-4 h-4 text-zinc-300" />;
+        return <Code2 className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "Server":
-        return <Server className="w-4 h-4 text-zinc-300" />;
+        return <Server className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "ShoppingBag":
-        return <ShoppingBag className="w-4 h-4 text-zinc-300" />;
+        return <ShoppingBag className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "Cloud":
-        return <Cloud className="w-4 h-4 text-zinc-300" />;
+        return <Cloud className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "Database":
-        return <Database className="w-4 h-4 text-zinc-300" />;
+        return <Database className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "Award":
-        return <Award className="w-4 h-4 text-zinc-300" />;
+        return <Award className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       case "Bot":
-        return <Bot className="w-4 h-4 text-zinc-300" />;
+        return <Bot className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
       default:
-        return <Code2 className="w-4 h-4 text-zinc-300" />;
+        return <Code2 className="w-4 h-4 text-zinc-300" aria-hidden="true" />;
     }
   };
 

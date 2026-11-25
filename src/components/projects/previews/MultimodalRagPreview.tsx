@@ -14,7 +14,7 @@ export function MultimodalRagPreview({ language }: ProjectPreviewProps) {
     <div className="lg:col-span-5 p-3.5 sm:p-5 rounded-lg bg-zinc-950/80 border border-zinc-800 font-mono">
       <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-zinc-800/80 pb-2.5 mb-3">
         <span className="flex items-center gap-1.5 text-zinc-200 font-medium">
-          <Cpu className="w-3.5 h-3.5 text-emerald-500" />
+          <Cpu className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
           <span>
             {language === "es" ? "PIPELINE RAG MULTIMODAL" : "MULTIMODAL RAG PIPELINE"}
           </span>

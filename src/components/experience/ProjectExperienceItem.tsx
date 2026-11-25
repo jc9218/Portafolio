@@ -32,7 +32,7 @@ export function ProjectExperienceItem({ project, language }: ProjectExperienceIt
             key={hIdx}
             className="flex items-start gap-2 text-xs text-zinc-300"
           >
-            <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+            <CheckCircle className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{highlight}</span>
           </li>
         ))}

@@ -19,7 +19,7 @@ export function ProjectFeatures({ features, language }: ProjectFeaturesProps) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
         {features.map((feature, fIdx) => (
           <div key={fIdx} className="flex items-start gap-2 text-xs text-zinc-300">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" aria-hidden="true" />
             <span>{feature}</span>
           </div>
         ))}

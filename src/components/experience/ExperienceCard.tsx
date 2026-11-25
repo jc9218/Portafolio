@@ -41,7 +41,7 @@ export function ExperienceCard({ experience, language }: ExperienceCardProps) {
           </div>
 
           <div className="flex items-center gap-1.5 text-xs font-mono text-zinc-400">
-            <Calendar className="w-3.5 h-3.5 text-zinc-500" />
+            <Calendar className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
             <span>{experience.period[language]}</span>
           </div>
         </div>

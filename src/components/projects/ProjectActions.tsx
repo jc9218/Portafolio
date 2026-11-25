@@ -31,14 +31,14 @@ export function ProjectActions({
         >
           <GithubIcon className="w-3.5 h-3.5" />
           <span>{language === "es" ? "Repositorio en GitHub" : "View on GitHub"}</span>
-          <ExternalLink className="w-3 h-3 text-zinc-400" />
+          <ExternalLink className="w-3 h-3 text-zinc-400" aria-hidden="true" />
         </a>
       )}
 
       {/* Alternative Left Badge: Private Repository */}
       {isPrivateRepo && (
         <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-950/90 border border-zinc-800 text-zinc-400 text-xs font-mono">
-          <Lock className="w-3.5 h-3.5 text-zinc-500" />
+          <Lock className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
           <span>{language === "es" ? "Repositorio Privado" : "Private Repository"}</span>
         </span>
       )}
@@ -51,9 +51,9 @@ export function ProjectActions({
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-medium text-xs transition-colors shadow-sm w-full sm:w-auto"
         >
-          <Globe className="w-3.5 h-3.5" />
+          <Globe className="w-3.5 h-3.5" aria-hidden="true" />
           <span>{language === "es" ? "Visitar Aplicación" : "Visit Application"}</span>
-          <ExternalLink className="w-3 h-3 text-zinc-950 opacity-70" />
+          <ExternalLink className="w-3 h-3 text-zinc-950 opacity-70" aria-hidden="true" />
         </a>
       )}
     </div>
