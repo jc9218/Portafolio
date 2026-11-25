@@ -1,7 +1,7 @@
 # Graph Report - Portafolio  (2026-11-25)
 
 ## Corpus Check
-- 52 files · ~23,578 words
+- 52 files · ~23,636 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 4 file(s) not represented in the graph (top: (none) 2, .example 1, .css 1)
 
@@ -11,7 +11,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1d114280`
+- Built from commit: `24b129e2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -57,10 +57,10 @@
   .github/skills/solid-principles/SKILL.md → src/context/LanguageContext.tsx
 - `🚩 Anti-Patterns (Smells)` --references--> `PersonalProject`  [INFERRED]
   .github/skills/solid-principles/SKILL.md → src/data/portfolio.ts
+- `SkillsSection()` --calls--> `TechIcon()`  [EXTRACTED]
+  src/components/SkillsSection.tsx → src/components/TechIcon.tsx
 - `Footer()` --calls--> `TechIcon()`  [EXTRACTED]
   src/components/Footer.tsx → src/components/TechIcon.tsx
-- `ProjectPreviewHostProps` --inherits--> `ProjectPreviewProps`  [EXTRACTED]
-  src/components/projects/previews/registry.tsx → src/components/projects/types.ts
 
 ## Import Cycles
 - None detected.
