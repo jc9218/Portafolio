@@ -92,13 +92,13 @@ export default function Footer() {
             <p>
               © {new Date().getFullYear()} Juan Camilo López Espitia. {language === "es" ? "Todos los derechos reservados." : "All rights reserved."}
             </p>
-            <p className="text-zinc-500 text-[11px] mt-1">
+            <p className="text-zinc-400 text-[11px] mt-1">
               {personal.location}
             </p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center md:justify-end gap-1.5 text-[11px] text-zinc-400">
-            <span className="text-zinc-500 mr-1">
+            <span className="text-zinc-400 mr-1">
               {language === "es" ? "Stack del sitio:" : "Site stack:"}
             </span>
             <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300">

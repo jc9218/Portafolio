@@ -30,7 +30,7 @@ export function PolyvaPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "ESTÁNDAR" : "STANDARD"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">CEFR</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             A1 – C2
           </div>
         </div>
@@ -41,7 +41,7 @@ export function PolyvaPreview({ language }: ProjectPreviewProps) {
           <div className="text-base sm:text-lg font-semibold text-indigo-400 mt-0.5">
             {language === "es" ? "Óptimo" : "Optimal"}
           </div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             {language === "es" ? "Muta en Vivo" : "Live Mutating"}
           </div>
         </div>
@@ -50,7 +50,7 @@ export function PolyvaPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "MEMORIA" : "MEMORY"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">FSRS</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             {language === "es" ? "Anclada a Errores" : "Error-Rooted"}
           </div>
         </div>

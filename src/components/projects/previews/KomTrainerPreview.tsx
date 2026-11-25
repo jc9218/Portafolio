@@ -30,7 +30,7 @@ export function KomTrainerPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "CTL (CONDICIÓN)" : "CTL (FITNESS)"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">84</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             {language === "es" ? "42 Días" : "42 Days"}
           </div>
         </div>
@@ -39,7 +39,7 @@ export function KomTrainerPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "ATL (FATIGA)" : "ATL (FATIGUE)"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">72</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             {language === "es" ? "7 Días" : "7 Days"}
           </div>
         </div>
@@ -48,7 +48,7 @@ export function KomTrainerPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "TSB (FORMA)" : "TSB (FORM)"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-emerald-400 mt-0.5">+12</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             {language === "es" ? "Óptimo" : "Optimal"}
           </div>
         </div>

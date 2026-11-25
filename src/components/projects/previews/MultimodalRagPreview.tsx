@@ -30,7 +30,7 @@ export function MultimodalRagPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "DIMENSIÓN" : "DIMENSION"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">768</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             Gemini 001
           </div>
         </div>
@@ -39,7 +39,7 @@ export function MultimodalRagPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "FUSIÓN RRF" : "RRF FUSION"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-zinc-100 mt-0.5">k=60</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             Dense + BM25
           </div>
         </div>
@@ -48,7 +48,7 @@ export function MultimodalRagPreview({ language }: ProjectPreviewProps) {
             {language === "es" ? "TIMEOUT" : "TIMEOUT"}
           </div>
           <div className="text-base sm:text-lg font-semibold text-emerald-400 mt-0.5">120s</div>
-          <div className="text-[8px] sm:text-[9px] text-zinc-500">
+          <div className="text-[10px] text-zinc-400">
             Cold-Start Safe
           </div>
         </div>
