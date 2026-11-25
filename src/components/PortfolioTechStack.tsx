@@ -25,14 +25,21 @@ export default function PortfolioTechStack() {
   const icons = [Cpu, Layers, Code2, Palette, Package, Zap, Bot, Cloud, ShieldCheck];
 
   return (
-    <section id="tech-stack" className="py-16 sm:py-20 border-b border-zinc-800/80">
+    <section
+      id="tech-stack"
+      aria-labelledby="tech-stack-heading"
+      className="py-16 sm:py-20 border-b border-zinc-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             04 // {language === "es" ? "Arquitectura de este Sitio" : "Site Architecture"}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2
+            id="tech-stack-heading"
+            className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3"
+          >
             {language === "es" ? "Stack & Especificaciones del Sitio" : "Site Stack & Specifications"}
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">

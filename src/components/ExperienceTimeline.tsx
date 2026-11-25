@@ -17,14 +17,21 @@ export default function ExperienceTimeline() {
   if (!experiences || experiences.length === 0) return null;
 
   return (
-    <section id="experience" className="py-16 sm:py-20 border-b border-zinc-800/80">
+    <section
+      id="experience"
+      aria-labelledby="experience-heading"
+      className="py-16 sm:py-20 border-b border-zinc-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             01 // {language === "es" ? "Trayectoria Profesional" : "Professional Track"}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2
+            id="experience-heading"
+            className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3"
+          >
             {language === "es" ? "Experiencia Profesional" : "Professional Experience"}
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">

@@ -22,13 +22,20 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 border-b border-zinc-800/80">
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="py-16 sm:py-20 border-b border-zinc-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mb-10 sm:mb-12">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             06 // {language === "es" ? "Contacto & Redes" : "Contact & Links"}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2
+            id="contact-heading"
+            className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3"
+          >
             {language === "es" ? "Contacto" : "Get in Touch"}
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
@@ -107,7 +114,7 @@ export default function ContactSection() {
               <a
                 href={personal.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
               >
                 <span>{language === "es" ? "Ver Perfil en LinkedIn" : "View LinkedIn Profile"}</span>
@@ -141,7 +148,7 @@ export default function ContactSection() {
               <a
                 href={personal.github}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 border border-zinc-700/80 text-zinc-200 hover:text-white text-xs font-medium transition-colors"
               >
                 <span>{language === "es" ? "Ver Perfil en GitHub" : "View GitHub Profile"}</span>

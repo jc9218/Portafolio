@@ -22,110 +22,71 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+const bingVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Juan Camilo López Espitia | Desarrollador Full Stack & Líder Técnico",
+    default: "Juan Camilo López Espitia | Desarrollador Full Stack & Tech Lead",
     template: "%s | Juan Camilo López Espitia",
   },
   description:
-    "Portafolio profesional de Juan Camilo López Espitia: Desarrollador Full Stack & Líder Técnico (Fullstack Developer & Tech Lead) con más de 10 años de experiencia en Next.js, React, arquitecturas web desacopladas, comercio headless (Commerce Layer, Ibexa DXP) y computación cloud (AWS, Vercel). Ubicado en Cali, Colombia.",
+    "Desarrollador Full Stack & Líder Técnico (+10 años) en Next.js, React, comercio headless (Ibexa DXP, Commerce Layer), IA y AWS. Cali, Colombia / Remoto.",
   applicationName: "Juan Camilo López Espitia Portfolio",
   authors: [{ name: "Juan Camilo López Espitia", url: SITE_URL }],
   generator: "Next.js",
   keywords: [
-    // Búsquedas generales de perfil (Español & Inglés)
-    "desarrollador",
-    "developer",
-    "desarrollador full stack",
-    "fullstack developer",
-    "full stack developer",
-    "desarrollador web",
-    "web developer",
-    "líder técnico",
-    "technical lead",
-    "tech lead",
-    "ingeniero de sistemas",
-    "systems engineer",
-    "ingeniero de software",
-    "software engineer",
-    "arquitecto de software",
-    "software architect",
-    "programador",
-    "programador web",
-    "senior developer",
-    "senior full stack developer",
-
-    // Tecnologías principales
-    "desarrollador next.js",
-    "next.js developer",
-    "desarrollador react",
-    "react developer",
-    "desarrollador typescript",
-    "typescript developer",
-    "desarrollador javascript",
-    "javascript developer",
-    "desarrollador php",
-    "php developer",
-    "symfony",
-    "laravel",
-    "docker",
-    "aws",
-    "amazon web services",
-    "vercel",
-    "postgresql",
-    "mysql",
-    "sql",
-
-    // Comercio Headless & Arquitectura Empresarial
-    "headless commerce",
-    "comercio headless",
-    "ibexa dxp",
-    "commerce layer",
-    "contentful",
-    "arquitecturas desacopladas",
-    "decoupled architectures",
-    "microservicios",
-    "graphql",
-    "restful apis",
-    "antigravity",
-    "antigravity ai",
-    "desarrollo agéntico",
-    "agentic engineering",
-
-    // Ubicación & Alcance Geográfico
-    "desarrollador cali",
-    "desarrollador colombia",
-    "developer cali",
-    "developer colombia",
-    "desarrollador remoto",
-    "remote developer",
-    "desarrollo web cali",
-    "ingeniero cali",
-    "ingeniero de sistemas cali",
-    "valle del cauca",
-
-    // Nombre y Marca Personal
-    "juan camilo lopez espitia",
-    "juan camilo lopez",
-    "camilo lopez",
-    "jc9218",
-    "kom trainer",
-    "kom-trainer"
+    "Juan Camilo López Espitia",
+    "Desarrollador Full Stack",
+    "Fullstack Developer",
+    "Líder Técnico",
+    "Technical Lead",
+    "Ingeniero de Sistemas",
+    "Software Architect",
+    "Next.js Developer",
+    "React Developer",
+    "TypeScript",
+    "Headless Commerce",
+    "Comercio Headless",
+    "Ibexa DXP",
+    "Commerce Layer",
+    "Contentful",
+    "Arquitecturas Desacopladas",
+    "PHP Symfony Laravel",
+    "Python FastAPI",
+    "Multimodal RAG",
+    "Agentic Engineering",
+    "AWS",
+    "Vercel",
+    "PostgreSQL",
+    "Desarrollador Cali Colombia",
+    "Remote Senior Developer",
+    "KOM Trainer",
+    "Polyva",
   ],
   creator: "Juan Camilo López Espitia",
   publisher: "Juan Camilo López Espitia",
   category: "technology",
   classification: "Software Engineering & Full Stack Web Development Portfolio",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "es-CO": SITE_URL,
-      "es": SITE_URL,
-      "en": SITE_URL,
-      "x-default": SITE_URL,
-    },
   },
+  ...(googleVerification || bingVerification
+    ? {
+        verification: {
+          ...(googleVerification ? { google: googleVerification } : {}),
+          ...(bingVerification
+            ? { other: { "msvalidate.01": bingVerification } }
+            : {}),
+        },
+      }
+    : {}),
   robots: {
     index: true,
     follow: true,
@@ -140,9 +101,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Juan Camilo López Espitia | Desarrollador Full Stack & Líder Técnico",
+    title: "Juan Camilo López Espitia | Desarrollador Full Stack & Tech Lead",
     description:
-      "Desarrollador Full Stack & Líder Técnico con más de 10 años de experiencia construyendo plataformas web empresariales, arquitecturas desacopladas con Next.js y ecosistemas de comercio headless (Ibexa DXP, Commerce Layer). Ubicado en Cali, Colombia.",
+      "Desarrollador Full Stack & Líder Técnico (+10 años) en Next.js, React, comercio headless (Ibexa DXP, Commerce Layer), IA y cloud en AWS y Vercel.",
     url: SITE_URL,
     siteName: "Juan Camilo López Espitia — Portafolio Profesional",
     type: "profile",
@@ -152,34 +113,22 @@ export const metadata: Metadata = {
     gender: "male",
     locale: "es_CO",
     alternateLocale: ["en_US", "es_ES"],
-    images: [
-      {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Juan Camilo López Espitia — Desarrollador Full Stack & Líder Técnico",
-        type: "image/svg+xml",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Camilo López Espitia | Desarrollador Full Stack & Líder Técnico",
+    title: "Juan Camilo López Espitia | Desarrollador Full Stack & Tech Lead",
     description:
-      "Desarrollador Full Stack & Líder Técnico con +10 años en Next.js, Headless Commerce, Ibexa DXP, Commerce Layer y arquitecturas cloud.",
-    images: ["/og-image.svg"],
+      "Desarrollador Full Stack & Líder Técnico (+10 años) en Next.js, Headless Commerce, Ibexa DXP, Commerce Layer, IA y arquitecturas cloud.",
     creator: "@jc9218",
   },
   other: {
     "geo.region": "CO-VAC",
     "geo.placename": "Cali",
     "geo.position": "3.4516;-76.5320",
-    "ICBM": "3.4516, -76.5320",
+    ICBM: "3.4516, -76.5320",
   },
   icons: {
-    icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
     apple: "/icon.svg",
   },
 };

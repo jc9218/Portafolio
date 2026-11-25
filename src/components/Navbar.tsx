@@ -52,7 +52,10 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-7">
+        <nav
+          aria-label={language === "es" ? "Navegación principal" : "Primary navigation"}
+          className="hidden md:flex items-center gap-7"
+        >
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -71,6 +74,7 @@ export default function Navbar() {
             <button
               onClick={() => setLanguage("es")}
               aria-label="Cambiar idioma a Español"
+              aria-pressed={language === "es"}
               className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all ${
                 language === "es"
                   ? "bg-zinc-800 text-zinc-100 shadow-sm"
@@ -82,6 +86,7 @@ export default function Navbar() {
             <button
               onClick={() => setLanguage("en")}
               aria-label="Switch language to English"
+              aria-pressed={language === "en"}
               className={`px-2.5 py-1 rounded-md text-[11px] font-mono font-medium transition-all ${
                 language === "en"
                   ? "bg-zinc-800 text-zinc-100 shadow-sm"

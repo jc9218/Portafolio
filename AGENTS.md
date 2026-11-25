@@ -131,9 +131,12 @@ Portafolio/
 │   │   ├── globals.css              # Tailwind CSS v4 setup & dark theme tokens
 │   │   ├── icon.svg                 # Next.js App Router icon metadata asset
 │   │   ├── layout.tsx               # SEO metadata, Geist fonts, OpenGraph & LanguageProvider
+│   │   ├── manifest.ts              # Dynamic Web App Manifest route
+│   │   ├── opengraph-image.tsx      # Dynamic 1200x630 PNG OpenGraph social card
 │   │   ├── page.tsx                 # Main orchestrator page composing all sections
 │   │   ├── robots.ts                # Dynamic robots.txt route
-│   │   └── sitemap.ts               # Dynamic XML sitemap route
+│   │   ├── sitemap.ts               # Dynamic XML sitemap route
+│   │   └── twitter-image.tsx        # Dynamic 1200x630 PNG Twitter/X card image
 │   ├── components/
 │   │   ├── ContactSection.tsx       # Direct email, 1-click copy, LinkedIn & GitHub cards
 │   │   ├── EducationSection.tsx     # Systems Engineering degree (Univalle) & languages

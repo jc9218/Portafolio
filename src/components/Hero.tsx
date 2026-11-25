@@ -25,22 +25,28 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative pt-26 pb-14 md:pt-40 md:pb-24 border-b border-zinc-800/80">
+    <section
+      aria-labelledby="hero-heading"
+      className="relative pt-26 pb-14 md:pt-40 md:pb-24 border-b border-zinc-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           {/* Location line */}
           <div className="inline-flex items-center gap-1.5 text-xs text-zinc-400 font-mono mb-5 sm:mb-6">
-            <MapPin className="w-3.5 h-3.5 text-zinc-500" />
+            <MapPin className="w-3.5 h-3.5 text-zinc-500" aria-hidden="true" />
             <span>{personal.location}</span>
           </div>
 
           {/* Name */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 sm:mb-4">
+          <h1
+            id="hero-heading"
+            className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3 sm:mb-4"
+          >
             {personal.name}
           </h1>
 
           {/* Role headline */}
-          <p className="text-lg sm:text-2xl font-medium text-zinc-300 mb-5 sm:mb-6 tracking-tight">
+          <h2 className="text-lg sm:text-2xl font-medium text-zinc-300 mb-5 sm:mb-6 tracking-tight">
             {language === "es" ? (
               <>
                 Desarrollador Full Stack <span className="text-zinc-600 font-normal">/</span> Líder Técnico
@@ -50,20 +56,12 @@ export default function Hero() {
                 Fullstack Developer <span className="text-zinc-600 font-normal">/</span> Technical Lead
               </>
             )}
-          </p>
+          </h2>
 
           {/* Bio Summary */}
           <p className="text-sm sm:text-lg text-zinc-400 leading-relaxed mb-6 sm:mb-8">
             {personal.summary[language]}
           </p>
-
-          {/* Accessible semantic context for search crawlers & screen readers */}
-          <div className="sr-only">
-            <h2>Desarrollador Full Stack, Web Developer &amp; Líder Técnico en Cali, Colombia</h2>
-            <p>
-              Perfil profesional de Juan Camilo López Espitia. Especialista en ingeniería de software, desarrollo web full stack con Next.js y React, arquitecturas desacopladas, comercio headless con Ibexa DXP y Commerce Layer, y soluciones cloud en AWS y Vercel.
-            </p>
-          </div>
 
           {/* Key tags */}
           <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-8 sm:mb-10">
@@ -92,9 +90,9 @@ export default function Hero() {
               href={`mailto:${personal.email}`}
               className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-sm transition-colors shadow-sm w-full sm:w-auto"
             >
-              <Mail className="w-4 h-4 text-zinc-900" />
+              <Mail className="w-4 h-4 text-zinc-900" aria-hidden="true" />
               <span>{language === "es" ? "Contactar por Correo" : "Contact via Email"}</span>
-              <ArrowUpRight className="w-3.5 h-3.5 opacity-60" />
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-60" aria-hidden="true" />
             </a>
 
             {/* Copy Email Button */}
@@ -104,14 +102,14 @@ export default function Hero() {
             >
               {copied ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                  <Check className="w-3.5 h-3.5 text-emerald-400" aria-hidden="true" />
                   <span className="text-emerald-400 font-medium">
                     {language === "es" ? "Copiado" : "Copied"}
                   </span>
                 </>
               ) : (
                 <>
-                  <Copy className="w-3.5 h-3.5 text-zinc-400 shrink-0" />
+                  <Copy className="w-3.5 h-3.5 text-zinc-400 shrink-0" aria-hidden="true" />
                   <span className="truncate">{personal.email}</span>
                 </>
               )}
@@ -122,7 +120,7 @@ export default function Hero() {
               <a
                 href={personal.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 aria-label="LinkedIn"
                 className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >
@@ -131,7 +129,7 @@ export default function Hero() {
               <a
                 href={personal.github}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
                 aria-label="GitHub"
                 className="flex-1 sm:flex-initial p-2.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white transition-colors flex items-center justify-center"
               >

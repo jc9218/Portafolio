@@ -51,7 +51,7 @@ export default function Footer() {
             <a
               href={personal.linkedin}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
               <LinkedinIcon className="w-3.5 h-3.5" />
@@ -60,7 +60,7 @@ export default function Footer() {
             <a
               href={personal.github}
               target="_blank"
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white transition-colors"
             >
               <GithubIcon className="w-3.5 h-3.5" />

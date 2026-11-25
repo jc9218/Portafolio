@@ -10,14 +10,21 @@ export default function EducationSection() {
   const { education, languages } = PORTFOLIO_DATA;
 
   return (
-    <section id="education" className="py-16 sm:py-20 border-b border-zinc-800/80">
+    <section
+      id="education"
+      aria-labelledby="education-heading"
+      className="py-16 sm:py-20 border-b border-zinc-800/80"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-14">
           <div className="text-xs font-mono text-emerald-500 uppercase tracking-wider mb-2">
             05 // {language === "es" ? "Formación & Comunicación" : "Education & Languages"}
           </div>
-          <h2 className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3">
+          <h2
+            id="education-heading"
+            className="text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3"
+          >
             {language === "es" ? "Educación & Idiomas" : "Education & Languages"}
           </h2>
         </div>
